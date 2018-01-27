@@ -48,7 +48,7 @@ public class BaseTestClass {
         return url;
     }
 
-    private static String selenoidUrl = "http://188.166.106.44:4444"; //127.0.0.1
+    private static String selenoidUrl = "http://127.0.0.1:4444"; //127.0.0.1
     public void attachAllureVideo(String sessionId) {
         try {
             URL videoUrl = new URL(selenoidUrl + "/video/" + sessionId + ".mp4");
@@ -70,7 +70,7 @@ public class BaseTestClass {
     }
 
     @SuppressWarnings("UnusedReturnValue")
-    @Attachment(value = "Видео HTML", type = "text/html", fileExtension = ".html")
+    @Attachment(value = "Video HTML", type = "text/html", fileExtension = ".html")
     public static String videoInHtml(String sessionId) {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
                 + getVideoUrl(sessionId)
