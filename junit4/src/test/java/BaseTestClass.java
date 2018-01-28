@@ -53,6 +53,7 @@ public class BaseTestClass {
         try {
             URL videoUrl = new URL(selenoidUrl + "/video/" + sessionId + ".mp4");
             InputStream is = null;
+            Thread.sleep(1000);
             for (int i = 0; i < 10; i++) {
                 try {
                     is = videoUrl.openStream();
