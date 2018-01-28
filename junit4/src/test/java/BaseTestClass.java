@@ -34,12 +34,13 @@ public class BaseTestClass {
         SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
     }
 
-    @Step
+    //@Step
     @After
     public void saveVideo() {
+        String sessionId = getSessionId();
+        closeWebDriver();
+
         if ("true".equals(System.getProperty("video.enabled"))) {
-            String sessionId = getSessionId();
-            closeWebDriver();
             //sleep(5000);
             attachAllureVideo(sessionId);
         }
@@ -62,6 +63,7 @@ public class BaseTestClass {
     }
 
     private static String selenoidUrl = "http://127.0.0.1:4444"; //127.0.0.1
+    //@Step
     public void attachAllureVideo(String sessionId) {
         try {
             URL videoUrl = new URL(selenoidUrl + "/video/" + sessionId + ".mp4");
