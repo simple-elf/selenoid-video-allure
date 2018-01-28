@@ -38,13 +38,4 @@ public class SimpleTest extends BaseTestClass {
         $("div.content").shouldBe(visible);
     }
 
-    @Step
-    @After
-    public void saveVideo() {
-        String sessionId = getSessionId();
-        closeWebDriver();
-        //sleep(5000);
-        attachAllureVideo(sessionId);
-    }
-
 }

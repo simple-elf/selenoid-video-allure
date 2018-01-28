@@ -21,8 +21,10 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("timeZone", "Europe/Moscow");
 
-        capabilities.setCapability("enableVideo", true);
-        capabilities.setCapability("videoFrameRate", 24);
+        if ("true".equals(System.getProperty("video.enabled"))) {
+            capabilities.setCapability("enableVideo", true);
+            capabilities.setCapability("videoFrameRate", 24);
+        }
 
         return new RemoteWebDriver(getGridHubUrl(), capabilities);
     }

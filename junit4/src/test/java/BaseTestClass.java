@@ -3,7 +3,9 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.google.common.io.Files;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
+import org.junit.After;
 import org.junit.BeforeClass;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -14,11 +16,10 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class BaseTestClass {
-
-
 
     @BeforeClass
     public static void beforeClass() {
@@ -31,6 +32,18 @@ public class BaseTestClass {
         Configuration.screenshots = false;
 
         SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
+    }
+
+    @Step
+    @After
+    public void saveVideo() {
+        if ("true".equals(System.getProperty("video.enabled"))) {
+            String sessionId = getSessionId();
+            closeWebDriver();
+            //sleep(5000);
+            attachAllureVideo(sessionId);
+        }
+
     }
 
     public static URL getVideoUrl() {
