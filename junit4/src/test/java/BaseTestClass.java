@@ -40,6 +40,7 @@ public class BaseTestClass {
         String sessionId = getSessionId();
         closeWebDriver();
 
+        System.out.println("video.enabled: " + System.getProperty("video.enabled"));
         if ("true".equals(System.getProperty("video.enabled"))) {
             //sleep(5000);
             attachAllureVideo(sessionId);
