@@ -72,43 +72,52 @@ public class BaseTestClass {
     public void attachAllureVideo(String sessionId) {
         try {
             URL videoUrl = new URL(selenoidUrl + "/video/" + sessionId + ".mp4");
-            InputStream is = null;
-            //checkSelenoidVideo(videoUrl);
-            //Thread.sleep(100);
-            for (int i = 0; i < 20; i++) {
-                Thread.sleep(100);
-                try {
-                    checkSelenoidVideo(videoUrl);
-                    is = videoUrl.openStream();
-
-                    //i = 10;
-                } catch (FileNotFoundException e) {
-                    System.out.println(i);
-
-                }
-            }
+            InputStream is = getSelenoidVideo(videoUrl);
             Allure.addAttachment("Video", "video/mp4", is, "mp4");
+            deleteSelenoidVideo(videoUrl);
         } catch (Exception e) {
             System.out.println("attachAllureVideo");
             e.printStackTrace();
         }
     }
 
-    public boolean checkSelenoidVideo(URL url) {
-        try {
-            URLConnection conn = url.openConnection();
-
-            String server = conn.getHeaderField("Content-Length");
-            System.out.println("Content-Length: " + server);
-
-            //HttpURLConnection conn2 = (HttpURLConnection) url.openConnection();
-            //conn2.setRequestMethod("DELETE");
-            //conn2.connect();
-        } catch (IOException e) {
-            e.printStackTrace();
-
+    public InputStream getSelenoidVideo(URL url) {
+        int lastSize = 0;
+        int exit = 2;
+        for (int i = 0; i < 20; i++) {
+            try {
+                int size = Integer.parseInt(url.openConnection().getHeaderField("Content-Length"));
+                System.out.println("Content-Length: " + size);
+                System.out.println(i);
+                if (size > lastSize) {
+                    lastSize = size;
+                    Thread.sleep(500);
+                } else if (size == lastSize) {
+                    exit--;
+                    Thread.sleep(200);
+                }
+                if (exit < 0) {
+                    return url.openStream();
+                }
+            } catch (Exception e) {
+                System.out.println("checkSelenoidVideo");
+                e.printStackTrace();
+            }
         }
-        return false;
+
+        return null;
+    }
+
+    public void deleteSelenoidVideo(URL url) {
+        try {
+            HttpURLConnection deleteConn = (HttpURLConnection) url.openConnection();
+            deleteConn.setRequestMethod("DELETE");
+            deleteConn.connect();
+            deleteConn.disconnect();
+        } catch (IOException e) {
+            System.out.println("deleteSelenoidVideo");
+            e.printStackTrace();
+        }
     }
 
     @SuppressWarnings("UnusedReturnValue")
