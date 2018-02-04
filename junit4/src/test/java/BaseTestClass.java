@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
@@ -96,9 +97,13 @@ public class BaseTestClass {
     public boolean checkSelenoidVideo(URL url) {
         try {
             URLConnection conn = url.openConnection();
+
             String server = conn.getHeaderField("Content-Length");
             System.out.println("Content-Length: " + server);
 
+            //HttpURLConnection conn2 = (HttpURLConnection) url.openConnection();
+            //conn2.setRequestMethod("DELETE");
+            //conn2.connect();
         } catch (IOException e) {
             e.printStackTrace();
 
