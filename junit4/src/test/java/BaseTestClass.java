@@ -72,16 +72,16 @@ public class BaseTestClass {
         try {
             URL videoUrl = new URL(selenoidUrl + "/video/" + sessionId + ".mp4");
             InputStream is = null;
-            checkSelenoidVideo(videoUrl);
-            Thread.sleep(1000);
-            for (int i = 0; i < 10; i++) {
+            //checkSelenoidVideo(videoUrl);
+            //Thread.sleep(100);
+            for (int i = 0; i < 20; i++) {
                 try {
                     is = videoUrl.openStream();
                     checkSelenoidVideo(videoUrl);
                     //i = 10;
                 } catch (FileNotFoundException e) {
                     System.out.println(i);
-                    Thread.sleep(1000);
+                    Thread.sleep(100);
                 }
             }
             Allure.addAttachment("Video", "video/mp4", is, "mp4");
@@ -94,15 +94,8 @@ public class BaseTestClass {
     public boolean checkSelenoidVideo(URL url) {
         try {
             URLConnection conn = url.openConnection();
-            //get all headers
-            Map<String, List<String>> map = conn.getHeaderFields();
-            for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-                System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
-            }
-
-            //get header by 'key'
-            String server = conn.getHeaderField("Server");
-            System.out.println("Server: " + server);
+            String server = conn.getHeaderField("Content-Length");
+            System.out.println("Content-Length: " + server);
 
         } catch (IOException e) {
             e.printStackTrace();
