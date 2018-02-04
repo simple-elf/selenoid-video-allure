@@ -11,9 +11,12 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
+import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
@@ -69,6 +72,7 @@ public class BaseTestClass {
         try {
             URL videoUrl = new URL(selenoidUrl + "/video/" + sessionId + ".mp4");
             InputStream is = null;
+            checkSelenoidVideo(videoUrl);
             Thread.sleep(1000);
             for (int i = 0; i < 10; i++) {
                 try {
@@ -84,6 +88,26 @@ public class BaseTestClass {
             System.out.println("attachAllureVideo");
             e.printStackTrace();
         }
+    }
+
+    public boolean checkSelenoidVideo(URL url) {
+        try {
+            URLConnection conn = url.openConnection();
+            //get all headers
+            Map<String, List<String>> map = conn.getHeaderFields();
+            for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+                System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+            }
+
+            //get header by 'key'
+            String server = conn.getHeaderField("Server");
+            System.out.println("Server: " + server);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        return false;
     }
 
     @SuppressWarnings("UnusedReturnValue")
