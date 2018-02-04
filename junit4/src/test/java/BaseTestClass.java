@@ -111,9 +111,10 @@ public class BaseTestClass {
     public void deleteSelenoidVideo(URL url) {
         try {
             HttpURLConnection deleteConn = (HttpURLConnection) url.openConnection();
+            deleteConn.setDoOutput(true);
+            deleteConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             deleteConn.setRequestMethod("DELETE");
             deleteConn.connect();
-            deleteConn.disconnect();
         } catch (IOException e) {
             System.out.println("deleteSelenoidVideo");
             e.printStackTrace();
