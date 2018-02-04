@@ -44,7 +44,7 @@ public class BaseTestClass {
         String sessionId = getSessionId();
         closeWebDriver();
 
-        System.out.println("video.enabled: " + System.getProperty("video.enabled"));
+        System.out.println("video.enabled1: " + System.getProperty("video.enabled"));
         if ("true".equals(System.getProperty("video.enabled"))) {
             //sleep(5000);
             attachAllureVideo(sessionId);
@@ -69,7 +69,7 @@ public class BaseTestClass {
 
     private static String selenoidUrl = "http://127.0.0.1:4444"; //127.0.0.1
     //@Step
-    public void attachAllureVideo(String sessionId) {
+    public static void attachAllureVideo(String sessionId) {
         try {
             URL videoUrl = new URL(selenoidUrl + "/video/" + sessionId + ".mp4");
             InputStream is = getSelenoidVideo(videoUrl);
@@ -81,7 +81,7 @@ public class BaseTestClass {
         }
     }
 
-    public InputStream getSelenoidVideo(URL url) {
+    public static InputStream getSelenoidVideo(URL url) {
         int lastSize = 0;
         int exit = 1;
         for (int i = 0; i < 20; i++) {
@@ -108,18 +108,13 @@ public class BaseTestClass {
         return null;
     }
 
-    public void deleteSelenoidVideo(URL url) {
+    public static void deleteSelenoidVideo(URL url) {
         try {
             HttpURLConnection deleteConn = (HttpURLConnection) url.openConnection();
             deleteConn.setDoOutput(true);
             deleteConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             deleteConn.setRequestMethod("DELETE");
             deleteConn.connect();
-            Map<String, List<String>> map = deleteConn.getHeaderFields();
-            for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-                System.out.println("Key : " + entry.getKey() +
-                        " ,Value : " + entry.getValue());
-            }
             deleteConn.disconnect();
         } catch (IOException e) {
             System.out.println("deleteSelenoidVideo");

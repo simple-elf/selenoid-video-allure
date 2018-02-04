@@ -1,6 +1,8 @@
+import com.codeborne.selenide.junit.BrowserStrategy;
 import io.qameta.allure.Link;
 import io.qameta.allure.Step;
 import org.junit.After;
+import org.junit.Rule;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Condition.visible;
@@ -15,8 +17,11 @@ public class SimpleTest extends BaseTestClass {
     //@Rule
     //public BrowserStrategy perTest = new BrowserStrategy();
 
+    @Rule
+    public VideoRule video = new VideoRule();
+
     @Link("http://ya.ru")
-    @Step
+    //@Step
     @Test
     public void test_1() {
         open("http://ya.ru");
@@ -29,7 +34,7 @@ public class SimpleTest extends BaseTestClass {
         sleep(5000);
     }
 
-    @Step
+    //@Step
     @Test
     public void test_2() {
         open("http://ya.ru");
