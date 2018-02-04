@@ -83,7 +83,7 @@ public class BaseTestClass {
 
     public InputStream getSelenoidVideo(URL url) {
         int lastSize = 0;
-        int exit = 2;
+        int exit = 1;
         for (int i = 0; i < 20; i++) {
             try {
                 int size = Integer.parseInt(url.openConnection().getHeaderField("Content-Length"));
@@ -115,6 +115,12 @@ public class BaseTestClass {
             deleteConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             deleteConn.setRequestMethod("DELETE");
             deleteConn.connect();
+            Map<String, List<String>> map = deleteConn.getHeaderFields();
+            for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+                System.out.println("Key : " + entry.getKey() +
+                        " ,Value : " + entry.getValue());
+            }
+            deleteConn.disconnect();
         } catch (IOException e) {
             System.out.println("deleteSelenoidVideo");
             e.printStackTrace();
