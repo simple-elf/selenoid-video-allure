@@ -77,9 +77,10 @@ public class BaseTestClass {
             for (int i = 0; i < 10; i++) {
                 try {
                     is = videoUrl.openStream();
-                    i = 10;
+                    checkSelenoidVideo(videoUrl);
+                    //i = 10;
                 } catch (FileNotFoundException e) {
-                    //System.out.println(i);
+                    System.out.println(i);
                     Thread.sleep(1000);
                 }
             }
