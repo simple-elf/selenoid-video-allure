@@ -75,13 +75,15 @@ public class BaseTestClass {
             //checkSelenoidVideo(videoUrl);
             //Thread.sleep(100);
             for (int i = 0; i < 20; i++) {
+                Thread.sleep(100);
                 try {
-                    is = videoUrl.openStream();
                     checkSelenoidVideo(videoUrl);
+                    is = videoUrl.openStream();
+
                     //i = 10;
                 } catch (FileNotFoundException e) {
                     System.out.println(i);
-                    Thread.sleep(100);
+
                 }
             }
             Allure.addAttachment("Video", "video/mp4", is, "mp4");
