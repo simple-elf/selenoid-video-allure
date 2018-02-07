@@ -10,26 +10,27 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
-import java.util.List;
-import java.util.Map;
 
-import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class BaseTestClass {
 
+    @Step
     @BeforeClass
     public static void beforeClass() {
-        //Configuration.browser = MyChromeBrowserClass.class.getName();
-        Configuration.browser = MyRemoteWebDriverClass.class.getName();
-        Configuration.browserSize = "1920x1080";
+        System.out.println("beforeClass");
+        if (isUnix()) {
+            Configuration.browser = MyRemoteWebDriverClass.class.getName();
+            Configuration.browserSize = "1920x1080";
+        } else {
+            Configuration.browser = MyChromeBrowserClass.class.getName();
+        }
+
 
         Configuration.startMaximized = true;
         Configuration.reportsFolder = "target/reports";
@@ -146,6 +147,11 @@ public class BaseTestClass {
 
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+    }
+
+    protected static boolean isUnix() {
+        String os = System.getProperty("os.name").toLowerCase();
+        return (os.contains("nix") || os.contains("nux"));// || isWindows(); // linux or unix
     }
 
 }
