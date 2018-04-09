@@ -75,18 +75,18 @@
     <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.0.18" level="project" />
     <orderEntry type="library" name="Maven: com.google.j2objc:j2objc-annotations:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.14" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-testng:2.0-BETA21" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-descriptions-javadoc:2.0-BETA21" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-java-commons:2.0-BETA21" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure2-model-api:1.0-BETA6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure2-model-pojo:1.0-BETA6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tika:tika-core:1.14" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure2-model-jackson:1.0-BETA6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.7.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.jooq:joor:0.9.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.testng:testng:6.10" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.beust:jcommander:1.48" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure-testng:2.0-BETA21" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure-descriptions-javadoc:2.0-BETA21" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure-java-commons:2.0-BETA21" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure2-model-api:1.0-BETA6" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure2-model-pojo:1.0-BETA6" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tika:tika-core:1.14" level="project" />
+    <orderEntry type="library" name="Maven: io.qameta.allure:allure2-model-jackson:1.0-BETA6" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.8.10" level="project" />
+    <orderEntry type="library" name="Maven: org.jooq:joor:0.9.6" level="project" />
+    <orderEntry type="library" name="Maven: org.testng:testng:6.10" level="project" />
+    <orderEntry type="library" name="Maven: com.beust:jcommander:1.48" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-nop:1.7.24" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.24" level="project" />
   </component>

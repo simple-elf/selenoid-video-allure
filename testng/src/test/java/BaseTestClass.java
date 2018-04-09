@@ -1,12 +1,15 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.codeborne.selenide.testng.BrowserPerClass;
+import com.codeborne.selenide.testng.TextReport;
 import com.google.common.io.Files;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +20,9 @@ import java.net.URL;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-public class BaseTestClass {
 
+@Listeners({TextReport.class, BrowserPerClass.class, AllureScreenShooter.class})
+public class BaseTestClass {
 
     @BeforeClass
     public static void beforeClass() {
@@ -38,7 +42,7 @@ public class BaseTestClass {
         SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
     }
 
-    @AfterTest
+    @AfterMethod
     public void saveVideo() {
         String sessionId = getSessionId();
         closeWebDriver();
@@ -99,7 +103,7 @@ public class BaseTestClass {
                     return url.openStream();
                 }
             } catch (Exception e) {
-                System.out.println("checkSelenoidVideo");
+                System.out.println("getSelenoidVideo");
                 e.printStackTrace();
             }
         }
