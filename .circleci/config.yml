@@ -31,13 +31,18 @@ jobs:
       #      --args "-limit 2"
       - checkout
       - run:
+          name: Maven deps
+          command: |
+            cd testng
+            mvn dependency:go-offline
+      - run:
           name: autotests
           command: |
             cd testng
             mvn clean test
             mvn allure:report
       - store_test_results:
-          path: target
+          path: testng/target/allure-report
       #- run:
       #    name: Selenoid stop
       #    command: |
