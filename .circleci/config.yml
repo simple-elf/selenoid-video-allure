@@ -1,41 +1,45 @@
 version: 2
 jobs:
-  selenoid_up:
-    machine: true
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+      - image: docker:17.05.0-ce-git
+        command: >
+          docker run --rm
+          -v /var/run/docker.sock:/var/run/docker.sock
+          -v ${HOME}:/root
+          -e OVERRIDE_HOME=${HOME}
+          aerokube/cm:latest-release selenoid start
+          --browsers chrome
+          --last-versions 1
+          --vnc
+          --args "-limit 2"
+    #working_directory: ~/testng
     steps:
-      - run:
-          name: selenoid_up
-          command: echo selenoid_up
-  selenoid_down:
-    machine: true
-    steps:
-      - run:
-          name: selenoid_down
-          command: echo selenoid_down
-  autotests:
-    machine: true
-    steps:
+      #- setup_remote_docker
+      #- run:
+      #    name: Run Selenoid CM
+      #    command: >
+      #      docker run --rm
+      #      -v /var/run/docker.sock:/var/run/docker.sock
+      #      -v ${HOME}:/root
+      #      -e OVERRIDE_HOME=${HOME}
+      #      aerokube/cm:latest-release selenoid start
+      #      --browsers chrome
+      #      --last-versions 1
+      #      --vnc
+      #      --args "-limit 2"
+      - checkout
       - run:
           name: autotests
-          command: echo autotests
-  allure_report:
-    machine: true
-    steps:
-      - run:
-          name: allure_report
-          command: echo allure_report
-
-workflows:
-  version: 2
-  selenoid_and_tests:
-    jobs:
-      - selenoid_up
-      - autotests:
-         requires:
-            - selenoid_up
-      - selenoid_down:
-          requires:
-            - autotests
-      - allure_report:
-          requires:
-            - autotests
+          command: |
+            cd testng
+            mvn clean test
+            mvn allure:report
+      - store_test_results:
+          path: target
+      #- run:
+      #    name: Selenoid stop
+      #    command: |
+      #      docker stop selenoid
+      #      docker rm selenoid
