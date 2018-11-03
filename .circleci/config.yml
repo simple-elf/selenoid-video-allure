@@ -1,0 +1,37 @@
+version: 2
+jobs:
+  selenoid_up:
+    steps:
+      - run:
+          name: selenoid_up
+          command: echo selenoid_up
+  selenoid_down:
+    steps:
+      - run:
+          name: selenoid_down
+          command: echo selenoid_down
+  autotests:
+    steps:
+      - run:
+          name: autotests
+          command: echo autotests
+  allure_report:
+    steps:
+      - run:
+          name: allure_report
+          command: echo allure_report
+
+workflows:
+  version: 2
+  selenoid_and_tests:
+    jobs:
+      - selenoid_up
+      - autotests:
+         requires:
+            - selenoid_up
+      - selenoid_down:
+          requires:
+            - autotests
+      - allure_report:
+          requires:
+            - autotests
