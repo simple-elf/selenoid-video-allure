@@ -14,7 +14,7 @@ jobs:
           --last-versions 1
           --vnc
           --args "-limit 2"
-    #working_directory: ~/testng
+    working_directory: ~/repo/testng
     steps:
       #- setup_remote_docker
       #- run:
@@ -29,20 +29,22 @@ jobs:
       #      --last-versions 1
       #      --vnc
       #      --args "-limit 2"
-      - checkout
-      - run:
-          name: Maven deps
-          command: |
-            cd testng
-            mvn dependency:go-offline
+      - checkout:
+          path: ~/repo
+      - restore_cache:
+          key: selenoid-video-allure-{{ checksum "pom.xml" }}
+      - run: mvn dependency:go-offline
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: selenoid-video-allure-{{ checksum "pom.xml" }}
       - run:
           name: autotests
           command: |
-            cd testng
             mvn clean test
             mvn allure:report
       - store_test_results:
-          path: testng/target/allure-report
+          path: target/allure-report
       #- run:
       #    name: Selenoid stop
       #    command: |
