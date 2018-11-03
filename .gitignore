@@ -4,3 +4,5 @@
 /junit4/target/
 /junit4/.allure/
 *.iml
+junit5.iml
+testng.iml
