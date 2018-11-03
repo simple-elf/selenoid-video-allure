@@ -15,6 +15,7 @@ jobs:
       #    --vnc
       #    --args "-limit 2"
     working_directory: ~/repo/testng
+
     steps:
       - setup_remote_docker
       #- run:
@@ -36,17 +37,17 @@ jobs:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
       - run: mvn dependency:go-offline
 
-      - run: |
-          ls -a
-          ls ~/.m2/
-          ls ~/.m2/repository/org/aspectj/aspectjweaver/1.8.10/ -a
+      #- run: |
+      #    ls -a
+      #    ls ~/.m2/
+      #    ls ~/.m2/repository/org/aspectj/aspectjweaver/1.8.10/ -a
 
       - run:
           name: Autotests
           command: mvn test
-      - run:
-          name: Allure
-          command: mvn allure:report
+      #- run:
+      #    name: Allure
+      #    command: mvn allure:report
 
       - save_cache:
           paths:
@@ -58,8 +59,8 @@ jobs:
 
       - store_artifacts:
           path: target/surefire-reports
-      - store_artifacts:
-          path: target/allure-results
+      #- store_artifacts:
+      #    path: target/allure-results
       - store_artifacts:
           path: target/site/allure-maven-plugin
 
