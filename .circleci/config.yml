@@ -36,6 +36,8 @@ jobs:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
       - run: mvn dependency:go-offline
 
+      - run: ls .m2 -a
+
       - run:
           name: Autotests
           command: mvn test
@@ -50,6 +52,11 @@ jobs:
 
       - store_test_results:
           path: target/surefire-reports
+
+      - store_artifacts:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/allure-results
       - store_artifacts:
           path: target/site/allure-maven-plugin
 
