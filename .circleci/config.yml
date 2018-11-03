@@ -35,10 +35,6 @@ jobs:
       - restore_cache:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
       - run: mvn dependency:go-offline
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: selenoid-video-allure-{{ checksum "pom.xml" }}
 
       - run:
           name: Autotests
@@ -46,8 +42,15 @@ jobs:
       - run:
           name: Allure
           command: mvn allure:report
+
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: selenoid-video-allure-{{ checksum "pom.xml" }}
+
       - store_test_results:
-          path: target/allure-report
+          path: target/site/allure-maven-plugin
+
       #- run:
       #    name: Selenoid stop
       #    command: |
