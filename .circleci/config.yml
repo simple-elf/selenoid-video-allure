@@ -3,20 +3,20 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk-browsers
-      - image: docker:17.05.0-ce-git
-        command: >
-          docker run --rm
-          -v /var/run/docker.sock:/var/run/docker.sock
-          -v ${HOME}:/root
-          -e OVERRIDE_HOME=${HOME}
-          aerokube/cm:latest-release selenoid start
-          --browsers chrome
-          --last-versions 1
-          --vnc
-          --args "-limit 2"
+      #- image: docker:17.05.0-ce-git
+      #  command: >
+      #    docker run --rm
+      #    -v /var/run/docker.sock:/var/run/docker.sock
+      #    -v ${HOME}:/root
+      #    -e OVERRIDE_HOME=${HOME}
+      #    aerokube/cm:latest-release selenoid start
+      #    --browsers chrome
+      #    --last-versions 1
+      #    --vnc
+      #    --args "-limit 2"
     working_directory: ~/repo/testng
     steps:
-      #- setup_remote_docker
+      - setup_remote_docker
       #- run:
       #    name: Run Selenoid CM
       #    command: >
@@ -39,8 +39,7 @@ jobs:
       - run: |
           ls -a
           ls ~/.m2/
-
-      #ls ~/.m2/repository/org/aspectj/aspectjweaver/1.8.10/ -a
+          ls ~/.m2/repository/org/aspectj/aspectjweaver/1.8.10/ -a
 
       - run:
           name: Autotests
