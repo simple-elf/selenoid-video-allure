@@ -36,7 +36,9 @@ jobs:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
       - run: mvn dependency:go-offline
 
-      - run: ls .m2 -a
+      - run: |
+          ls -a
+          ls ~/.m2/repository/org/aspectj/aspectjweaver/1.8.10/ -a
 
       - run:
           name: Autotests
