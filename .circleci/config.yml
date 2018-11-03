@@ -31,6 +31,7 @@ jobs:
       #      --args "-limit 2"
       - checkout:
           path: ~/repo
+
       - restore_cache:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
       - run: mvn dependency:go-offline
@@ -38,11 +39,13 @@ jobs:
           paths:
             - ~/.m2
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
+
       - run:
-          name: autotests
-          command: |
-            mvn clean test
-            mvn allure:report
+          name: Autotests
+          command: mvn test
+      - run:
+          name: Allure
+          command: mvn allure:report
       - store_test_results:
           path: target/allure-report
       #- run:
