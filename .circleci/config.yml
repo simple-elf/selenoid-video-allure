@@ -38,7 +38,9 @@ jobs:
 
       - run: |
           ls -a
-          ls ~/.m2/repository/org/aspectj/aspectjweaver/1.8.10/ -a
+          ls ~/.m2/
+
+      #ls ~/.m2/repository/org/aspectj/aspectjweaver/1.8.10/ -a
 
       - run:
           name: Autotests
