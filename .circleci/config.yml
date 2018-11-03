@@ -1,22 +1,25 @@
 version: 2
-machine: true
 jobs:
   selenoid_up:
+    machine: true
     steps:
       - run:
           name: selenoid_up
           command: echo selenoid_up
   selenoid_down:
+    machine: true
     steps:
       - run:
           name: selenoid_down
           command: echo selenoid_down
   autotests:
+    machine: true
     steps:
       - run:
           name: autotests
           command: echo autotests
   allure_report:
+    machine: true
     steps:
       - run:
           name: allure_report
