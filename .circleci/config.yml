@@ -8,6 +8,9 @@ jobs:
     steps:
       - setup_remote_docker:
           version: 17.05.0-ce
+
+      - checkout:
+          path: ~/repo
       - run:
           name: Run Selenoid CM
           command: >
@@ -20,9 +23,6 @@ jobs:
             --last-versions 1
             --vnc
             --args "-limit 2"
-
-      - checkout:
-          path: ~/repo
 
       - restore_cache:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
