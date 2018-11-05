@@ -51,12 +51,6 @@
             <version>1.7.24</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj.version}</version>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -78,11 +72,10 @@
                 <version>2.20</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <!--<argLine>
-                        -Xmx1024m -XX:MaxPermSize=256m
+                    <argLine>
                         -Dfile.encoding=UTF-8
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>-->
+                    </argLine>
                     <!--<parallel>classes</parallel>
                     <threadCount>2</threadCount>
                     <forkCount>2</forkCount>-->
@@ -90,6 +83,8 @@
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                         <video.enabled>${video.enabled}</video.enabled>
                     </systemPropertyVariables>
+
+                    <useSystemClassLoader>false</useSystemClassLoader><!-- circleci workaround!!! -->
                 </configuration>
                 <dependencies>
                     <dependency>
