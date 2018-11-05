@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
       - image: aerokube/cm:latest-release
-          command: --rm selenoid start
+          #command: --rm selenoid start
     working_directory: ~/repo/testng
 
     steps:
