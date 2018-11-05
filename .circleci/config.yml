@@ -15,7 +15,6 @@ jobs:
           name: Run Selenoid CM
           command: >
             docker run --rm
-            -v /var/run/docker.sock:/var/run/docker.sock
             -v ${HOME}:/root
             -e OVERRIDE_HOME=${HOME}
             aerokube/cm:latest-release selenoid configure
@@ -33,18 +32,22 @@ jobs:
             aerokube/selenoid:latest-release
             -limit 2
 
+      - run:
+          name: Check Selenoid
+          command: curl http://127.0.0.1:4444/status
+
       - restore_cache:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
       - run:
           name: Resolve Maven dependencies
           command: mvn dependency:go-offline compile compiler:testCompile
 
-      - run:
-          name: Autotests
-          command: mvn test
-      - run:
-          name: Allure Report
-          command: mvn allure:report
+      #- run:
+      #    name: Autotests
+      #    command: mvn test
+      #- run:
+      #    name: Allure Report
+      #    command: mvn allure:report
 
       - save_cache:
           paths:
@@ -53,18 +56,16 @@ jobs:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
           when: always
 
-      - store_test_results:
-          path: target/surefire-reports
-      - store_artifacts:
-          path: target/surefire-reports
-      - store_artifacts:
-          path: target/allure-results
+      #- store_test_results:
+      #    path: target/surefire-reports
+      #- store_artifacts:
+      #    path: target/surefire-reports
+      #- store_artifacts:
+      #    path: target/allure-results
       - store_artifacts:
           path: target/site/allure-maven-plugin
           destination: allure-report
 
       - run:
           name: Selenoid stop
-          command: |
-            docker stop selenoid
-            docker rm selenoid
+          command: docker stop selenoid
