@@ -2,39 +2,40 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk
-      - image: aerokube/cm:latest-release
-          command: [cm, selenoid, start]
-          #entrypint: /cm
+      - image: circleci/openjdk:8-jdk-browsers
     working_directory: ~/repo/testng
 
     steps:
+      #- setup_remote_docker
+
       - checkout:
           path: ~/repo
 
-      - run:
-          name: Check Selenoid
-          command: curl http://localhost:4444/status
-
-      - restore_cache:
-          key: selenoid-video-allure-{{ checksum "pom.xml" }}
-      - run:
-          name: Resolve Maven dependencies
-          command: mvn dependency:go-offline compile compiler:testCompile
-
       #- run:
-      #    name: Autotests
-      #    command: mvn test
+      #    name: Check Selenoid
+      #    command: |
+      #      sleep 30
+      #      curl http://localhost:4444/status
+
+      #- restore_cache:
+      #    key: selenoid-video-allure-{{ checksum "pom.xml" }}
+      #- run:
+      #    name: Resolve Maven dependencies
+      #    command: mvn dependency:go-offline compile compiler:testCompile
+
+      - run:
+          name: Autotests
+          command: mvn test
       #- run:
       #    name: Allure Report
       #    command: mvn allure:report
 
-      - save_cache:
-          paths:
-            - ~/.m2
-            - .allure
-          key: selenoid-video-allure-{{ checksum "pom.xml" }}
-          when: always
+      #- save_cache:
+      #    paths:
+      #      - ~/.m2
+      #      - .allure
+      #    key: selenoid-video-allure-{{ checksum "pom.xml" }}
+      #    when: always
 
       #- store_test_results:
       #    path: target/surefire-reports
@@ -42,6 +43,7 @@ jobs:
       #    path: target/surefire-reports
       #- store_artifacts:
       #    path: target/allure-results
-      - store_artifacts:
-          path: target/site/allure-maven-plugin
-          destination: allure-report
+
+      #- store_artifacts:
+      #    path: target/site/allure-maven-plugin
+      #    destination: allure-report

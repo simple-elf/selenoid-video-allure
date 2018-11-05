@@ -27,12 +27,12 @@ public class BaseTestClass {
     @BeforeClass
     public static void beforeClass() {
         System.out.println("beforeClass");
-        if (isUnix()) {
-            Configuration.browser = MyRemoteWebDriverClass.class.getName();
-            Configuration.browserSize = "1920x1080";
-        } else {
+        //if (isUnix()) {
+        //    Configuration.browser = MyRemoteWebDriverClass.class.getName();
+        //    Configuration.browserSize = "1920x1080";
+        //} else {
             Configuration.browser = MyChromeBrowserClass.class.getName();
-        }
+        //}
 
 
         Configuration.startMaximized = true;
