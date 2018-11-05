@@ -18,15 +18,26 @@ jobs:
             -v /var/run/docker.sock:/var/run/docker.sock
             -v ${HOME}:/root
             -e OVERRIDE_HOME=${HOME}
-            aerokube/cm:latest-release selenoid start
+            aerokube/cm:latest-release selenoid configure
             --browsers chrome
             --last-versions 1
             --vnc
             --args "-limit 2"
+      - run:
+          name: Run Selenoid
+          command: >
+            docker run --rm -d
+            --name selenoid
+            -p 4444:4444
+            -v /var/run/docker.sock:/var/run/docker.sock
+            -v `pwd`/config/:/etc/selenoid/:ro
+            aerokube/selenoid:latest-release
 
       - restore_cache:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
-      - run: mvn dependency:go-offline compile compiler:testCompile
+      - run:
+          name: Resolve Maven dependencies
+          command: mvn dependency:go-offline compile compiler:testCompile
 
       - run:
           name: Autotests
