@@ -3,69 +3,57 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-      #- image: docker:17.05.0-ce-git
-      #  command: >
-      #    docker run --rm
-      #    -v /var/run/docker.sock:/var/run/docker.sock
-      #    -v ${HOME}:/root
-      #    -e OVERRIDE_HOME=${HOME}
-      #    aerokube/cm:latest-release selenoid start
-      #    --browsers chrome
-      #    --last-versions 1
-      #    --vnc
-      #    --args "-limit 2"
     working_directory: ~/repo/testng
 
     steps:
-      - setup_remote_docker
-      #- run:
-      #    name: Run Selenoid CM
-      #    command: >
-      #      docker run --rm
-      #      -v /var/run/docker.sock:/var/run/docker.sock
-      #      -v ${HOME}:/root
-      #      -e OVERRIDE_HOME=${HOME}
-      #      aerokube/cm:latest-release selenoid start
-      #      --browsers chrome
-      #      --last-versions 1
-      #      --vnc
-      #      --args "-limit 2"
+      - setup_remote_docker:
+          version: 17.05.0-ce
+      - run:
+          name: Run Selenoid CM
+          command: >
+            docker run --rm
+            -v /var/run/docker.sock:/var/run/docker.sock
+            -v ${HOME}:/root
+            -e OVERRIDE_HOME=${HOME}
+            aerokube/cm:latest-release selenoid start
+            --browsers chrome
+            --last-versions 1
+            --vnc
+            --args "-limit 2"
+
       - checkout:
           path: ~/repo
 
       - restore_cache:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
-      - run: mvn dependency:go-offline
-
-      #- run: |
-      #    ls -a
-      #    ls ~/.m2/
-      #    ls ~/.m2/repository/org/aspectj/aspectjweaver/1.8.10/ -a
+      - run: mvn dependency:go-offline compile compiler:testCompile
 
       - run:
           name: Autotests
           command: mvn test
       - run:
-          name: Allure
+          name: Allure Report
           command: mvn allure:report
 
       - save_cache:
           paths:
             - ~/.m2
+            - .allure
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
+          when: always
 
       - store_test_results:
           path: target/surefire-reports
-
       - store_artifacts:
           path: target/surefire-reports
-      #- store_artifacts:
-      #    path: target/allure-results
+      - store_artifacts:
+          path: target/allure-results
       - store_artifacts:
           path: target/site/allure-maven-plugin
+          destination: allure-report
 
-      #- run:
-      #    name: Selenoid stop
-      #    command: |
-      #      docker stop selenoid
-      #      docker rm selenoid
+      - run:
+          name: Selenoid stop
+          command: |
+            docker stop selenoid
+            docker rm selenoid

@@ -1,9 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
-/junit4/junit4.iml
 /.idea/
 /junit4/target/
 /junit4/.allure/
 *.iml
-junit5.iml
-testng.iml
 /testng/.allure/
