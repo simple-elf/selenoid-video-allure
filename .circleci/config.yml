@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
       - image: aerokube/cm:latest-release
-          command: --rm -v ${HOME}:/root -e OVERRIDE_HOME=${HOME} selenoid start --browsers chrome --last-versions 1 --args "-limit 2"
+          command: --rm selenoid start --browsers chrome --last-versions 1 --args "-limit 2"
     working_directory: ~/repo/testng
 
     steps:
