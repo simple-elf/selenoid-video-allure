@@ -32,10 +32,9 @@ public class BaseTestClass {
             Configuration.browserSize = "1920x1080";
         } else {
             Configuration.browser = MyChromeBrowserClass.class.getName();
+            Configuration.startMaximized = true;
         }
 
-
-        Configuration.startMaximized = true;
         Configuration.reportsFolder = "target/reports";
         Configuration.screenshots = false;
 
