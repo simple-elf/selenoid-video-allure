@@ -22,7 +22,6 @@ jobs:
             --browsers chrome
             --last-versions 1
             --vnc
-            --args "-limit 2"
       - run:
           name: Run Selenoid
           command: >
@@ -32,6 +31,7 @@ jobs:
             -v /var/run/docker.sock:/var/run/docker.sock
             -v `pwd`/config/:/etc/selenoid/:ro
             aerokube/selenoid:latest-release
+            -limit 2
 
       - restore_cache:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
