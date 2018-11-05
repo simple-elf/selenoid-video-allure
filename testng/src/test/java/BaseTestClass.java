@@ -41,7 +41,7 @@ public class BaseTestClass {
         SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void saveVideo() {
         String sessionId = getSessionId();
         closeWebDriver();
