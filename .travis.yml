@@ -9,7 +9,7 @@ services:
 before_script:
   - echo "Starting build"
   - docker run --rm -d --name chrome -p 4444:4444 selenoid/chrome:70.0
-  #- docker run --rm -d selenoid/cm:latest-release --browsers chrome --last-versions 1 --args "-limit 2"
+  # - docker run --rm -d selenoid/cm:latest-release --browsers chrome --last-versions 1 --args "-limit 2"
 script:
   - cd testng
   - mvn test allure:report
