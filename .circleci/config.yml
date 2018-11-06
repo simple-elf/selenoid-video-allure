@@ -6,7 +6,7 @@ jobs:
       - image: selenoid/chrome:70.0
         environment:
           PORT: 4444
-    #working_directory: ~/repo/testng
+    working_directory: ~/repo/testng
 
     steps:
 
@@ -15,36 +15,36 @@ jobs:
 
       #- run: sleep 30 & curl http://127.0.0.1:4444/
 
-      - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+      #- run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
 
-      #- restore_cache:
-      #    key: selenoid-video-allure-{{ checksum "pom.xml" }}
+      - restore_cache:
+          key: selenoid-video-allure-{{ checksum "pom.xml" }}
 
-      #- run:
-      #    name: Resolve Maven dependencies
-      #    command: mvn dependency:go-offline compile compiler:testCompile
+      - run:
+          name: Resolve Maven dependencies
+          command: mvn dependency:go-offline compile compiler:testCompile
 
-      #- run:
-      #    name: Autotests
-      #    command: mvn test
-      #- run:
-      #    name: Allure Report
-      #    command: mvn allure:report
+      - run:
+          name: Autotests
+          command: mvn test
+      - run:
+          name: Allure Report
+          command: mvn allure:report
 
-      #- save_cache:
-      #    paths:
-      #      - ~/.m2
-      #      - .allure
-      #    key: selenoid-video-allure-{{ checksum "pom.xml" }}
-      #    when: always
+      - save_cache:
+          paths:
+            - ~/.m2
+            - .allure
+          key: selenoid-video-allure-{{ checksum "pom.xml" }}
+          when: always
 
-      #- store_test_results:
-      #    path: target/surefire-reports
-      #- store_artifacts:
-      #    path: target/surefire-reports
-      #- store_artifacts:
-      #    path: target/allure-results
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/allure-results
 
-      #- store_artifacts:
-      #    path: target/site/allure-maven-plugin
-      #    destination: allure-report
+      - store_artifacts:
+          path: target/site/allure-maven-plugin
+          destination: allure-report
