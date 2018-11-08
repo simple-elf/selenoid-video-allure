@@ -93,10 +93,10 @@ public class BaseTestClass {
                 System.out.println(i);
                 if (size > lastSize) {
                     lastSize = size;
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                 } else if (size == lastSize) {
                     exit--;
-                    Thread.sleep(200);
+                    Thread.sleep(500);
                 }
                 if (exit < 0) {
                     return url.openStream();
