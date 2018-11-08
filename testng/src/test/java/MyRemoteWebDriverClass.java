@@ -19,7 +19,7 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("timeZone", "Europe/Moscow");
 
-        //System.out.println("video.enabled: " + System.getProperty("video.enabled"));
+        System.out.println("video.enabled: " + System.getProperty("video.enabled"));
         if ("true".equals(System.getProperty("video.enabled"))) {
             capabilities.setCapability("enableVideo", true);
             capabilities.setCapability("videoFrameRate", 24);
@@ -31,7 +31,7 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
     public static URL getGridHubUrl() {
         URL hostURL = null;
         try {
-            hostURL = new URL("http://127.0.0.1:4444"); // /wd/hub
+            hostURL = new URL("http://127.0.0.1:4444/wd/hub"); //
         } catch (MalformedURLException e) {
             //e.printStackTrace();
         }
