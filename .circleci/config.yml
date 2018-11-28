@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-      - image: selenoid/chrome:70.0
+      - image: selenoid/vnc_chrome:70.0
         environment:
           PORT: 4444
     working_directory: ~/repo/testng
@@ -15,7 +15,7 @@ jobs:
 
       - run: curl http://127.0.0.1:4444/status
 
-      #- run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+      - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
 
       - restore_cache:
           keys:
