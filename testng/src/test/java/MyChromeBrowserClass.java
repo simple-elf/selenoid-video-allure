@@ -1,5 +1,5 @@
 import com.codeborne.selenide.WebDriverProvider;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +13,7 @@ public class MyChromeBrowserClass implements WebDriverProvider {
     @SuppressWarnings("deprecation")
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
-        ChromeDriverManager.getInstance().setup();
+        WebDriverManager.chromedriver().setup();
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, getChromeOptions());
 
