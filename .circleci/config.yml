@@ -13,12 +13,12 @@ jobs:
       - checkout:
           path: ~/repo
 
-      #- run: curl http://127.0.0.1:4444/status
+      - run: curl http://127.0.0.1:4444/status
 
       #- run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
 
       - restore_cache:
-          key:
+          keys:
             - selenoid-video-allure-{{ checksum "pom.xml" }}
             - selenoid-video-allure-
 
@@ -37,7 +37,7 @@ jobs:
           paths:
             - ~/.m2
             - .allure
-          key:
+          keys:
             - selenoid-video-allure-{{ checksum "pom.xml" }}
             - selenoid-video-allure-
           when: always
