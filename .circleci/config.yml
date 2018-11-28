@@ -18,8 +18,9 @@ jobs:
       #- run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
 
       - restore_cache:
-          key: selenoid-video-allure-{{ checksum "pom.xml" }}
-          key: selenoid-video-allure-
+          key:
+            - selenoid-video-allure-{{ checksum "pom.xml" }}
+            - selenoid-video-allure-
 
       - run:
           name: Resolve Maven dependencies
@@ -36,8 +37,9 @@ jobs:
           paths:
             - ~/.m2
             - .allure
-          key: selenoid-video-allure-{{ checksum "pom.xml" }}
-          key: selenoid-video-allure-
+          key:
+            - selenoid-video-allure-{{ checksum "pom.xml" }}
+            - selenoid-video-allure-
           when: always
 
       - store_test_results:
