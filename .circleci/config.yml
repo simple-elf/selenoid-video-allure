@@ -37,9 +37,7 @@ jobs:
           paths:
             - ~/.m2
             - .allure
-          keys:
-            - selenoid-video-allure-{{ checksum "pom.xml" }}
-            - selenoid-video-allure-
+          key: selenoid-video-allure-{{ checksum "pom.xml" }}
           when: always
 
       - store_test_results:
