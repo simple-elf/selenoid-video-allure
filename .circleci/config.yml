@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-      - image: selenoid/chrome:70.0
+      - image: selenoid/chrome:69.0
         environment:
           PORT: 4444
     working_directory: ~/repo/testng
@@ -19,6 +19,7 @@ jobs:
 
       - restore_cache:
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
+          key: selenoid-video-allure-
 
       - run:
           name: Resolve Maven dependencies
@@ -36,6 +37,7 @@ jobs:
             - ~/.m2
             - .allure
           key: selenoid-video-allure-{{ checksum "pom.xml" }}
+          key: selenoid-video-allure-
           when: always
 
       - store_test_results:
