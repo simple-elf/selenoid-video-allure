@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-      - image: selenoid/chrome:69.0
+      - image: selenoid/chrome:70.0
         environment:
           PORT: 4444
     working_directory: ~/repo/testng
