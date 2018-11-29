@@ -10,7 +10,7 @@
 
     <properties>
         <video.enabled>false</video.enabled>
-        <selenoid.url>http://127.0.0.1:4444/wd/hub</selenoid.url>
+        <selenoid.url>http://127.0.0.1:4444/</selenoid.url>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -86,6 +86,8 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                         <video.enabled>${video.enabled}</video.enabled>
+
+                        <selenoid.url>${selenoid.url}</selenoid.url>
                     </systemPropertyVariables>
 
                     <useSystemClassLoader>false</useSystemClassLoader><!-- circleci workaround!!! -->
