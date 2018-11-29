@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>5.0.0</version>
+            <version>4.7</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.google.guava</groupId>

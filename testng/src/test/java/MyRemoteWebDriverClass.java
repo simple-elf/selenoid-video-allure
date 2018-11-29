@@ -12,6 +12,7 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
     @SuppressWarnings("deprecation")
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
+        //WebDriverManager.chromedriver().arch64().version("2.42").setup();
         capabilities.setBrowserName("chrome");
         capabilities.setCapability(ChromeOptions.CAPABILITY, MyChromeBrowserClass.getChromeOptions());
 
