@@ -90,20 +90,23 @@ public class BaseTestClass {
             try {
                 int size = Integer.parseInt(url.openConnection().getHeaderField("Content-Length"));
                 System.out.println("Content-Length: " + size);
-                System.out.println(i);
+                System.out.println("i: " + i);
                 if (size > lastSize) {
                     lastSize = size;
                     Thread.sleep(1000);
                 } else if (size == lastSize) {
+                    System.out.println("Content-Length: " + size);
+                    System.out.println("exit: " + exit);
                     exit--;
                     Thread.sleep(500);
                 }
                 if (exit < 0) {
+                    System.out.println("video ok!");
                     return url.openStream();
                 }
             } catch (Exception e) {
-                System.out.println("getSelenoidVideo");
-                e.printStackTrace();
+                System.out.println("getSelenoidVideo: " + e.getMessage());
+                //e.printStackTrace();
             }
         }
 
@@ -117,6 +120,9 @@ public class BaseTestClass {
             deleteConn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             deleteConn.setRequestMethod("DELETE");
             deleteConn.connect();
+            System.out.println("deleteSelenoidVideo");
+            System.out.println(deleteConn.getResponseCode());
+            System.out.println(deleteConn.getResponseMessage());
             deleteConn.disconnect();
         } catch (IOException e) {
             System.out.println("deleteSelenoidVideo");

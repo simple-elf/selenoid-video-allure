@@ -28,20 +28,20 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>4.7</version>
-            <exclusions>
+            <version>5.0.0</version>
+            <!--<exclusions>
                 <exclusion>
                     <groupId>com.google.guava</groupId>
                     <artifactId>guava</artifactId>
                 </exclusion>
-            </exclusions>
+            </exclusions>-->
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>23.0</version>
-        </dependency>
+        </dependency>-->
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
