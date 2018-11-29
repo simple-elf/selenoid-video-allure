@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class SimpleTest extends BaseTestClass {
 
@@ -19,6 +20,7 @@ public class SimpleTest extends BaseTestClass {
     @Test
     public void test_1() {
         open("http://ya.ru");
+        sleep(1000);
         $("#text").shouldBe(visible).setValue("selenoid");
         $(byText("Найти")).parent().shouldBe(visible).click();
         $("div.content").shouldBe(visible);
@@ -28,6 +30,7 @@ public class SimpleTest extends BaseTestClass {
     @Test
     public void test_2() {
         open("http://ya.ru");
+        sleep(1000);
         $("#text").shouldBe(visible).setValue("selenoid");
         $(byText("Найти")).shouldBe(visible).click();
         $("div.content").shouldBe(visible);
