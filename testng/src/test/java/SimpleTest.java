@@ -22,8 +22,11 @@ public class SimpleTest extends BaseTestClass {
         open("http://ya.ru");
         sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");
+        sleep(5000);
         $(byText("Найти")).parent().shouldBe(visible).click();
+        sleep(5000);
         $("div.content").shouldBe(visible);
+        sleep(5000);
     }
 
     //@Step
@@ -32,8 +35,11 @@ public class SimpleTest extends BaseTestClass {
         open("http://ya.ru");
         sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");
+        sleep(5000);
         $(byText("Найти")).shouldBe(visible).click();
+        sleep(5000);
         $("div.content").shouldBe(visible);
+        sleep(5000);
     }
 
 }
