@@ -20,7 +20,7 @@ public class SimpleTest extends BaseTestClass {
     @Test
     public void test_1() {
         open("http://ya.ru");
-        sleep(1000);
+        sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");
         $(byText("Найти")).parent().shouldBe(visible).click();
         $("div.content").shouldBe(visible);
@@ -30,7 +30,7 @@ public class SimpleTest extends BaseTestClass {
     @Test
     public void test_2() {
         open("http://ya.ru");
-        sleep(1000);
+        sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");
         $(byText("Найти")).shouldBe(visible).click();
         $("div.content").shouldBe(visible);
