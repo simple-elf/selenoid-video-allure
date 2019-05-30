@@ -1,6 +1,6 @@
 import com.codeborne.selenide.WebDriverProvider;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -13,8 +13,10 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
         //WebDriverManager.chromedriver().arch64().version("2.42").setup();
-        capabilities.setBrowserName("chrome");
-        capabilities.setCapability(ChromeOptions.CAPABILITY, MyChromeBrowserClass.getChromeOptions());
+        //capabilities.setBrowserName("chrome");
+        //capabilities.setCapability(ChromeOptions.CAPABILITY, MyChromeBrowserClass.getChromeOptions());
+        capabilities.setCapability(OperaOptions.CAPABILITY, MyOperaDriverProvider.getOperaOptions());
+        capabilities.setBrowserName("opera");
 
         capabilities.setCapability("screenResolution", "1920x1080x24");
         capabilities.setCapability("enableVNC", true);
