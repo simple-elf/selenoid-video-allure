@@ -20,11 +20,18 @@ public class MyOperaDriverProvider implements WebDriverProvider {
         OperaOptions operaOptions = new OperaOptions();
         //operaOptions.addArguments("start-maximized"); // open Browser in maximized mode
         operaOptions.addArguments("disable-infobars"); // disabling infobars
+        operaOptions.addArguments("--disable-infobars");
         operaOptions.addArguments("--disable-extensions"); // disabling extensions
         operaOptions.addArguments("--disable-gpu"); // applicable to windows os only
         operaOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         operaOptions.addArguments("--no-sandbox"); // Bypass OS security model
         //operaOptions.addArguments("--headless"); // Bypass OS security model
+
+        operaOptions.addArguments("-kioskmode");
+        operaOptions.addArguments("-nocontextmenu");
+        operaOptions.addArguments("--kioskmode");
+        operaOptions.addArguments("--nocontextmenu");
+
 
         return operaOptions;
     }
