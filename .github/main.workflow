@@ -5,7 +5,7 @@ workflow "autotests" {
 
 action "maven" {
   uses = "LucaFeger/action-maven-cli@master"
-  runs = "mvn -f testng/pom.xmldependency:go-offline compile compiler:testCompile"
+  runs = "mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile"
 }
 
 action "test" {
@@ -17,5 +17,5 @@ action "test" {
 action "allure" {
   uses = "LucaFeger/action-maven-cli@master"
   needs = ["test"]
-  runs = "mvn -f testng/pom.xmlallure:report"
+  runs = "mvn -f testng/pom.xml allure:report"
 }
