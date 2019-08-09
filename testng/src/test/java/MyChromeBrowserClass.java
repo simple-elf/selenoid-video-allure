@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,6 +35,8 @@ public class MyChromeBrowserClass implements WebDriverProvider {
         //chromeOptions.addArguments("disable-popup-blocking", "true");
 
         chromeOptions.addArguments("disable-infobars");
+        chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+        chromeOptions.setExperimentalOption("useAutomationExtension", false);
 
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("credentials_enable_service", false);
