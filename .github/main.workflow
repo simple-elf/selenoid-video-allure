@@ -1,9 +1,21 @@
 workflow "autotests" {
   on = "push"
-  resolves = ["maven"]
+  resolves = ["allure"]
 }
 
 action "maven" {
-  uses = "LucaFeger/action-maven-cli@765e218a50f02a12a7596dc9e7321fc385888a27"
-  runs = "-f testng/pom.xml clean test -Dvideo.enabled=true -Dselenoid.url=http://127.0.0.1:4444/wd/hub"
+  uses = "LucaFeger/action-maven-cli@master"
+  runs = "mvn dependency:go-offline compile compiler:testCompile"
+}
+
+action "test" {
+  uses = "LucaFeger/action-maven-cli@master"
+  needs = ["maven"]
+  runs = "mvn -f testng/pom.xml clean test -Dvideo.enabled=true -Dselenoid.url=http://167.71.60.248:4444/wd/hub"
+}
+
+action "allure" {
+  uses = "LucaFeger/action-maven-cli@master"
+  needs = ["test"]
+  runs = "mvn allure:report"
 }
