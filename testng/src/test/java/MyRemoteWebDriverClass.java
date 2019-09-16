@@ -12,12 +12,8 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
     @SuppressWarnings("deprecation")
     @Override
     public WebDriver createDriver(DesiredCapabilities capabilities) {
-        //WebDriverManager.chromedriver().arch64().version("2.42").setup();
         capabilities.setBrowserName("chrome");
         capabilities.setCapability(ChromeOptions.CAPABILITY, MyChromeBrowserClass.getChromeOptions());
-        //capabilities.setCapability(OperaOptions.CAPABILITY, MyOperaDriverProvider.getOperaOptions());
-        //capabilities.setBrowserName("opera");
-
         capabilities.setCapability("screenResolution", "1920x1080x24");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("timeZone", "Europe/Moscow");
@@ -34,7 +30,7 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
     public static URL getGridHubUrl() {
         URL hostURL = null;
         try {
-            hostURL = new URL(System.getProperty("selenoid.url", "http://127.0.0.1:4444/")); // wd/hub
+            hostURL = new URL(System.getProperty("selenoid.url", "http://127.0.0.1:4444/wd/hub"));
         } catch (MalformedURLException e) {
             //e.printStackTrace();
         }

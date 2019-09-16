@@ -1,52 +1,34 @@
-version: 2
-jobs:
-  build:
+version: 2.1
+
+orbs:
+  maven: circleci/maven@0.0.9
+  #allure: ayte/allure@0.1.2
+
+executors:
+  selenoid:
     docker:
       - image: circleci/openjdk:8-jdk
-      - image: selenoid/chrome:70.0
-        environment:
-          PORT: 4444
+      - image: selenoid/chrome:latest
+          environment:
+            PORT: 4444
     working_directory: ~/repo/testng
 
+workflows:
+  version: 2
+  autotest_and_report:
+    jobs:
+      - check_selenoid
+      - maven/test:
+          executor: selenoid
+          test_results_path: ~/repo/testng/test_results
+          settingg_file: ~/repo/testng/pom.xml
+          command: 'with_cache process_test_results'
+
+      #- allure/allure
+
+jobs:
+  check_selenoid:
+    executors: selenoid
     steps:
-
-      - checkout:
-          path: ~/repo
-
       - run: curl http://127.0.0.1:4444/status
-
       - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
-
-      - restore_cache:
-          keys:
-            - selenoid-video-allure-{{ checksum "pom.xml" }}
-            - selenoid-video-allure-
-
-      - run:
-          name: Resolve Maven dependencies
-          command: mvn dependency:go-offline compile compiler:testCompile
-
-      - run:
-          name: Autotests
-          command: mvn test
-      - run:
-          name: Allure Report
-          command: mvn allure:report
-
-      - save_cache:
-          paths:
-            - ~/.m2
-            - .allure
-          key: selenoid-video-allure-{{ checksum "pom.xml" }}
-          when: always
-
-      - store_test_results:
-          path: target/surefire-reports
-      - store_artifacts:
-          path: target/surefire-reports
-      - store_artifacts:
-          path: target/allure-results
-
-      - store_artifacts:
-          path: target/site/allure-maven-plugin
-          destination: allure-report

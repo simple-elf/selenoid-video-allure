@@ -1,0 +1,39 @@
+maven_build:
+  executor: maven
+  steps:
+
+    - checkout:
+        path: ~/repo
+    - restore_cache:
+        keys:
+          - selenoid-video-allure-{{ checksum "pom.xml" }}
+          - selenoid-video-allure-
+
+    - run:
+        name: Resolve Maven dependencies
+        command: mvn dependency:go-offline compile compiler:testCompile
+
+    - run:
+        name: Autotests
+        command: mvn test -Dselenoid.url=http://127.0.0.1:4444/
+    - run:
+        name: Allure Report
+        command: mvn allure:report
+
+    - save_cache:
+        paths:
+          - ~/.m2
+          - .allure
+        key: selenoid-video-allure-{{ checksum "pom.xml" }}
+        when: always
+
+    - store_test_results:
+        path: target/surefire-reports
+    - store_artifacts:
+        path: target/surefire-reports
+    - store_artifacts:
+        path: target/allure-results
+
+    - store_artifacts:
+        path: target/site/allure-maven-plugin
+        destination: allure-report

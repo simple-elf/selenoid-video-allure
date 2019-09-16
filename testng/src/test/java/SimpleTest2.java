@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SimpleTest extends BaseTestClass {
+public class SimpleTest2 extends BaseTestClass {
 
     //@Rule
     //public BrowserStrategy perTest = new BrowserStrategy();
@@ -16,7 +16,7 @@ public class SimpleTest extends BaseTestClass {
     @Link("http://ya.ru")
     //@Step
     @Test
-    public void test_1() {
+    public void test_3() {
         open("http://ya.ru");
         sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");
@@ -30,7 +30,7 @@ public class SimpleTest extends BaseTestClass {
 
     //@Step
     @Test
-    public void test_2() {
+    public void test_4() {
         open("http://ya.ru");
         sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");
