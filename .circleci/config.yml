@@ -38,7 +38,8 @@ jobs:
       - run: curl http://127.0.0.1:4444/status
 
   report:
-    executor: selenoid
+    docker:
+      - image: alpine:latest
     steps:
       - attach_workspace:
           at: ~/project
@@ -140,10 +141,6 @@ commands:
             - ~/.m2
           key: maven-{{ checksum "/tmp/maven_cache_seed" }}
       - steps: << parameters.steps >>
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: maven-{{ checksum "/tmp/maven_cache_seed" }}
 
   save_maven_cache:
     steps:
@@ -161,7 +158,7 @@ commands:
           path: << parameters.test_results_path >>
       - store_artifacts:
           path: << parameters.test_results_path >>
-          destination: testng
+          #destination: testng
 
   allure-install:
     description: Installs Allure Framework and registers it as /usr/local/bin/allure
