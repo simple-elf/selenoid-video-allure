@@ -38,6 +38,7 @@ jobs:
       - run: curl http://127.0.0.1:4444/status
 
   report:
+    executor: selenoid
     steps:
       - attach_workspace:
           at: /testng
