@@ -41,7 +41,7 @@ jobs:
     executor: selenoid
     steps:
       - attach_workspace:
-          at: /testng
+          at: ~/project
       - process_test_results:
           test_results_path: 'testng/target/surefire-reports'
       - allure-install:
@@ -95,7 +95,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - testng
+            - .
 
       #- process_test_results:
       #    test_results_path: << parameters.test_results_path >>
