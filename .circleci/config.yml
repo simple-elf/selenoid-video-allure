@@ -136,6 +136,7 @@ commands:
           path: << parameters.test_results_path >>
       - store_artifacts:
           path: << parameters.test_results_path >>
+          destination: testng
 
   allure-install:
     description: Installs Allure Framework and registers it as /usr/local/bin/allure
