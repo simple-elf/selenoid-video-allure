@@ -121,4 +121,6 @@ commands:
     steps:
       - store_test_results:
           path: << parameters.test_results_path >>
+      - store_artifacts:
+          path: << parameters.test_results_path >>
 
