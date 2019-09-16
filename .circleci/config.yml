@@ -15,10 +15,14 @@ executors:
 
 jobs:
   check_selenoid:
-    executor: selenoid
+    docker:
+      - image: selenoid/chrome:latest
+        environment:
+          PORT: 4444
     steps:
       - run: curl http://127.0.0.1:4444/status
       - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+      - run: curl http://127.0.0.1:4444/status
 
 workflows:
   version: 2
@@ -27,8 +31,8 @@ workflows:
       - check_selenoid
       - maven/test:
           executor: selenoid
-          test_results_path: ~/repo/testng/test_results
-          settings_file: ~/repo/testng/pom.xml
+          test_results_path: target/surefire-reports
+          settings_file: pom.xml
           command: 'with_cache process_test_results'
 
       #- allure/allure
