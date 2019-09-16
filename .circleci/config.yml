@@ -28,7 +28,7 @@ workflows:
       - maven/test:
           executor: selenoid
           test_results_path: ~/repo/testng/test_results
-          settingg_file: ~/repo/testng/pom.xml
+          settings_file: ~/repo/testng/pom.xml
           command: 'with_cache process_test_results'
 
       #- allure/allure
