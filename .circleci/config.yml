@@ -9,8 +9,8 @@ executors:
     docker:
       - image: circleci/openjdk:8-jdk
       - image: selenoid/chrome:latest
-          environment:
-            PORT: 4444
+        environment:
+          PORT: 4444
     working_directory: ~/repo/testng
 
 jobs:
