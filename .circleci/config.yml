@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  maven: circleci/maven@0.0.9
+  #maven: circleci/maven@0.0.9
   #allure: ayte/allure@0.1.2
 
 executors:
@@ -13,27 +13,117 @@ executors:
           PORT: 4444
     #working_directory: ~/repo/testng
 
-jobs:
-  check_selenoid:
-    docker:
-      - image: selenoid/chrome:latest
-        environment:
-          PORT: 4444
-    steps:
-      - run: curl http://127.0.0.1:4444/status
-      - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
-      - run: curl http://127.0.0.1:4444/status
-
 workflows:
   version: 2
   autotest_and_report:
     jobs:
       #- check_selenoid
-      - maven/test:
+      - maven
+      #- allure/allure
+
+jobs:
+  check_selenoid:
+    executor: selenoid
+    steps:
+      - run: curl http://127.0.0.1:4444/status
+      - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+      - run: curl http://127.0.0.1:4444/status
+
+  maven:
+    executor: selenoid
+    steps:
+      - maven_test:
           executor: selenoid
-          #test_results_path: target/surefire-reports
-          settings_file: ''
           command: 'test'
+          test_results_path: 'testng/target/surefire-reports'
+          settings_file: ''
           maven_command: 'mvn -f testng/pom.xml'
 
-      #- allure/allure
+  maven_test:
+    executor: <<parameters.executor>>
+    parameters:
+      executor:
+        description: The name of custom executor to use
+        type: executor
+        default: maven
+      command:
+        description: The maven command to run.
+        type: string
+        default: verify
+      test_results_path:
+        description: The path to the test results.
+        type: string
+        default: target/surefire-reports
+      settings_file:
+        description: Specify a custom settings file to use (optional)
+        type: string
+      maven_command:
+        description: Specify a custom path for invoking maven
+        type: string
+        default: mvn
+
+    steps:
+      - checkout
+      - with_cache:
+          settings_file: << parameters.settings_file >>
+          maven_command: << parameters.maven_command >>
+          steps:
+            - when:
+                condition: << parameters.settings_file >>
+                steps:
+                  - run:
+                      name: Run Tests
+                      command: << parameters.maven_command >> << parameters.command >> --settings '<< parameters.settings_file >>'
+            - unless:
+                condition: << parameters.settings_file >>
+                steps:
+                  - run:
+                      name: Run Tests
+                      command: << parameters.maven_command >> << parameters.command >>
+      - process_test_results:
+          test_results_path: << parameters.test_results_path >>
+
+commands:
+  with_cache:
+    parameters:
+      settings_file:
+        description: Specify a custom settings file to use (optional)
+        type: string
+      steps:
+        type: steps
+      maven_command:
+        description: Specify a custom path for invoking maven
+        type: string
+        default: mvn
+    steps:
+      - run:
+          name: Generate Cache Checksum
+          command: find . -name 'pom.xml' -exec cat {} + | shasum | awk '{print $1}' > /tmp/maven_cache_seed
+      - restore_cache:
+          key: maven-{{ checksum "/tmp/maven_cache_seed" }}
+      - when:
+          condition: << parameters.settings_file >>
+          steps:
+            - run:
+                name: Install Dependencies
+                command: << parameters.maven_command >> dependency:go-offline --settings '<< parameters.settings_file >>'
+      - unless:
+          condition: << parameters.settings_file >>
+          steps:
+            - run:
+                name: Install Dependencies
+                command: << parameters.maven_command >> dependency:go-offline
+      - steps: << parameters.steps >>
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-{{ checksum "/tmp/maven_cache_seed" }}
+
+  process_test_results:
+    parameters:
+      test_results_path:
+        type: string
+    steps:
+      - store_test_results:
+          path: << parameters.test_results_path >>
+
