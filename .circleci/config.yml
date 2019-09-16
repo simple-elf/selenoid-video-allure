@@ -75,6 +75,7 @@ jobs:
                   - run:
                       name: Run Tests
                       command: << parameters.maven_command >> << parameters.command >>
+      - save_maven_cache
       - process_test_results:
           test_results_path: << parameters.test_results_path >>
 
@@ -109,6 +110,13 @@ commands:
                 name: Install Dependencies
                 command: << parameters.maven_command >> dependency:go-offline
       - steps: << parameters.steps >>
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: maven-{{ checksum "/tmp/maven_cache_seed" }}
+
+  save_maven_cache:
+    steps:
       - save_cache:
           paths:
             - ~/.m2
