@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   maven: circleci/maven@0.0.9
-  #allure: ayte/allure@0.1.2
+  allure: ayte/allure@0.1.2
 
 executors:
   selenoid:
@@ -12,6 +12,13 @@ executors:
           environment:
             PORT: 4444
     working_directory: ~/repo/testng
+
+jobs:
+  check_selenoid:
+    executors: selenoid
+    steps:
+      - run: curl http://127.0.0.1:4444/status
+      - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
 
 workflows:
   version: 2
@@ -25,10 +32,3 @@ workflows:
           command: 'with_cache process_test_results'
 
       #- allure/allure
-
-jobs:
-  check_selenoid:
-    executors: selenoid
-    steps:
-      - run: curl http://127.0.0.1:4444/status
-      - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
