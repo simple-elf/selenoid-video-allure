@@ -18,7 +18,12 @@ workflows:
   autotest_and_report:
     jobs:
       #- check_selenoid
-      - maven
+      - maven_test:
+          executor: selenoid
+          command: 'test'
+          test_results_path: 'testng/target/surefire-reports'
+          settings_file: ''
+          maven_command: 'mvn -f testng/pom.xml'
       #- allure/allure
 
 jobs:
@@ -28,16 +33,6 @@ jobs:
       - run: curl http://127.0.0.1:4444/status
       - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
       - run: curl http://127.0.0.1:4444/status
-
-  maven:
-    executor: selenoid
-    steps:
-      - maven_test:
-          executor: selenoid
-          command: 'test'
-          test_results_path: 'testng/target/surefire-reports'
-          settings_file: ''
-          maven_command: 'mvn -f testng/pom.xml'
 
   maven_test:
     executor: <<parameters.executor>>
