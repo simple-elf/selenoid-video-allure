@@ -11,7 +11,7 @@ executors:
       - image: selenoid/chrome:latest
         environment:
           PORT: 4444
-    working_directory: ~/repo/testng
+    #working_directory: ~/repo/testng
 
 jobs:
   check_selenoid:
@@ -33,6 +33,7 @@ workflows:
           executor: selenoid
           #test_results_path: target/surefire-reports
           settings_file: ''
-          command: '-f testng/pom.xml test'
+          command: 'test'
+          maven_command: 'mvn -f testng/pom.xml'
 
       #- allure/allure
