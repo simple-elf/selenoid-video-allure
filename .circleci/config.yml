@@ -134,7 +134,7 @@ commands:
           steps:
             - run:
                 name: Install Dependencies
-                command: << parameters.maven_command >> dependency:go-offline testCompile
+                command: << parameters.maven_command >> dependency:go-offline compiler:testCompile
       - save_cache:
           paths:
             - ~/.m2
