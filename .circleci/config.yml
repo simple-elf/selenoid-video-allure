@@ -28,11 +28,11 @@ workflows:
   version: 2
   autotest_and_report:
     jobs:
-      - check_selenoid
+      #- check_selenoid
       - maven/test:
           executor: selenoid
           #test_results_path: target/surefire-reports
           settings_file: ''
-          #command: 'with_cache process_test_results'
+          command: '-f testng/pom.xml test'
 
       #- allure/allure
