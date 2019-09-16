@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   maven: circleci/maven@0.0.9
-  allure: ayte/allure@0.1.2
+  #allure: ayte/allure@0.1.2
 
 executors:
   selenoid:
