@@ -93,7 +93,7 @@ jobs:
                       command: << parameters.maven_command >> << parameters.command >>
       #- save_maven_cache
       - persist_to_workspace:
-          root: /
+          root: ~/project
           paths:
             - testng
 
