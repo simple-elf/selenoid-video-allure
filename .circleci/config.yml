@@ -128,7 +128,7 @@ commands:
           steps:
             - run:
                 name: Install Dependencies
-                command: << parameters.maven_command >> dependency:go-offline testCompile --settings '<< parameters.settings_file >>'
+                command: << parameters.maven_command >> dependency:go-offline compiler:testCompile --settings '<< parameters.settings_file >>'
       - unless:
           condition: << parameters.settings_file >>
           steps:
