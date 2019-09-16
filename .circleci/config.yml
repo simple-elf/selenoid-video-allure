@@ -15,7 +15,7 @@ executors:
 
 jobs:
   check_selenoid:
-    executors: selenoid
+    executor: selenoid
     steps:
       - run: curl http://127.0.0.1:4444/status
       - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
