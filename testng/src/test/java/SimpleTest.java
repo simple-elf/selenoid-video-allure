@@ -1,10 +1,6 @@
 import io.qameta.allure.Link;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
-
 public class SimpleTest extends BaseTestClass {
 
     //@Rule
@@ -17,29 +13,13 @@ public class SimpleTest extends BaseTestClass {
     //@Step
     @Test
     public void test_1() {
-        open("http://ya.ru");
-        sleep(5000);
-        $("#text").shouldBe(visible).setValue("selenoid");
-        sleep(5000);
-        $(byText("Найти")).parent().shouldBe(visible).click();
-        sleep(5000);
-        $("div.content").shouldBe(visible);
-        sleep(5000);
-        close();
+        SimpleTest2.test_do();
     }
 
     //@Step
     @Test
     public void test_2() {
-        open("http://ya.ru");
-        sleep(5000);
-        $("#text").shouldBe(visible).setValue("selenoid");
-        sleep(5000);
-        $(byText("Найти")).shouldBe(visible).click();
-        sleep(5000);
-        $("div.content").shouldBe(visible);
-        sleep(5000);
-        close();
+        SimpleTest2.test_do();
     }
 
 }

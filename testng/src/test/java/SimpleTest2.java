@@ -17,20 +17,17 @@ public class SimpleTest2 extends BaseTestClass {
     //@Step
     @Test
     public void test_3() {
-        open("http://ya.ru");
-        sleep(5000);
-        $("#text").shouldBe(visible).setValue("selenoid");
-        sleep(5000);
-        $(byText("Найти")).parent().shouldBe(visible).click();
-        sleep(5000);
-        $("div.content").shouldBe(visible);
-        sleep(5000);
-        close();
+        test_do();
     }
 
     //@Step
     @Test
     public void test_4() {
+        test_do();
+    }
+
+
+    public static void test_do() {
         open("http://ya.ru");
         sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");

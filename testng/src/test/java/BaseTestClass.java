@@ -3,8 +3,10 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.google.common.io.Files;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
@@ -49,6 +51,11 @@ public class BaseTestClass {
             attachAllureVideo(sessionId);
         }
 
+    }
+
+    @AfterMethod
+    public void saveScreenshot() {
+        AllureHelpers.takeScreenshot();
     }
 
     public static URL getVideoUrl() {
