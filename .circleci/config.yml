@@ -1,8 +1,8 @@
 version: 2.1
 
-orbs:
+#orbs:
   #maven: circleci/maven@0.0.9
-  allure: ayte/allure@0.1.2
+  #allure: ayte/allure@0.1.2
 
 executors:
   selenoid:
@@ -78,9 +78,9 @@ jobs:
       - save_maven_cache
       - process_test_results:
           test_results_path: << parameters.test_results_path >>
-      - allure/install:
+      - allure-install:
           version: '2.10.0'
-      - allure/report:
+      - allure-report:
           results-path: 'testng/target/allure-results'
           artifact-path: allure-report
 
@@ -137,3 +137,54 @@ commands:
       - store_artifacts:
           path: << parameters.test_results_path >>
 
+  allure-install:
+    description: Installs Allure Framework and registers it as /usr/local/bin/allure
+    parameters:
+      version:
+        description: Allure version to use
+        type: string
+        default: 2.8.1
+    steps:
+      - run:
+          name: Allure archive download
+          command: curl -L http://repo2.maven.org/maven2/io/qameta/allure/allure-commandline/<< parameters.version >>/allure-commandline-<< parameters.version >>.zip -o /tmp/allure.zip
+      - run:
+          name: Archive extraction
+          command: unzip /tmp/allure.zip
+      - run:
+          name: Allure installation
+          command: sudo mv allure-<< parameters.version >> /usr/local/share/allure
+      - run:
+          name: Allure binary symlinking
+          command: sudo ln -s /usr/local/share/allure/bin/allure /usr/local/bin/allure
+
+  allure-report:
+    description: Generates report using Allure Framework
+    parameters:
+      configuration-path:
+        description: Path to Allure configuration, uses default one if omitted
+        type: string
+        default: /usr/local/share/allure/config/allure.yml
+      target-path:
+        description: Path for report directory
+        type: string
+        default: allure-report
+      results-path:
+        description: Path to directory with test results
+        type: string
+        default: allure-results
+      artifact-path:
+        description: Path that will be used when storing result as artifact
+        type: string
+        default: Report/Allure
+    steps:
+      - run:
+          name: Allure report generation (<< parameters.results-path >> -> << parameters.target-path >>)
+          command: |
+            allure generate \
+              --config << parameters.configuration-path >> \
+              --report-dir << parameters.target-path >> \
+              << parameters.results-path >>
+      - store_artifacts:
+          path: << parameters.target-path >>
+          destination: << parameters.artifact-path >>
