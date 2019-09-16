@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   #maven: circleci/maven@0.0.9
-  #allure: ayte/allure@0.1.2
+  allure: ayte/allure@0.1.2
 
 executors:
   selenoid:
@@ -24,7 +24,7 @@ workflows:
           test_results_path: 'testng/target/surefire-reports'
           settings_file: ''
           maven_command: 'mvn -f testng/pom.xml'
-      #- allure/allure
+
 
 jobs:
   check_selenoid:
@@ -78,6 +78,11 @@ jobs:
       - save_maven_cache
       - process_test_results:
           test_results_path: << parameters.test_results_path >>
+      - allure/install:
+          version: '2.10.0'
+      - allure/report:
+          results-path: 'testng/target/allure-results'
+          artifact-path: allure-report
 
 commands:
   with_cache:

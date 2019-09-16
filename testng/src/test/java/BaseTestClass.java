@@ -5,7 +5,6 @@ import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
@@ -39,7 +38,7 @@ public class BaseTestClass {
         SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void saveVideo() {
         String sessionId = getSessionId();
         closeWebDriver();
