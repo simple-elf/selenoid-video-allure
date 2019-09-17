@@ -83,7 +83,6 @@ jobs:
             - when:
                 condition: << parameters.settings_file >>
                 steps:
-                  - on_error: continue
                   - run:
                       halt_build_on_fail: false
                       name: Run Tests
@@ -91,7 +90,6 @@ jobs:
             - unless:
                 condition: << parameters.settings_file >>
                 steps:
-                  - on_error: continue
                   - run:
                       halt_build_on_fail: false
                       name: Run Tests
