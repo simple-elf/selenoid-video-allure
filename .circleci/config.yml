@@ -13,7 +13,7 @@ jobs:
       - image: selenoid/chrome:latest
         environment:
           PORT: 4444
-    working_directory: testng
+    working_directory: ~/project/testng
     steps:
     - checkout
     - restore_cache:
