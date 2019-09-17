@@ -10,6 +10,8 @@ jobs:
   maven_test:
     docker:
       - image: circleci/openjdk:8-jdk-browsers
+        environment:
+          MAVEN_OPTS: -Xmx1024m
       #- image: selenoid/chrome:latest
       #  environment:
       #    PORT: 4444
@@ -17,20 +19,28 @@ jobs:
     steps:
     - checkout:
         path: ~/project
+    - run:
+        name: versions
+        command: |
+          google-chrome --version
+          chromedriver --version
+          geckodriver --version
+          firefox --version
+    - run:
+        name: Selenoid
+        command: curl -s https://aerokube.com/cm/bash | bash ./cm selenoid start --use-drivers
+        background: true
     - restore_cache:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
           - ebaymag-
-    #- run:
-    #    name: Curl driver
-    #    command: curl
     - run:
         name: Resolve Maven dependencies
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
         halt_build_on_fail: false
         name: Autotests
-        command: mvn test -Dselenoid.url=http://127.0.0.1:4444
+        command: mvn test -Dselenoid.url=http://127.0.0.1:4444/wd/hub
     - run:
         name: Allure Report
         command: mvn allure:report
