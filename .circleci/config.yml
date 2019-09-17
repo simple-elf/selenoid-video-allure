@@ -80,7 +80,6 @@ jobs:
           settings_file: << parameters.settings_file >>
           maven_command: << parameters.maven_command >>
           steps:
-            - on_error: continue
             - when:
                 condition: << parameters.settings_file >>
                 steps:
