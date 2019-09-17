@@ -9,7 +9,7 @@ workflows:
 jobs:
   maven_test:
     docker:
-      - image: circleci/openjdk:8-jdk-browsers
+      - image: circleci/openjdk:8-jdk-stretch-browsers
         environment:
           MAVEN_OPTS: -Xmx1024m
       #- image: selenoid/chrome:latest
@@ -29,7 +29,7 @@ jobs:
     - run:
         name: Selenoid
         command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers
-        background: true
+        #background: true
     - restore_cache:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
