@@ -31,9 +31,9 @@ jobs:
         when: always
     - run:
         name: Selenoid
-        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers 'chrome;firefox';
+        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome
         background: true
-    - run: sleep 10
+    - run: sleep 20
     - restore_cache:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
@@ -45,13 +45,15 @@ jobs:
     - run:
         name: Check selenoid
         command: curl http://localhost:4444/status
+        when: always
     - run:
         name: Check selenoid 2
         command: curl -XPOST http://localhost:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+        when: always
     - run:
         name: Check selenoid 3
         command: curl http://localhost:4444/status
-
+        when: always
     - run:
         halt_build_on_fail: true
         name: Autotests
