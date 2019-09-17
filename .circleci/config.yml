@@ -1,14 +1,5 @@
 version: 2
 
-executors:
-  selenoid:
-    docker:
-      - image: circleci/openjdk:8-jdk
-      - image: selenoid/chrome:latest
-        environment:
-          PORT: 4444
-    #working_directory: ~/repo/testng
-
 workflows:
   version: 2
   autotest_and_report:
@@ -17,7 +8,11 @@ workflows:
 
 jobs:
   maven_test:
-    executor: selenoid
+    docker:
+      - image: circleci/openjdk:8-jdk
+      - image: selenoid/chrome:latest
+        environment:
+          PORT: 4444
     working_directory: testng
     steps:
     - checkout
