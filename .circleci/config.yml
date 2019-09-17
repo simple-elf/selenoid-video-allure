@@ -49,16 +49,16 @@ jobs:
         when: always
     - run:
         name: Check selenoid 2
-        command: curl -X POST http://localhost:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
         when: always
     - run:
         name: Check selenoid 3
-        command: curl http://localhost:4444/status
+        command: curl http://127.0.0.1:4444/status
         when: always
     - run:
         halt_build_on_fail: true
         name: Autotests
-        command: mvn test -Dselenoid.url=http://localhost:4444/wd/hub
+        command: mvn test -Dselenoid.url=http://127.0.0.1:4444/wd/hub
         #when: always
     - run:
         name: Allure Report
