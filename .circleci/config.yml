@@ -28,9 +28,7 @@ jobs:
           firefox --version
     - run:
         name: Selenoid
-        command: |
-        curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome;firefox
-        curl http://localhost:4444/status
+        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome;firefox && curl http://localhost:4444/status
         background: true
     - run:
         name: Check selenoid
