@@ -27,14 +27,13 @@ jobs:
           geckodriver --version
           firefox --version
     - run:
-        command: cat /etc/hosts
-        when: always
+        name: Selenoid install
+        command: curl -s https://aerokube.com/cm/bash | bash
     - run:
-        name: Selenoid
-        shell: /bin/sh
-        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome
+        name: Selenoid install
+        command: ./cm selenoid start --use-drivers --browsers chrome;firefox
         background: true
-    - run: sleep 20
+    - run: sleep 5
     - restore_cache:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
