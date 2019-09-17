@@ -84,12 +84,14 @@ jobs:
                 condition: << parameters.settings_file >>
                 steps:
                   - run:
+                      halt_build_on_fail: false
                       name: Run Tests
                       command: << parameters.maven_command >> << parameters.command >> --settings '<< parameters.settings_file >>'
             - unless:
                 condition: << parameters.settings_file >>
                 steps:
                   - run:
+                      halt_build_on_fail: false
                       name: Run Tests
                       command: << parameters.maven_command >> << parameters.command >>
       #- save_maven_cache
