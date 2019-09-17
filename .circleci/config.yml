@@ -31,6 +31,7 @@ jobs:
         when: always
     - run:
         name: Selenoid
+        shell: /bin/sh
         command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome;firefox
         background: true
     - run: sleep 20
@@ -48,7 +49,7 @@ jobs:
         when: always
     - run:
         name: Check selenoid 2
-        command: curl -XPOST http://localhost:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+        command: curl -X POST http://localhost:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
         when: always
     - run:
         name: Check selenoid 3
