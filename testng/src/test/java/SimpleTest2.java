@@ -33,11 +33,7 @@ public class SimpleTest2 extends BaseTestClass {
         sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");
         sleep(5000);
-        if ($("button[type='submit']").is(visible)) {
-            $("button[type='submit']").click();
-            $("button[type='submit']").should(disappear);
-        }
-        $(byText("Найти")).shouldBe(visible).click();
+        $(byText("Найти")).parent().shouldBe(visible).click();
         sleep(5000);
         $("div.content").shouldBe(visible);
         sleep(5000);
