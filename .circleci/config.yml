@@ -28,7 +28,7 @@ jobs:
           firefox --version
     - run:
         name: Selenoid
-        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome;firefox
+        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers 'chrome;firefox'
         background: true
     - run: sleep 10
     - restore_cache:
@@ -41,12 +41,13 @@ jobs:
         #when: always
     - run:
         name: Check selenoid
-        command: curl http://localhost:4444/status
-          #when: always
+        command: curl http://127.0.0.1:4444/status
     - run:
         name: Check selenoid 2
-        command: curl -XPOST http://localhost:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
-        #when: always
+        command: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
+    - run:
+        name: Check selenoid 3
+        command: curl http://127.0.0.1:4444/status
     - run:
         halt_build_on_fail: true
         name: Autotests
