@@ -27,8 +27,11 @@ jobs:
           geckodriver --version
           firefox --version
     - run:
+        command: cat /etc/hosts
+        when: always
+    - run:
         name: Selenoid
-        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers 'chrome;firefox'
+        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers 'chrome;firefox';
         background: true
     - run: sleep 10
     - restore_cache:
@@ -48,7 +51,7 @@ jobs:
     - run:
         name: Check selenoid 3
         command: curl http://localhost:4444/status
-    - run: cat /etc/hosts
+
     - run:
         halt_build_on_fail: true
         name: Autotests
