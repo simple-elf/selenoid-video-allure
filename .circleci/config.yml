@@ -1,8 +1,4 @@
-version: 2.1
-
-#orbs:
-  #maven: circleci/maven@0.0.9
-  #allure: ayte/allure@0.1.2
+version: 2
 
 executors:
   selenoid:
@@ -17,199 +13,43 @@ workflows:
   version: 2
   autotest_and_report:
     jobs:
-      #- check_selenoid
-      - maven_test:
-          executor: selenoid
-          command: 'test'
-          test_results_path: 'testng/target/surefire-reports'
-          settings_file: ''
-          maven_command: 'mvn -f testng/pom.xml'
-      - report:
-          requires:
-            - maven_test
-
+    - maven_test
 
 jobs:
-  check_selenoid:
-    executor: selenoid
-    steps:
-      - run: curl http://127.0.0.1:4444/status
-      - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
-      - run: curl http://127.0.0.1:4444/status
-
-  report:
-    docker:
-      - image: alpine:latest
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - process_test_results:
-          test_results_path: 'testng/target/surefire-reports'
-      - allure-install:
-          version: '2.10.0'
-      - allure-report:
-          results-path: 'testng/target/allure-results'
-          artifact-path: allure-report
-
   maven_test:
-    executor: <<parameters.executor>>
-    parameters:
-      executor:
-        description: The name of custom executor to use
-        type: executor
-        default: maven
-      command:
-        description: The maven command to run.
-        type: string
-        default: verify
-      test_results_path:
-        description: The path to the test results.
-        type: string
-        default: target/surefire-reports
-      settings_file:
-        description: Specify a custom settings file to use (optional)
-        type: string
-      maven_command:
-        description: Specify a custom path for invoking maven
-        type: string
-        default: mvn
-
+    executor: selenoid
+    working_directory: testng
     steps:
-      - checkout
-      - with_cache:
-          settings_file: << parameters.settings_file >>
-          maven_command: << parameters.maven_command >>
-          steps:
-            - when:
-                condition: << parameters.settings_file >>
-                steps:
-                  - run:
-                      halt_build_on_fail: false
-                      name: Run Tests
-                      command: << parameters.maven_command >> << parameters.command >> --settings '<< parameters.settings_file >>'
-            - unless:
-                condition: << parameters.settings_file >>
-                steps:
-                  - run:
-                      halt_build_on_fail: false
-                      name: Run Tests
-                      command: << parameters.maven_command >> << parameters.command >>
-      #- save_maven_cache
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
-
-      #- process_test_results:
-      #    test_results_path: << parameters.test_results_path >>
-      #- allure-install:
-      #    version: '2.10.0'
-      #- allure-report:
-      #    results-path: 'testng/target/allure-results'
-      #    artifact-path: allure-report
-
-commands:
-  with_cache:
-    parameters:
-      settings_file:
-        description: Specify a custom settings file to use (optional)
-        type: string
-      steps:
-        type: steps
-      maven_command:
-        description: Specify a custom path for invoking maven
-        type: string
-        default: mvn
-    steps:
-      - run:
-          name: Generate Cache Checksum
-          command: find . -name 'pom.xml' -exec cat {} + | shasum | awk '{print $1}' > /tmp/maven_cache_seed
-      - restore_cache:
-          key: maven-{{ checksum "/tmp/maven_cache_seed" }}
-      - when:
-          condition: << parameters.settings_file >>
-          steps:
-            - run:
-                name: Install Dependencies
-                command: << parameters.maven_command >> dependency:go-offline compiler:testCompile --settings '<< parameters.settings_file >>'
-      - unless:
-          condition: << parameters.settings_file >>
-          steps:
-            - run:
-                name: Install Dependencies
-                command: << parameters.maven_command >> dependency:go-offline compiler:testCompile
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: maven-{{ checksum "/tmp/maven_cache_seed" }}
-      - steps: << parameters.steps >>
-
-  save_maven_cache:
-    steps:
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: maven-{{ checksum "/tmp/maven_cache_seed" }}
-
-  process_test_results:
-    parameters:
-      test_results_path:
-        type: string
-    steps:
-      - store_test_results:
-          path: << parameters.test_results_path >>
-      - store_artifacts:
-          path: << parameters.test_results_path >>
-          #destination: testng
-
-  allure-install:
-    description: Installs Allure Framework and registers it as /usr/local/bin/allure
-    parameters:
-      version:
-        description: Allure version to use
-        type: string
-        default: 2.8.1
-    steps:
-      - run:
-          name: Allure archive download
-          command: curl -L http://repo2.maven.org/maven2/io/qameta/allure/allure-commandline/<< parameters.version >>/allure-commandline-<< parameters.version >>.zip -o /tmp/allure.zip
-      - run:
-          name: Archive extraction
-          command: unzip /tmp/allure.zip
-      - run:
-          name: Allure installation
-          command: sudo mv allure-<< parameters.version >> /usr/local/share/allure
-      - run:
-          name: Allure binary symlinking
-          command: sudo ln -s /usr/local/share/allure/bin/allure /usr/local/bin/allure
-
-  allure-report:
-    description: Generates report using Allure Framework
-    parameters:
-      configuration-path:
-        description: Path to Allure configuration, uses default one if omitted
-        type: string
-        default: /usr/local/share/allure/config/allure.yml
-      target-path:
-        description: Path for report directory
-        type: string
-        default: allure-report
-      results-path:
-        description: Path to directory with test results
-        type: string
-        default: allure-results
-      artifact-path:
-        description: Path that will be used when storing result as artifact
-        type: string
-        default: Report/Allure
-    steps:
-      - run:
-          name: Allure report generation (<< parameters.results-path >> -> << parameters.target-path >>)
-          command: |
-            allure generate \
-              --config << parameters.configuration-path >> \
-              --report-dir << parameters.target-path >> \
-              << parameters.results-path >>
-      - store_artifacts:
-          path: << parameters.target-path >>
-          destination: << parameters.artifact-path >>
+    - checkout
+    - restore_cache:
+        keys:
+          - ebaymag-{{ checksum "pom.xml" }}
+          - ebaymag-
+    - run:
+        name: Resolve Maven dependencies
+        command: mvn dependency:go-offline compile compiler:testCompile
+    - run:
+        halt_build_on_fail: false
+        name: Autotests
+        command: mvn test -Dselenoid.url=http://127.0.0.1:4444
+    - run:
+        name: Allure Report
+        command: mvn allure:report
+        when: always
+    - save_cache:
+        paths:
+          - ~/.m2
+          - .allure
+        key: ebaymag-{{ checksum "pom.xml" }}
+        when: always
+    - store_test_results:
+        path: target/surefire-reports/junitreports
+    - store_artifacts:
+        path: target/surefire-reports
+        destination: report
+    - store_artifacts:
+        path: target/allure-results
+        destination: allure-results
+    - store_artifacts:
+        path: target/site/allure-maven-plugin
+        destination: Allure
