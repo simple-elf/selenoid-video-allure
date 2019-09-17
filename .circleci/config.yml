@@ -9,10 +9,10 @@ workflows:
 jobs:
   maven_test:
     docker:
-      - image: circleci/openjdk:8-jdk
-      - image: selenoid/chrome:latest
-        environment:
-          PORT: 4444
+      - image: circleci/openjdk:8-jdk-browsers
+      #- image: selenoid/chrome:latest
+      #  environment:
+      #    PORT: 4444
     working_directory: ~/project/testng
     steps:
     - checkout:
@@ -21,6 +21,9 @@ jobs:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
           - ebaymag-
+    #- run:
+    #    name: Curl driver
+    #    command: curl
     - run:
         name: Resolve Maven dependencies
         command: mvn dependency:go-offline compile compiler:testCompile
@@ -42,10 +45,10 @@ jobs:
         path: target/surefire-reports/junitreports
     - store_artifacts:
         path: target/surefire-reports
-        destination: report
+        destination: report/testng-results
     - store_artifacts:
         path: target/allure-results
-        destination: allure-results
+        destination: report/allure-results
     - store_artifacts:
         path: target/site/allure-maven-plugin
         destination: Allure

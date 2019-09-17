@@ -1,12 +1,11 @@
 import io.qameta.allure.Link;
 import org.testng.annotations.Test;
 
-import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class SimpleTest2 extends BaseTestClass {
+public class EasyTest extends BaseTestClass {
 
     //@Rule
     //public BrowserStrategy perTest = new BrowserStrategy();

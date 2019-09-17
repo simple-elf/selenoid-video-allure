@@ -13,13 +13,13 @@ public class SimpleTest extends BaseTestClass {
     //@Step
     @Test
     public void test_1() {
-        SimpleTest2.test_do();
+        EasyTest.test_do();
     }
 
     //@Step
     @Test
     public void test_2() {
-        SimpleTest2.test_do();
+        EasyTest.test_do();
     }
 
 }
