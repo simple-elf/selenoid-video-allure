@@ -20,7 +20,7 @@ jobs:
     - checkout:
         path: ~/project
     - run:
-        name: versions
+        name: Browsers versions
         command: |
           google-chrome --version
           chromedriver --version
@@ -30,6 +30,12 @@ jobs:
         name: Selenoid
         command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers
         #background: true
+    - run:
+        name: Check selenoid
+        command: curl http://127.0.0.1:4444/status
+    - run:
+        name: Check selenoid 2
+        command: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
     - restore_cache:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
@@ -38,7 +44,7 @@ jobs:
         name: Resolve Maven dependencies
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
-        halt_build_on_fail: false
+        halt_build_on_fail: true
         name: Autotests
         command: mvn test -Dselenoid.url=http://127.0.0.1:4444/wd/hub
     - run:

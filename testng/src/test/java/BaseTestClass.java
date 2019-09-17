@@ -6,7 +6,6 @@ import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
@@ -29,9 +28,11 @@ public class BaseTestClass {
             Configuration.browser = MyRemoteWebDriverClass.class.getName();
             Configuration.browserSize = "1920x1080";
             Configuration.startMaximized = true;
+            System.out.println("RemoteWebDriver");
         } else {
             Configuration.browser = MyChromeBrowserClass.class.getName();
             Configuration.startMaximized = true;
+            System.out.println("LocalWebDriver");
         }
 
         Configuration.reportsFolder = "target/reports";
@@ -45,7 +46,7 @@ public class BaseTestClass {
         String sessionId = getSessionId();
         closeWebDriver();
 
-        System.out.println("video.enabled1: " + System.getProperty("video.enabled"));
+        //System.out.println("video.enabled1: " + System.getProperty("video.enabled"));
         if ("true".equals(System.getProperty("video.enabled"))) {
             //sleep(5000);
             attachAllureVideo(sessionId);
@@ -53,7 +54,7 @@ public class BaseTestClass {
 
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void saveScreenshot() {
         AllureHelpers.takeScreenshot();
     }
@@ -162,6 +163,7 @@ public class BaseTestClass {
 
     protected static boolean isUnix() {
         String os = System.getProperty("os.name").toLowerCase();
+        System.out.println("isUnix: " + os);
         return (os.contains("nix") || os.contains("nux"));// || isWindows(); // linux or unix
     }
 

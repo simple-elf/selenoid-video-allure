@@ -15,10 +15,10 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
         capabilities.setBrowserName("chrome");
         capabilities.setCapability(ChromeOptions.CAPABILITY, MyChromeBrowserClass.getChromeOptions());
         capabilities.setCapability("screenResolution", "1920x1080x24");
-        capabilities.setCapability("enableVNC", true);
+        //capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("timeZone", "Europe/Moscow");
 
-        System.out.println("video.enabled: " + System.getProperty("video.enabled"));
+        //System.out.println("video.enabled: " + System.getProperty("video.enabled"));
         if ("true".equals(System.getProperty("video.enabled"))) {
             capabilities.setCapability("enableVideo", true);
             capabilities.setCapability("videoFrameRate", 24);
