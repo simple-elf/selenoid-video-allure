@@ -1,6 +1,7 @@
 import io.qameta.allure.Link;
 import org.testng.annotations.Test;
 
+import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -32,6 +33,10 @@ public class SimpleTest2 extends BaseTestClass {
         sleep(5000);
         $("#text").shouldBe(visible).setValue("selenoid");
         sleep(5000);
+        if ($("button[type='submit']").is(visible)) {
+            $("button[type='submit']").click();
+            $("button[type='submit']").should(disappear);
+        }
         $(byText("Найти")).shouldBe(visible).click();
         sleep(5000);
         $("div.content").shouldBe(visible);
