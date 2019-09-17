@@ -15,7 +15,8 @@ jobs:
           PORT: 4444
     working_directory: ~/project/testng
     steps:
-    - checkout
+    - checkout:
+        path: ~/project
     - restore_cache:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
