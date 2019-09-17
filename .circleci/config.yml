@@ -31,7 +31,7 @@ jobs:
         when: always
     - run:
         name: Selenoid
-        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome
+        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome;
         background: true
     - run: sleep 20
     - restore_cache:
@@ -44,7 +44,7 @@ jobs:
         #when: always
     - run:
         name: Check selenoid
-        command: curl http://localhost:4444/status
+        command: curl http://127.0.0.1:4444/status
         when: always
     - run:
         name: Check selenoid 2
