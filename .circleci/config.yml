@@ -32,7 +32,7 @@ jobs:
     - run:
         name: Selenoid
         shell: /bin/sh
-        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome;firefox
+        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome
         background: true
     - run: sleep 20
     - restore_cache:
