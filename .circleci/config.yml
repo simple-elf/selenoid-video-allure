@@ -29,7 +29,7 @@ jobs:
     - run:
         name: Selenoid
         command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start --use-drivers --browsers chrome;firefox && curl http://localhost:4444/status
-        background: true
+        #background: true
     - run:
         name: Check selenoid
         command: curl http://localhost:4444/status
@@ -72,3 +72,6 @@ jobs:
     - store_artifacts:
         path: target/site/allure-maven-plugin
         destination: Allure
+    - store_artifacts:
+        path: ~/.aerokube/selenoid
+        destination: Selenoid
