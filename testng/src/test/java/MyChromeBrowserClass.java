@@ -23,6 +23,7 @@ public class MyChromeBrowserClass implements WebDriverProvider {
 
     public static ChromeOptions getChromeOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
+
         chromeOptions.addArguments("disable-infobars");
         chromeOptions.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         chromeOptions.setExperimentalOption("useAutomationExtension", false);
@@ -34,7 +35,8 @@ public class MyChromeBrowserClass implements WebDriverProvider {
         chromeOptions.addArguments("--disable-dev-shm-usage");
         //chromeOptions.addArguments("disable-popup-blocking", "true");
 
-        chromeOptions.setBinary("google-chrome");
+        chromeOptions.addArguments("--enable-logging=stderr --v=1");
+        chromeOptions.setBinary("/opt/google/chrome/google-chrome");
 
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("credentials_enable_service", false);
