@@ -6,8 +6,8 @@ maven_build:
         path: ~/repo
     - restore_cache:
         keys:
-          - selenoid-video-allure-{{ checksum "pom.xml" }}
-          - selenoid-video-allure-
+          - selenoid.yml-video-allure-{{ checksum "pom.xml" }}
+          - selenoid.yml-video-allure-
 
     - run:
         name: Resolve Maven dependencies
@@ -24,7 +24,7 @@ maven_build:
         paths:
           - ~/.m2
           - .allure
-        key: selenoid-video-allure-{{ checksum "pom.xml" }}
+        key: selenoid.yml-video-allure-{{ checksum "pom.xml" }}
         when: always
 
     - store_test_results:

@@ -1,0 +1,30 @@
+    - run:
+    name: Selenoid install
+    command: curl -s https://aerokube.com/cm/bash | bash
+    #- run:
+    #    name: Selenoid configure
+    #    command: ./cm selenoid configure --use-drivers --tmpfs 128
+    - run:
+        name: Selenoid start
+        command: |
+          ./cm selenoid start --use-drivers --browsers-json browsers.json --args "-conf browsers.json"
+          sleep 100
+        background: true
+    #- run: sleep 5
+
+    - run:
+        name: Check selenoid.yml
+        command: curl http://127.0.0.1:4444/status
+        when: always
+        - run:
+            name: Check selenoid.yml 2
+            command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox","moz:firefoxOptions":{"binary":"/usr/local/bin/firefox"}}}'
+            when: always
+        - run:
+            name: Check selenoid.yml 2.1
+            command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome","binary":"/opt/google/chrome/google-chrome --enable-logging=stderr --v=1"}}'
+            when: always
+        - run:
+            name: Check selenoid.yml 3
+            command: curl http://127.0.0.1:4444/status
+            when: always
