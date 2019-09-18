@@ -36,6 +36,7 @@ public class EasyTest extends BaseTestClass {
         sleep(5000);
         $("div.content").shouldBe(visible);
         sleep(5000);
+        AllureHelpers.takeScreenshot();
         close();
     }
 
