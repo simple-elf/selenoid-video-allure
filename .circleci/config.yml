@@ -29,11 +29,13 @@ jobs:
     - run:
         name: Selenoid install
         command: curl -s https://aerokube.com/cm/bash | bash
+    #- run:
+    #    name: Selenoid configure
+    #    command: ./cm selenoid configure --use-drivers --tmpfs 128
     - run:
-        name: Selenoid
+        name: Selenoid start
         command: |
-          ./cm selenoid configure --use-drivers
-          ./cm selenoid start --browsers-json browsers.json --use-drivers --args "-conf browsers.json"
+          ./cm selenoid start --browsers-json browsers.json --args "-conf browsers.json"
           sleep 100
         background: true
     #- run: sleep 5
@@ -87,6 +89,3 @@ jobs:
     - store_artifacts:
         path: target/site/allure-maven-plugin
         destination: Allure
-    - store_artifacts:
-        path: ~/.aerokube/selenoid
-        destination: Selenoid

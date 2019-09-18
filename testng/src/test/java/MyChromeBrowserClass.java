@@ -9,6 +9,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.sun.javafx.util.Utils.isUnix;
+
 public class MyChromeBrowserClass implements WebDriverProvider {
 
     @SuppressWarnings("deprecation")
@@ -35,8 +37,9 @@ public class MyChromeBrowserClass implements WebDriverProvider {
         chromeOptions.addArguments("--disable-dev-shm-usage");
         //chromeOptions.addArguments("disable-popup-blocking", "true");
 
-        chromeOptions.addArguments("--enable-logging=stderr --v=1");
-        chromeOptions.setBinary("/opt/google/chrome/google-chrome");
+        //chromeOptions.addArguments("--enable-logging=stderr --v=1");
+        if (isUnix())
+            chromeOptions.setBinary("/opt/google/chrome/google-chrome");
 
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("credentials_enable_service", false);

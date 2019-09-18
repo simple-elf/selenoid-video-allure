@@ -6,6 +6,7 @@ import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
@@ -54,7 +55,7 @@ public class BaseTestClass {
 
     }
 
-    //@AfterMethod
+    @AfterMethod
     public void saveScreenshot() {
         AllureHelpers.takeScreenshot();
     }

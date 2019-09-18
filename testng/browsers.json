@@ -4,7 +4,7 @@
     "versions": {
       "latest": {
         "image": [
-          "/home/circleci/.aerokube/selenoid/chromedriver",
+          "/usr/local/bin/chromedriver",
           "--host",
           "127.0.0.1",
           "--whitelisted-ips=",
@@ -21,7 +21,7 @@
     "versions": {
       "latest": {
         "image": [
-          "/home/circleci/.aerokube/selenoid/geckodriver",
+          "/usr/local/bin/geckodriver",
           "--host",
           "127.0.0.1",
           "--log",
