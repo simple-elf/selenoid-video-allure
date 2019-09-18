@@ -29,7 +29,8 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
             return new RemoteWebDriver(getGridHubUrl(), capabilities);
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
+            throw e;
+            //return null;
         }
     }
 

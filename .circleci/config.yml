@@ -26,12 +26,15 @@ jobs:
           chromedriver --version
           geckodriver --version
           firefox --version
+          google-chrome --enable-logging=stderr --v=1
     - run:
         name: Selenoid install
         command: curl -s https://aerokube.com/cm/bash | bash
     - run:
         name: Selenoid
-        command: ./cm selenoid start --use-drivers --browsers 'chrome;firefox';sleep 50
+        command: |
+          ./cm selenoid start --use-drivers --browsers 'chrome;firefox'
+          sleep 50
         background: true
     #- run: sleep 5
     - restore_cache:
@@ -43,13 +46,6 @@ jobs:
         command: mvn dependency:go-offline compile compiler:testCompile
         #when: always
     - run:
-        name: Browsers versions
-        command: |
-          google-chrome --version
-          chromedriver --version
-          geckodriver --version
-          firefox --version
-    - run:
         name: Check selenoid
         command: curl http://127.0.0.1:4444/status
         when: always
@@ -59,7 +55,7 @@ jobs:
         when: always
     - run:
         name: Check selenoid 1
-        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome"}'
+        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome","binary":"/opt/google/chrome/google-chrome --enable-logging=stderr --v=1"}}'
         when: always
     - run:
         name: Check selenoid 3
