@@ -22,11 +22,10 @@ jobs:
     - run:
         name: Browsers versions
         command: |
-          google-chrome --version
           chromedriver --version
+          google-chrome --version
           geckodriver --version
           firefox --version
-          google-chrome --enable-logging=stderr --v=1
     - run:
         name: Selenoid install
         command: curl -s https://aerokube.com/cm/bash | bash
@@ -51,11 +50,11 @@ jobs:
         when: always
     - run:
         name: Check selenoid 2
-        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox","moz:firefoxOptions.binary":"/usr/local/bin/firefox"}}'
+        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox","moz:firefoxOptions.binary":"firefox","binary":"firefox"}}'
         when: always
     - run:
         name: Check selenoid 1
-        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome","binary":"/opt/google/chrome/google-chrome --enable-logging=stderr --v=1"}}'
+        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome","binary":"google-chrome --enable-logging=stderr --v=1"}}'
         when: always
     - run:
         name: Check selenoid 3
