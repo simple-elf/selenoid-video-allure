@@ -1,0 +1,32 @@
+{
+  "chrome": {
+    "default": "latest",
+    "versions": {
+      "latest": {
+        "image": [
+          "/home/circleci/.aerokube/selenoid/chromedriver",
+          "--whitelisted-ips=",
+          "--verbose"
+        ],
+        "port": "",
+        "path": "/"
+      }
+    }
+  },
+  "firefox": {
+    "default": "latest",
+    "versions": {
+      "latest": {
+        "image": [
+          "/home/circleci/.aerokube/selenoid/geckodriver",
+          "--host",
+          "127.0.0.1",
+          "--log",
+          "debug"
+        ],
+        "port": "",
+        "path": "/"
+      }
+    }
+  }
+}

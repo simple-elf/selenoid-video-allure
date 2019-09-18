@@ -31,7 +31,7 @@ jobs:
         command: curl -s https://aerokube.com/cm/bash | bash
     - run:
         name: Selenoid
-        command: ./cm selenoid start --use-drivers --browsers chrome;firefox
+        command: ./cm selenoid start --use-drivers --browsers 'chrome;firefox';sleep 50
         background: true
     #- run: sleep 5
     - restore_cache:
