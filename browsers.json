@@ -5,9 +5,12 @@
       "latest": {
         "image": [
           "/home/circleci/.aerokube/selenoid/chromedriver",
+          "--host",
+          "127.0.0.1",
           "--whitelisted-ips=",
           "--verbose"
         ],
+        "shmSize" : 268435456,
         "port": "",
         "path": "/"
       }

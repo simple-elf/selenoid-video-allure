@@ -34,7 +34,7 @@ public class MyChromeBrowserClass implements WebDriverProvider {
         chromeOptions.addArguments("--disable-dev-shm-usage");
         //chromeOptions.addArguments("disable-popup-blocking", "true");
 
-        chromeOptions.setBinary("/opt/google/chrome/google-chrome");
+        chromeOptions.setBinary("google-chrome");
 
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("credentials_enable_service", false);
