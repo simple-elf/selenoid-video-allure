@@ -12,8 +12,8 @@ jobs:
       - image: circleci/openjdk:8-jdk-stretch-browsers
         environment:
           MAVEN_OPTS: -Xmx1024m
-        entrypoint: ["/bin/sh"]
-        command: [Xvfb :99 -screen 0 1920x1080x24 &\nexec "$@"\n]
+        #entrypoint: ["/bin/sh"]
+        #command: [Xvfb :99 -screen 0 1920x1080x24 &\nexec "$@"\n]
 
     working_directory: ~/project/testng
     steps:
