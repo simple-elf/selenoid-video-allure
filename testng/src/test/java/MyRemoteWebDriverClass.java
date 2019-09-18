@@ -24,7 +24,13 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
             capabilities.setCapability("videoFrameRate", 24);
         }
 
-        return new RemoteWebDriver(getGridHubUrl(), capabilities);
+        System.out.println(capabilities);
+        try {
+            return new RemoteWebDriver(getGridHubUrl(), capabilities);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public static URL getGridHubUrl() {
