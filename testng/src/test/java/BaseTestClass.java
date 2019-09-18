@@ -162,9 +162,9 @@ public class BaseTestClass {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 
-    protected static boolean isUnix() {
+    public static boolean isUnix() {
         String os = System.getProperty("os.name").toLowerCase();
-        System.out.println("isUnix: " + os);
+        //System.out.println("isUnix: " + os);
         return (os.contains("nix") || os.contains("nux"));// || isWindows(); // linux or unix
     }
 

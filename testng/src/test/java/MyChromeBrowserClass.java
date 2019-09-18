@@ -9,8 +9,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.sun.javafx.util.Utils.isUnix;
-
 public class MyChromeBrowserClass implements WebDriverProvider {
 
     @SuppressWarnings("deprecation")
@@ -38,7 +36,7 @@ public class MyChromeBrowserClass implements WebDriverProvider {
         //chromeOptions.addArguments("disable-popup-blocking", "true");
 
         //chromeOptions.addArguments("--enable-logging=stderr --v=1");
-        if (isUnix())
+        if (BaseTestClass.isUnix())
             chromeOptions.setBinary("/opt/google/chrome/google-chrome");
 
         Map<String, Object> prefs = new HashMap<String, Object>();

@@ -27,6 +27,9 @@ public class MyFirefoxWebDriver implements WebDriverProvider {
         profile.setAssumeUntrustedCertificateIssuer(false);
         profile.setPreference("pageLoadStrategy", "normal");
 
+        if (BaseTestClass.isUnix())
+            firefoxOptions.setBinary("/opt/firefox/firefox");
+
         firefoxOptions.setCapability(FirefoxDriver.PROFILE, profile);
         //firefoxOptions.setCapability("version", "68.0"); //TODO set auto latest version
 
