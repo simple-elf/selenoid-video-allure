@@ -32,7 +32,8 @@ jobs:
     - run:
         name: Selenoid
         command: |
-          ./cm selenoid start --use-drivers --browsers-json ~/project/browsers.json --browsers 'chrome;firefox'
+          ./cm selenoid start --use-drivers --browsers-json ~/project/browsers.json
+          sleep 1
         background: true
     #- run: sleep 5
     - restore_cache:
