@@ -29,13 +29,13 @@ public class EasyTest extends BaseTestClass {
 
     public static void test_do() {
         open("http://ya.ru");
-        sleep(5000);
+        sleep(1000);
         $("#text").shouldBe(visible).setValue("selenoid");
-        sleep(5000);
+        sleep(1000);
         $(byText("Найти")).parent().shouldBe(visible).click();
-        sleep(5000);
+        sleep(1000);
         $("div.content").shouldBe(visible);
-        sleep(5000);
+        sleep(1000);
         AllureHelpers.takeScreenshot();
         close();
     }

@@ -41,7 +41,7 @@ jobs:
         when: always
     - run:
         name: Get previous artifact links
-        command: curl https://circleci.com/api/v1.1/project/github/{{$CIRCLE_PROJECT_USERNAME}}/{{$CIRCLE_PROJECT_REPONAME}}/{{$CIRCLE_PREVIOUS_BUILD_NUM}}/artifacts?circle-token=${artifacts} | grep -o 'https:\/\/[^"]*history\/history.*\.json' > artifacts.txt
+        command: curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$artifacts | grep -o 'https:\/\/[^"]*history\/history.*\.json' > artifacts.txt
         when: always
     - run: cat artifacts.txt
     - run:
@@ -51,7 +51,7 @@ jobs:
     - run:
         name: Rename and copy history artifacts to allure-result
         command: |
-          mv history.json?circle-token=${artifacts} history.json && mv history-trend.json?circle-token=${artifacts} history-trend.json
+          mv history.json?circle-token=$artifacts history.json && mv history-trend.json?circle-token=$artifacts history-trend.json
           cp history.json target/allure-results/history/ && cp history-trend.json target/allure-results/history/
         when: always
 
