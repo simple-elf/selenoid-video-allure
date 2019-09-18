@@ -32,8 +32,8 @@ jobs:
     - run:
         name: Selenoid
         command: |
-          ./cm selenoid start --use-drivers --browsers-json ~/project/browsers.json
-          sleep 1
+          ./cm selenoid start --browsers-json browsers.json --use-drivers
+          sleep 100
         background: true
     #- run: sleep 5
     - restore_cache:
@@ -50,11 +50,11 @@ jobs:
         when: always
     - run:
         name: Check selenoid 2
-        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox","moz:firefoxOptions":"{binary:firefox}","binary":"firefox"}}'
+        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"firefox","moz:firefoxOptions":{"binary":"/usr/local/bin/firefox"}}}'
         when: always
     - run:
         name: Check selenoid 1
-        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome","binary":"google-chrome --enable-logging=stderr --v=1"}}'
+        command: curl -X POST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome","binary":"/opt/google/chrome/google-chrome --enable-logging=stderr --v=1"}}'
         when: always
     - run:
         name: Check selenoid 3

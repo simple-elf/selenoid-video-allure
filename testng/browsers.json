@@ -27,6 +27,7 @@
           "--log",
           "debug"
         ],
+        "shmSize" : 268435456,
         "port": "",
         "path": "/"
       }
