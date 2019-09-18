@@ -35,7 +35,7 @@ jobs:
     - run:
         name: Selenoid start
         command: |
-          ./cm selenoid start --browsers-json browsers.json --args "-conf browsers.json"
+          ./cm selenoid start --use-drivers --browsers-json browsers.json --args "-conf browsers.json"
           sleep 100
         background: true
     #- run: sleep 5
