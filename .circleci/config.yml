@@ -1,17 +1,19 @@
 version: 2.1
 
-workflows:
-  version: 2
-  autotest_and_report:
-    jobs:
-    - maven_test
-
 jobs:
   maven_test:
     docker:
       - image: circleci/openjdk:8-jdk-stretch-browsers
         environment:
           MAVEN_OPTS: -Xmx1024m
+    description: "Run maven autotests and generate Allure report"
+    parameters:
+      staging:
+        type: string
+        default: "alpha"
+      suite:
+        type: string
+        default: "all" # browsers smoke
     working_directory: ~/project/testng
     steps:
     - checkout:
@@ -29,16 +31,15 @@ jobs:
           - ebaymag-
 
     - run:
-        name: Running X virtual framebuffer
-        command: Xvfb :99 -screen 0 1920x1080x24
-        background: true
-    - run:
         name: Resolve Maven dependencies
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
         name: Autotests
-        command: mvn test
-
+        command: mvn test -Dstaging=<< parameters.staging >> -Dsuite=<< parameters.suite>>
+    - run:
+        name: Generate environment properties
+        command: echo "BUILD_NUM=$CIRCLE_BUILD_NUM\nstaging=<< parameters.staging >>" >> target/allure-results/environment.properties
+        when: always
     - allure-history
     - run:
         name: Allure Report
@@ -62,6 +63,14 @@ jobs:
     - store_artifacts:
         path: target/site/allure-maven-plugin
         destination: Allure
+
+workflows:
+  version: 2
+  autotest_and_report:
+    jobs:
+      - maven_test:
+          staging: "beta"
+          suite: "browsers"
 
 commands:
   allure-history:
