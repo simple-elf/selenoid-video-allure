@@ -27,8 +27,6 @@ jobs:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
           - ebaymag-
-    - run: echo $CIRCLE_BUILD_URL
-    - run: echo $CIRCLE_JOB
     - run:
         name: Resolve Maven dependencies
         command: mvn dependency:go-offline compile compiler:testCompile
