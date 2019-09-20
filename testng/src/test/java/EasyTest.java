@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class EasyTest extends BaseTestClass {
 
@@ -36,6 +37,8 @@ public class EasyTest extends BaseTestClass {
         sleep(1000);
         $("div.content").shouldBe(visible);
         sleep(1000);
+        AllureHelpers.takeScreenshot();
+        getWebDriver().manage().window().maximize();
         AllureHelpers.takeScreenshot();
         close();
     }

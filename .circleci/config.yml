@@ -27,36 +27,19 @@ jobs:
         keys:
           - ebaymag-{{ checksum "pom.xml" }}
           - ebaymag-
+
+    - run:
+        name: Running X virtual framebuffer
+        command: Xvfb :99 -screen 0 1920x1080x24
+        background: true
     - run:
         name: Resolve Maven dependencies
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
-        #halt_build_on_fail: true
         name: Autotests
         command: mvn test
 
-    - run:
-        name: Make history dir for allure
-        command: mkdir target/allure-results/history
-        when: always
-    - run:
-        halt_build_on_fail: false
-        name: Get previous artifact links
-        command: curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$artifacts | grep -o 'https:\/\/[^"]*history\/history.*\.json' > artifacts.txt
-        when: always
-    - run:
-        halt_build_on_fail: false
-        name: Download history artfacts
-        command: <artifacts.txt xargs -P4 -I % wget %?circle-token=$artifacts
-        when: always
-    - run:
-        halt_build_on_fail: false
-        name: Rename and copy history artifacts to allure-result
-        command: |
-          mv history.json?circle-token=$artifacts history.json && mv history-trend.json?circle-token=$artifacts history-trend.json
-          cp history.json target/allure-results/history/ && cp history-trend.json target/allure-results/history/
-        when: always
-
+    - allure-history
     - run:
         name: Allure Report
         command: mvn allure:report
@@ -79,3 +62,26 @@ jobs:
     - store_artifacts:
         path: target/site/allure-maven-plugin
         destination: Allure
+
+commands:
+  allure-history:
+    description: Step for allure history trend to
+    steps:
+      - run:
+          name: Make history dir for allure
+          command: mkdir target/allure-results/history
+          when: always
+      - run:
+          name: Get previous artifact links
+          command: curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$artifacts | grep -o 'https:\/\/[^"]*history\/history.*\.json' > artifacts.txt
+          when: always
+      - run:
+          name: Download history artfacts
+          command: <artifacts.txt xargs -P4 -I % wget %?circle-token=$artifacts
+          when: always
+      - run:
+          name: Rename and copy history artifacts to allure-result
+          command: |
+            mv history.json?circle-token=$artifacts history.json && mv history-trend.json?circle-token=$artifacts history-trend.json
+            cp history.json target/allure-results/history/ && cp history-trend.json target/allure-results/history/
+          when: always
