@@ -94,6 +94,8 @@
                         <video.enabled>${video.enabled}</video.enabled>
 
                         <selenoid.url>${selenoid.url}</selenoid.url>
+                        <staging>${staging}</staging>
+
                     </systemPropertyVariables>
 
                     <useSystemClassLoader>false</useSystemClassLoader><!-- circleci workaround!!! -->

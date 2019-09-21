@@ -38,7 +38,7 @@ jobs:
         command: mvn test -Dstaging=<< parameters.staging >> -Dsuite=<< parameters.suite>>
     - run:
         name: Generate environment properties
-        command: echo "BUILD_NUM=$CIRCLE_BUILD_NUM\nstaging=<< parameters.staging >>" >> target/allure-results/environment.properties
+        command: echo "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=<< parameters.staging >>" >> target/allure-results/environment.properties
         when: always
     - allure-history
     - run:
