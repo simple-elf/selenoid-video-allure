@@ -71,11 +71,19 @@ workflows:
       - maven_test:
           staging: "beta"
           suite: "browsers"
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^browsers.*/
   all:
     jobs:
       - maven_test:
           staging: "alpha"
           suite: "all"
+          filters:
+            tags:
+              ignore: /^browsers.*/
 
 commands:
   allure-history:
