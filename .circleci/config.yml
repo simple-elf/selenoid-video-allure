@@ -39,7 +39,7 @@ jobs:
         when: always
     - run:
         name: Get previous artifact links
-        command: curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$artifacts | grep -o 'https:\/\/[^"]*history\/.*\.json' > artifacts.txt || true
+        command: curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$artifacts | grep -o 'https:\/\/[^"]*Allure\/history\/.*\.json' > artifacts.txt || true
         when: always
     - run: cat artifacts.txt
     - run:
