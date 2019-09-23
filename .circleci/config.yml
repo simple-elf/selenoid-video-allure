@@ -27,7 +27,7 @@ jobs:
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
         name: Autotests
-        command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-browsers}.xml
+        command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-all}.xml
     - run:
         name: Generate environment properties
         command: echo -e "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=${STAGING:-alpha}" >> target/allure-results/environment.properties
@@ -88,7 +88,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "0 * * * *"
+          cron: "0 0 * * *"
           filters:
             branches:
               only:
