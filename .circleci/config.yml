@@ -1,7 +1,7 @@
 version: 2.0
 
 jobs:
-  maven_test:
+  build:
     docker:
       - image: circleci/openjdk:8-jdk-stretch-browsers
         environment:
@@ -27,10 +27,10 @@ jobs:
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
         name: Autotests
-        command: mvn test -Dstaging=$STAGING -Dsurefire.suiteXmlFiles=$SUITE.xml
+        command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-all}.xml
     - run:
         name: Generate environment properties
-        command: echo "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=$STAGING \nsuite=$SUITE" >> target/allure-results/environment.properties
+        command: echo -e "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=$STAGING" >> target/allure-results/environment.properties
         when: always
 
     - run:
@@ -39,7 +39,7 @@ jobs:
         when: always
     - run:
         name: Get previous artifact links
-        command: curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$artifacts | grep -o 'https:\/\/[^"]*history\/history.*\.json' > artifacts.txt
+        command: curl https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_PREVIOUS_BUILD_NUM/artifacts?circle-token=$artifacts | grep -o 'https:\/\/[^"]*history\/history.*\.json' > artifacts.txt || true
         when: always
     - run:
         name: Download history artfacts
@@ -79,7 +79,7 @@ workflows:
   version: 2
   autotests_and_report:
     jobs:
-      - maven_test
+      - build
   nightly:
     triggers:
       - schedule:
@@ -89,4 +89,4 @@ workflows:
               only:
                 - master
     jobs:
-      - maven_test
+      - build
