@@ -27,7 +27,7 @@ jobs:
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
         name: Autotests
-        command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-all}.xml
+        command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-browsers}.xml
     - run:
         name: Generate environment properties
         command: echo -e "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=${STAGING:-alpha}" >> target/allure-results/environment.properties
@@ -51,6 +51,10 @@ jobs:
         command: |
           mv history.json?circle-token=$artifacts history.json && mv history-trend.json?circle-token=$artifacts history-trend.json || true
           cp history.json target/allure-results/history/ && cp history-trend.json target/allure-results/history/ || true
+          mv categories-trend.json?circle-token=$artifacts categories-trend.json && mv duration-trend.json?circle-token=$artifacts duration-trend.json || true
+          cp categories-trend.json target/allure-results/history/ && cp duration-trend.json target/allure-results/history/ || true
+          mv retry-trend.json?circle-token=$artifacts retry-trend.json || true
+          cp retry-trend.json target/allure-results/history/ || true
         when: always
 
     - run:
@@ -84,7 +88,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "0 0 * * *"
+          cron: "0 * * * *"
           filters:
             branches:
               only:
