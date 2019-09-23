@@ -19,8 +19,8 @@ jobs:
           firefox --version
     - restore_cache:
         keys:
-          - ebaymag-{{ checksum "pom.xml" }}
-          - ebaymag-
+          - $CIRCLE_PROJECT_REPONAME-{{ checksum "pom.xml" }}
+          - $CIRCLE_PROJECT_REPONAME-
 
     - run:
         name: Resolve Maven dependencies
@@ -30,7 +30,7 @@ jobs:
         command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-all}.xml
     - run:
         name: Generate environment properties
-        command: echo -e "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=$STAGING" >> target/allure-results/environment.properties
+        command: echo -e "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=${STAGING:-alpha}" >> target/allure-results/environment.properties
         when: always
 
     - run:
@@ -48,8 +48,8 @@ jobs:
     - run:
         name: Rename and copy history artifacts to allure-result
         command: |
-          mv history.json?circle-token=$artifacts history.json && mv history-trend.json?circle-token=$artifacts history-trend.json
-          cp history.json target/allure-results/history/ && cp history-trend.json target/allure-results/history/
+          mv history.json?circle-token=$artifacts history.json && mv history-trend.json?circle-token=$artifacts history-trend.json || true
+          cp history.json target/allure-results/history/ && cp history-trend.json target/allure-results/history/ || true
         when: always
 
     - run:
@@ -61,7 +61,7 @@ jobs:
         paths:
           - ~/.m2
           - .allure
-        key: ebaymag-{{ checksum "pom.xml" }}
+        key: $CIRCLE_PROJECT_REPONAME-{{ checksum "pom.xml" }}
         when: always
     - store_test_results:
         path: target/surefire-reports/junitreports
