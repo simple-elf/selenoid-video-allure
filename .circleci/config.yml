@@ -87,7 +87,7 @@ workflows:
 
 commands:
   allure-history:
-    description: Step for allure history trend to
+    description: Step for allure history trend
     steps:
       - run:
           name: Make history dir for allure
