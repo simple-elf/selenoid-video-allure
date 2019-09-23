@@ -6,14 +6,6 @@ jobs:
       - image: circleci/openjdk:8-jdk-stretch-browsers
         environment:
           MAVEN_OPTS: -Xmx1024m
-    description: "Run maven autotests and generate Allure report"
-    #parameters:
-    #  staging:
-    #    type: string
-    #    default: "alpha"
-    #  suite:
-    #    type: string
-    #    default: "all" # browsers smoke
     working_directory: ~/project/testng
     steps:
     - checkout:
@@ -75,7 +67,7 @@ jobs:
         path: target/surefire-reports/junitreports
     - store_artifacts:
         path: target/surefire-reports
-        destination: report/testng-results
+        #destination: report/testng-results
     - store_artifacts:
         path: target/allure-results
         #destination: report/allure-results
