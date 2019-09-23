@@ -35,7 +35,7 @@ jobs:
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
         name: Autotests
-        command: mvn test -Dstaging=<< parameters.staging >> -Dsuite=<< parameters.suite>>
+        command: mvn test -Dstaging=<< parameters.staging >> -Dsurefire.suiteXmlFiles=<< parameters.suite>>.xml
     - run:
         name: Generate environment properties
         command: echo "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=<< parameters.staging >>" >> target/allure-results/environment.properties
@@ -66,11 +66,16 @@ jobs:
 
 workflows:
   version: 2
-  autotest_and_report:
+  browsers:
     jobs:
       - maven_test:
           staging: "beta"
           suite: "browsers"
+  all:
+    jobs:
+      - maven_test:
+          staging: "alpha"
+          suite: "all"
 
 commands:
   allure-history:
