@@ -6,21 +6,21 @@ jobs:
   autotests:
     name: Run autotests
     runs-on: ubuntu-latest
-    container:
-      image: circleci/openjdk:8-jdk-stretch-browsers
+    #container:
+    #  image: circleci/openjdk:8-jdk-stretch-browsers
     steps:
       - uses: actions/checkout@v1
 
-      #- name: Set up JDK
-      #  uses: actions/setup-java@v1
-      #  with:
-      #    java-version: 1.8
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
 
-      #- name: start xvfb
-      #  run: Xvfb :99 &
+      - name: start xvfb
+        run: Xvfb :99 &
 
-      #- name: initialize the X11 DISPLAY variable
-      #  run: export DISPLAY=:99
+      - name: initialize the X11 DISPLAY variable
+        run: export DISPLAY=:99
 
       - name: chrome version
         run: |
@@ -31,7 +31,10 @@ jobs:
         run: mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile
 
       - name: Run Test
+        env:
+          DISPLAY: :99
         run: mvn -f testng/pom.xml test
+        continue-on-error: true
 
       - name: Generate Allure report
         run: mvn -f testng/pom.xml allure:report
@@ -41,3 +44,8 @@ jobs:
         with:
           name: Allure
           path: testng/target/site/allure-maven-plugin
+
+      - uses: actions/upload-artifact@master
+          with:
+            name: target
+            path: testng/target/
