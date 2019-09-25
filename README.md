@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/simple-elf/selenoid-video-allure.svg?style=svg)](https://circleci.com/gh/simple-elf/selenoid-video-allure)
+[![CircleCI](https://circleci.com/gh/simple-elf/selenoid-video-allure.svg?style=shield)](https://circleci.com/gh/simple-elf/selenoid-video-allure) 
+![Actions](https://github.com/simple-elf/selenoid-video-allure/workflows/Autotests/badge.svg)
 
 # selenoid-video-allure
 This is example of using selenoide video recording feature with Allure.

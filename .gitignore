@@ -4,3 +4,5 @@
 /junit4/.allure/
 *.iml
 /testng/.allure/
+*/.gradle
+*/gradle
