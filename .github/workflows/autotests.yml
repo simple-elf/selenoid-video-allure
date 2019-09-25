@@ -6,35 +6,38 @@ jobs:
   autotests:
     name: Run autotests
     runs-on: ubuntu-latest
+    container:
+      image: circleci/openjdk:8-jdk-stretch-browsers
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: Set up JDK
-      uses: actions/setup-java@v1
-      with:
-        java-version: 1.8
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
 
-    - name: start xvfb
-      run: Xvfb :99 &
+      - name: start xvfb
+        run: Xvfb :99 &
 
-    - name: initialize the X11 DISPLAY variable
-      run: export DISPLAY=:99
+      - name: initialize the X11 DISPLAY variable
+        run: export DISPLAY=:99
 
-    - name: chrome version
-      run: |
-        google-chrome --version
-        which google-chrome
+      - name: chrome version
+        run: |
+          google-chrome --version
+          which google-chrome
 
-    - name: Install dependencies
-      run: mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile
+      - name: Install dependencies
+        run: mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile
 
-    - name: Run Test
-      run: mvn -f testng/pom.xml test
+      - name: Run Test
+        run: mvn -f testng/pom.xml test
 
-    - name: Generate Allure report
-      run: mvn -f testng/pom.xml allure:report
+      - name: Generate Allure report
+        run: mvn -f testng/pom.xml allure:report
+        continue-on-error: true
 
-    - uses: actions/upload-artifact@master
-      with:
-        name: Allure
-        path: testng/target/site/allure-maven-plugin
+      - uses: actions/upload-artifact@master
+        with:
+          name: Allure
+          path: testng/target/site/allure-maven-plugin
