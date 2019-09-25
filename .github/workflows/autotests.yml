@@ -1,0 +1,24 @@
+name: Autotests
+
+on: [push]
+
+jobs: 
+  autotests:
+    name: Run autotests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up JDK 9
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Setup xvfb
+      run: |
+        sudo apt-get install -y xvfb
+        Xvfb :99 -screen 0 1920x1080x32 &
+    - name: Install dependencies
+      run: mvn dependency:go-offline compile compiler:testCompile
+    - name: Run Test
+      env:
+        DISPLAY: :99
+      run: mvn -f testng/pom.xml test
