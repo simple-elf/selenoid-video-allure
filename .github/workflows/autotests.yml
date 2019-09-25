@@ -46,6 +46,6 @@ jobs:
           path: testng/target/site/allure-maven-plugin
 
       - uses: actions/upload-artifact@master
-          with:
-            name: target
-            path: testng/target/
+        with:
+          name: target
+          path: testng/target/
