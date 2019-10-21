@@ -20,7 +20,6 @@ jobs:
     - run:
         name: Download CM Selenoid
         command: curl -s https://aerokube.com/cm/bash | bash
-    - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
     - run:
         name: Run CM Selenoid
         command: ./cm selenoid start --browsers chrome --use-drivers & curl http://127.0.0.1:4444/status
@@ -36,6 +35,7 @@ jobs:
     - run:
         name: Curl
         command: sleep 30 & curl http://127.0.0.1:4444/status
+    - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
     - run:
         name: Autotests
         command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-all}.xml
