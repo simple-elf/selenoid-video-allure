@@ -20,9 +20,10 @@ jobs:
     - run:
         name: Download CM Selenoid
         command: curl -s https://aerokube.com/cm/bash | bash
+    - run: curl -XPOST http://127.0.0.1:4444/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
     - run:
         name: Run CM Selenoid
-        command: ./cm selenoid start --browsers chrome --use-drivers &
+        command: ./cm selenoid start --browsers chrome --use-drivers & curl http://127.0.0.1:4444/status
         background: true
     - restore_cache:
         keys:
@@ -34,7 +35,7 @@ jobs:
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
         name: Curl
-        command: curl http://localhost:4444/status
+        command: sleep 30 & curl http://127.0.0.1:4444/status
     - run:
         name: Autotests
         command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-all}.xml
