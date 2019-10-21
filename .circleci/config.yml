@@ -22,8 +22,8 @@ jobs:
         command: curl -s https://aerokube.com/cm/bash | bash
     - run:
         name: Run CM Selenoid
-        command: ./cm selenoid start --browsers chrome --use-drivers & curl http://127.0.0.1:4444/status
-        background: true
+        command: ./cm selenoid start --browsers chrome --use-drivers
+        #background: true
     - restore_cache:
         keys:
           - $CIRCLE_PROJECT_REPONAME-{{ checksum "pom.xml" }}
