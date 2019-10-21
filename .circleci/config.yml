@@ -33,6 +33,9 @@ jobs:
         name: Resolve Maven dependencies
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
+        name: Curl
+        command: curl http://localhost:4444/status
+    - run:
         name: Autotests
         command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-all}.xml
     - run:
