@@ -17,6 +17,13 @@ jobs:
           google-chrome --version
           geckodriver --version
           firefox --version
+    - run:
+        name: Download CM Selenoid
+        command: curl -s https://aerokube.com/cm/bash | bash
+    - run:
+        name: Run CM Selenoid
+        command: ./cm selenoid start --browsers chrome
+        background: true
     - restore_cache:
         keys:
           - $CIRCLE_PROJECT_REPONAME-{{ checksum "pom.xml" }}
