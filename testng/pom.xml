@@ -9,7 +9,7 @@
     <version>2.0</version>
 
     <properties>
-        <video.enabled>false</video.enabled>
+        <video.enabled>true</video.enabled>
         <selenoid.url>http://127.0.0.1:4444/wd/hub</selenoid.url>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

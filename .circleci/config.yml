@@ -33,10 +33,6 @@ jobs:
         name: Resolve Maven dependencies
         command: mvn dependency:go-offline compile compiler:testCompile
     - run:
-        name: Curl
-        command: sleep 30 & curl http://127.0.0.1:4444/status
-    - run: curl -XPOST http://127.0.0.1:4444/wd/hub/session -d '{"desiredCapabilities":{"browserName":"chrome"}}'
-    - run:
         name: Autotests
         command: mvn test -Dstaging=${STAGING:-alpha} -Dsurefire.suiteXmlFiles=${SUITE:-all}.xml
         when: always
@@ -45,6 +41,7 @@ jobs:
         command: echo -e "BUILD_NUM=$CIRCLE_BUILD_NUM \nstaging=${STAGING:-alpha}" >> target/allure-results/environment.properties
         when: always
 
+    - run: ls /home/circleci/project/testng/video
     - run:
         name: Make history dir for allure
         command: mkdir target/allure-results/history
