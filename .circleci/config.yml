@@ -22,7 +22,7 @@ jobs:
         command: curl -s https://aerokube.com/cm/bash | bash
     - run:
         name: Run CM Selenoid
-        command: ./cm selenoid start --browsers chrome
+        command: ./cm selenoid start --browsers chrome --use-drivers
         background: true
     - restore_cache:
         keys:
