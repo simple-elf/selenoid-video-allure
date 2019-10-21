@@ -19,11 +19,11 @@ jobs:
           firefox --version
     - run:
         name: Download CM Selenoid
-        command: curl -s https://aerokube.com/cm/bash | bash
+        command: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid configure --browsers chrome --use-drivers
     - run:
         name: Run CM Selenoid
-        command: ./cm selenoid start --browsers chrome --use-drivers
-        #background: true
+        command: ./.aerokube/selenoid/selenoid_linux_amd64 -conf ./.aerokube/selenoid/browsers.json && sleep 60
+        background: true
     - restore_cache:
         keys:
           - $CIRCLE_PROJECT_REPONAME-{{ checksum "pom.xml" }}
