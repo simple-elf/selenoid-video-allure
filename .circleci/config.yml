@@ -94,13 +94,3 @@ workflows:
   autotests_and_report:
     jobs:
       - build
-  nightly:
-    triggers:
-      - schedule:
-          cron: "0 4 * * *"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - build
