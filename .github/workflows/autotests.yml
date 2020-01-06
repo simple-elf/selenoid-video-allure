@@ -56,6 +56,6 @@ jobs:
         #if: always()
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: docs #master # The branch the action should deploy to.
+          BRANCH: master # The branch the action should deploy to.
           FOLDER: testng/target/site/allure-maven-plugin # The folder the action should deploy.
           TARGET_FOLDER: docs
