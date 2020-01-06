@@ -37,7 +37,7 @@ jobs:
         continue-on-error: true
 
       - name: Keep Allure history
-        run: cp -r $(pwd)/docs/history/. $(pwd)/target/testng/allure-results/history
+        run: cp -r $(pwd)/docs/history/. $(pwd)/testng/target/allure-results/history
 
       - name: Generate Allure report
         run: mvn -f testng/pom.xml allure:report
