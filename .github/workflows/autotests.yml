@@ -1,8 +1,19 @@
 name: Autotests
 
-on: [push]
+on:
+  push:
+    branches-ignore:
+    - '!master' # Push events to branches matching allure-report
+    paths-ignore:
+    - 'docs/**'
 
-jobs: 
+jobs:
+  selenoid:
+    name: Run autotests on selenoid
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
   autotests:
     name: Run autotests
     runs-on: ubuntu-latest
