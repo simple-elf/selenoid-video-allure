@@ -6,3 +6,4 @@
 /testng/.allure/
 */.gradle
 */gradle
+/gradle-testng/gradle/
