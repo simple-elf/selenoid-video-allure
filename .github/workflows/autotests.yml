@@ -8,12 +8,6 @@ on:
     - 'docs/**'
 
 jobs:
-  selenoid:
-    name: Run autotests on selenoid
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-
   autotests:
     name: Run autotests
     runs-on: ubuntu-latest
@@ -41,6 +35,9 @@ jobs:
           DISPLAY: :99
         run: mvn -f testng/pom.xml test
         continue-on-error: true
+
+      - name: Keep Allure history
+        run: cp -r $(pwd)/docs/history/. $(pwd)/target/testng/allure-results/history
 
       - name: Generate Allure report
         run: mvn -f testng/pom.xml allure:report
