@@ -1,0 +1,82 @@
+{
+  "8ced8c7659dacd37a192bd01347caf17" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "72007542bcac7238",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578320942554,
+        "stop" : 1578320942581,
+        "duration" : 27
+      }
+    } ]
+  },
+  "e08b0d164fc9382ef6731b116cdf8d52" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c89580d1b62687a2",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578320941434,
+        "stop" : 1578320942368,
+        "duration" : 934
+      }
+    } ]
+  },
+  "40f03c6a9652c83ee42175fe25edce63" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6bf0b4fb3841e49f",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578320942506,
+        "stop" : 1578320942545,
+        "duration" : 39
+      }
+    } ]
+  },
+  "da2f4f38cd97d2872be6bcc061ddcfc8" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "31d3bbb079114d95",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578320942582,
+        "stop" : 1578320942596,
+        "duration" : 14
+      }
+    } ]
+  }
+}
