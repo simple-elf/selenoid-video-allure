@@ -6,8 +6,6 @@ jobs:
   autotests:
     name: Run autotests
     runs-on: ubuntu-latest
-    #container:
-    #  image: circleci/openjdk:8-jdk-stretch-browsers
     steps:
       - uses: actions/checkout@v1
 
@@ -15,9 +13,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-
-      - name: start xvfb
-        run: Xvfb :99 &
 
       - name: initialize the X11 DISPLAY variable
         run: export DISPLAY=:99
@@ -45,7 +40,11 @@ jobs:
           name: Allure
           path: testng/target/site/allure-maven-plugin
 
-      - uses: actions/upload-artifact@master
+      - name: Deploy report to Github Pages
+        uses: JamesIves/github-pages-deploy-action@3.1.1
+        #if: always()
         with:
-          name: target
-          path: testng/target/
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: docs #master # The branch the action should deploy to.
+          FOLDER: testng/target/site/allure-maven-plugin # The folder the action should deploy.
+          TARGET_FOLDER: docs
