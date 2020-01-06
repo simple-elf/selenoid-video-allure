@@ -1,0 +1,82 @@
+{
+  "e08b0d164fc9382ef6731b116cdf8d52" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "60d54d0c9d799c4d",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578324814345,
+        "stop" : 1578324823664,
+        "duration" : 9319
+      }
+    } ]
+  },
+  "8ced8c7659dacd37a192bd01347caf17" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "38373037f6842503",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578324824030,
+        "stop" : 1578324824258,
+        "duration" : 228
+      }
+    } ]
+  },
+  "40f03c6a9652c83ee42175fe25edce63" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6cb82db38029f7e4",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578324823774,
+        "stop" : 1578324824009,
+        "duration" : 235
+      }
+    } ]
+  },
+  "da2f4f38cd97d2872be6bcc061ddcfc8" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9847be42d2770a14",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578324824260,
+        "stop" : 1578324824483,
+        "duration" : 223
+      }
+    } ]
+  }
+}

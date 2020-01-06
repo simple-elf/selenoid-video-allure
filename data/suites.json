@@ -1,0 +1,73 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "Surefire suite",
+    "children" : [ {
+      "name" : "Surefire test",
+      "children" : [ {
+        "name" : "EasyTest",
+        "children" : [ {
+          "name" : "test_3",
+          "uid" : "60d54d0c9d799c4d",
+          "parentUid" : "fca4fe4c77bfb75835a62a88274f26f4",
+          "status" : "broken",
+          "time" : {
+            "start" : 1578324814345,
+            "stop" : 1578324823664,
+            "duration" : 9319
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "test_4",
+          "uid" : "6cb82db38029f7e4",
+          "parentUid" : "fca4fe4c77bfb75835a62a88274f26f4",
+          "status" : "broken",
+          "time" : {
+            "start" : 1578324823774,
+            "stop" : 1578324824009,
+            "duration" : 235
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "fca4fe4c77bfb75835a62a88274f26f4"
+      }, {
+        "name" : "SimpleTest",
+        "children" : [ {
+          "name" : "test_1",
+          "uid" : "38373037f6842503",
+          "parentUid" : "bbcf161ecd07e5a7010d3862ec476093",
+          "status" : "broken",
+          "time" : {
+            "start" : 1578324824030,
+            "stop" : 1578324824258,
+            "duration" : 228
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "test_2",
+          "uid" : "9847be42d2770a14",
+          "parentUid" : "bbcf161ecd07e5a7010d3862ec476093",
+          "status" : "broken",
+          "time" : {
+            "start" : 1578324824260,
+            "stop" : 1578324824483,
+            "duration" : 223
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "bbcf161ecd07e5a7010d3862ec476093"
+      } ],
+      "uid" : "1fcb2e6ec8e5b5e8a1f2a70b87c80b24"
+    } ],
+    "uid" : "940a09faf31371a51747026c9d178f0a"
+  } ],
+  "name" : "suites"
+}
