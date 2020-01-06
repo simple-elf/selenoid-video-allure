@@ -37,7 +37,7 @@ jobs:
 
       - uses: actions/upload-artifact@master
         with:
-          name: Allure
+          name: allure-report
           path: testng/target/site/allure-maven-plugin
 
       - name: Deploy report to Github Pages
