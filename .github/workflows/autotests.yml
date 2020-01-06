@@ -1,4 +1,4 @@
-name: Autotests
+name: Autotests on Selenoid
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   autotests:
-    name: Run autotests
+    name: Run autotests on selenoid
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -53,6 +53,6 @@ jobs:
         #if: always()
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: master # The branch the action should deploy to.
+          BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: testng/target/site/allure-maven-plugin # The folder the action should deploy.
-          TARGET_FOLDER: docs
+          #TARGET_FOLDER: docs
