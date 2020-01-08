@@ -1,52 +1,44 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "children" : [ {
-    "name" : "Test defects",
-    "children" : [ {
-      "name" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "children" : [ {
-        "name" : "saveVideo",
-        "uid" : "a23d452663da002c",
-        "parentUid" : "fb591d850b490b03d83413a9291646b3",
-        "status" : "broken",
-        "time" : {
-          "start" : 1578474136921,
-          "stop" : 1578474136922,
-          "duration" : 1
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "fb591d850b490b03d83413a9291646b3"
-    } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
-  }, {
     "name" : "Product defects",
     "children" : [ {
       "name" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
       "children" : [ {
-        "name" : "test_1",
-        "uid" : "450c6774e1a0a63a",
+        "name" : "test_4",
+        "uid" : "2e293ff039ac037b",
         "parentUid" : "2da48e01a39d49d856eff44740f6e489",
         "status" : "failed",
         "time" : {
-          "start" : 1578474136954,
-          "stop" : 1578474147794,
-          "duration" : 10840
+          "start" : 1578474587679,
+          "stop" : 1578474598137,
+          "duration" : 10458
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "test_1",
+        "uid" : "bdccdc94f26a5a9d",
+        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
+        "status" : "failed",
+        "time" : {
+          "start" : 1578474600298,
+          "stop" : 1578474610832,
+          "duration" : 10534
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "test_2",
-        "uid" : "2e24517ac98e1f87",
+        "uid" : "ecec75cdd3539b63",
         "parentUid" : "2da48e01a39d49d856eff44740f6e489",
         "status" : "failed",
         "time" : {
-          "start" : 1578474150931,
-          "stop" : 1578474161443,
-          "duration" : 10512
+          "start" : 1578474612935,
+          "stop" : 1578474623229,
+          "duration" : 10294
         },
         "flaky" : false,
         "newFailed" : false,
