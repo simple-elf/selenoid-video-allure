@@ -64,7 +64,7 @@ jobs:
           path: testng/target/site/allure-maven-plugin
 
       - name: Deploy report to Github Pages
-        uses: JamesIves/github-pages-deploy-action@3.1.1
+        uses: JamesIves/github-pages-deploy-action@3.1.2
         #if: always()
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
