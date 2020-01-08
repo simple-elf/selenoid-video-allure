@@ -95,7 +95,7 @@ public class BaseTestClass {
 
     public static InputStream getSelenoidVideo(URL url) {
         int lastSize = 0;
-        int exit = 1;
+        int exit = 2;
         for (int i = 0; i < 20; i++) {
             try {
                 int size = Integer.parseInt(url.openConnection().getHeaderField("Content-Length"));
@@ -103,12 +103,12 @@ public class BaseTestClass {
                 System.out.println("i: " + i);
                 if (size > lastSize) {
                     lastSize = size;
-                    Thread.sleep(1000);
+                    Thread.sleep(1500);
                 } else if (size == lastSize) {
                     System.out.println("Content-Length: " + size);
                     System.out.println("exit: " + exit);
                     exit--;
-                    Thread.sleep(500);
+                    Thread.sleep(1000);
                 }
                 if (exit < 0) {
                     System.out.println("video ok!");

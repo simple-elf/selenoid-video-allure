@@ -13,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Start selenoid
-        uses: Xotabu4/selenoid-github-action@v1
+        #uses: Xotabu4/selenoid-github-action@v1
+        run: curl -s https://aerokube.com/cm/bash | bash && ./cm selenoid start
 
       - uses: actions/checkout@v1
 
