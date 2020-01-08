@@ -3,61 +3,61 @@
   "children" : [ {
     "name" : "Test defects",
     "children" : [ {
-      "name" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "name" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
       "children" : [ {
         "name" : "test_3",
-        "uid" : "ef5687c3a4933894",
-        "parentUid" : "fb591d850b490b03d83413a9291646b3",
+        "uid" : "5598b58e980f6453",
+        "parentUid" : "63bb674721e178162cf5f3f3304f4b50",
         "status" : "broken",
         "time" : {
-          "start" : 1578467158032,
-          "stop" : 1578467170441,
-          "duration" : 12409
+          "start" : 1578468584159,
+          "stop" : 1578468590461,
+          "duration" : 6302
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "test_4",
-        "uid" : "65c4e0434181c3a3",
-        "parentUid" : "fb591d850b490b03d83413a9291646b3",
+        "uid" : "f4d0ab4a5acb14cf",
+        "parentUid" : "63bb674721e178162cf5f3f3304f4b50",
         "status" : "broken",
         "time" : {
-          "start" : 1578467170576,
-          "stop" : 1578467170800,
-          "duration" : 224
+          "start" : 1578468590588,
+          "stop" : 1578468590792,
+          "duration" : 204
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "test_1",
-        "uid" : "624d53b0f44fde4e",
-        "parentUid" : "fb591d850b490b03d83413a9291646b3",
+        "uid" : "ad121bdefaef3d74",
+        "parentUid" : "63bb674721e178162cf5f3f3304f4b50",
         "status" : "broken",
         "time" : {
-          "start" : 1578467170816,
-          "stop" : 1578467171083,
-          "duration" : 267
+          "start" : 1578468590801,
+          "stop" : 1578468591009,
+          "duration" : 208
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "test_2",
-        "uid" : "237de94a9deff5dc",
-        "parentUid" : "fb591d850b490b03d83413a9291646b3",
+        "uid" : "92ed8cbe32d5c511",
+        "parentUid" : "63bb674721e178162cf5f3f3304f4b50",
         "status" : "broken",
         "time" : {
-          "start" : 1578467171088,
-          "stop" : 1578467171293,
-          "duration" : 205
+          "start" : 1578468591012,
+          "stop" : 1578468591208,
+          "duration" : 196
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "fb591d850b490b03d83413a9291646b3"
+      "uid" : "63bb674721e178162cf5f3f3304f4b50"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ],
