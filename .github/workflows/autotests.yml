@@ -12,7 +12,7 @@ jobs:
     name: Run autotests on selenoid
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - uses: actions/cache@v1
         with:
@@ -28,8 +28,8 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: initialize the X11 DISPLAY variable
-        run: export DISPLAY=:99
+      #- name: initialize the X11 DISPLAY variable
+      #  run: export DISPLAY=:99
 
       - name: chrome version
         run: |
@@ -40,13 +40,19 @@ jobs:
         run: mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile
 
       - name: Run Test
-        env:
-          DISPLAY: :99
+      #  env:
+      #    DISPLAY: :99
         run: mvn -f testng/pom.xml test
         continue-on-error: true
 
-      #- name: Keep Allure history
-      #  run: cp -r $(pwd)/docs/history/. $(pwd)/testng/target/allure-results/history
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Keep Allure history
+        run: cp -r $(pwd)/gh-pages/history/. $(pwd)/testng/target/allure-results/history
 
       - name: Generate Allure report
         run: mvn -f testng/pom.xml allure:report

@@ -1,5 +1,6 @@
 import com.codeborne.selenide.WebDriverProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.model.Status;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,6 +9,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+import static io.qameta.allure.Allure.step;
 
 public class MyChromeBrowserClass implements WebDriverProvider {
 
@@ -22,6 +25,7 @@ public class MyChromeBrowserClass implements WebDriverProvider {
             return new ChromeDriver(capabilities);
         } catch (Exception e) {
             e.printStackTrace();
+            step("ChromeDriver error: " + e.getMessage(), Status.FAILED);
             return null;
         }
     }
