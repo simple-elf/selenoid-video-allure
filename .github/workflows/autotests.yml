@@ -26,21 +26,14 @@ jobs:
         with:
           java-version: 1.8
 
-      #- name: initialize the X11 DISPLAY variable
-      #  run: export DISPLAY=:99
-
-      - name: chrome version
-        run: |
-          google-chrome --version
-          which google-chrome
-
       #- name: Install dependencies
       #  run: mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile
 
+      - name: Install xvfb
+        run: sudo apt-get install xvfb
+
       - name: Run Test
-      #  env:
-      #    DISPLAY: :99
-        run: mvn -f testng/pom.xml test
+        run: xvfb-run --auto-servernum mvn -f testng/pom.xml test
         continue-on-error: true
 
       - name: Get Allure history
@@ -62,7 +55,7 @@ jobs:
           path: testng/target/site/allure-maven-plugin
 
       - name: Deploy report to Github Pages
-        uses: JamesIves/github-pages-deploy-action@3.1.0
+        uses: JamesIves/github-pages-deploy-action@3.1.2
         #if: always()
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}

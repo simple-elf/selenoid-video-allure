@@ -6,7 +6,7 @@
 
     <groupId>autotest</groupId>
     <artifactId>testng</artifactId>
-    <version>2.0</version>
+    <version>3.0</version>
 
     <properties>
         <video.enabled>true</video.enabled>
@@ -19,7 +19,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <aspectj.version>1.8.10</aspectj.version>
+        <aspectj.version>1.9.1</aspectj.version>
         <allure.version>2.13.0</allure.version>
     </properties>
 
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>5.2.2</version>
+            <version>5.3.1</version>
             <!--<exclusions>
                 <exclusion>
                     <groupId>com.google.guava</groupId>
@@ -94,8 +94,6 @@
                         <video.enabled>${video.enabled}</video.enabled>
 
                         <selenoid.url>${selenoid.url}</selenoid.url>
-                        <staging>${staging}</staging>
-
                     </systemPropertyVariables>
 
                     <useSystemClassLoader>false</useSystemClassLoader><!-- circleci workaround!!! -->
