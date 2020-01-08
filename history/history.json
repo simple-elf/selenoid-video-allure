@@ -2,13 +2,22 @@
   "8ced8c7659dacd37a192bd01347caf17" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 2,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 1
+      "total" : 2
     },
     "items" : [ {
+      "uid" : "624d53b0f44fde4e",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578467170816,
+        "stop" : 1578467171083,
+        "duration" : 267
+      }
+    }, {
       "uid" : "b19674dfc6729da",
       "status" : "broken",
       "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
@@ -22,13 +31,22 @@
   "e08b0d164fc9382ef6731b116cdf8d52" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 2,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 1
+      "total" : 2
     },
     "items" : [ {
+      "uid" : "ef5687c3a4933894",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578467158032,
+        "stop" : 1578467170441,
+        "duration" : 12409
+      }
+    }, {
       "uid" : "e50d0e50b0e70799",
       "status" : "broken",
       "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
@@ -42,13 +60,22 @@
   "40f03c6a9652c83ee42175fe25edce63" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 2,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 1
+      "total" : 2
     },
     "items" : [ {
+      "uid" : "65c4e0434181c3a3",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578467170576,
+        "stop" : 1578467170800,
+        "duration" : 224
+      }
+    }, {
       "uid" : "b55b9bcb7d9811df",
       "status" : "broken",
       "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
@@ -62,13 +89,22 @@
   "da2f4f38cd97d2872be6bcc061ddcfc8" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 2,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 1
+      "total" : 2
     },
     "items" : [ {
+      "uid" : "237de94a9deff5dc",
+      "status" : "broken",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578467171088,
+        "stop" : 1578467171293,
+        "duration" : 205
+      }
+    }, {
       "uid" : "a79636be78aeed2b",
       "status" : "broken",
       "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
