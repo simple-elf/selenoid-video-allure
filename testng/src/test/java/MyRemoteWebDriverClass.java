@@ -1,4 +1,5 @@
 import com.codeborne.selenide.WebDriverProvider;
+import io.qameta.allure.model.Status;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -6,6 +7,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import static io.qameta.allure.Allure.step;
 
 public class MyRemoteWebDriverClass implements WebDriverProvider {
 
@@ -29,6 +32,7 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
             return new RemoteWebDriver(getGridHubUrl(), capabilities);
         } catch (Exception e) {
             e.printStackTrace();
+            step("ChromeDriver error: " + e.getMessage(), Status.FAILED);
             throw e;
             //return null;
         }

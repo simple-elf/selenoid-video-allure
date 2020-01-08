@@ -12,6 +12,9 @@ jobs:
     name: Run autotests on selenoid
     runs-on: ubuntu-latest
     steps:
+      - name: Start selenoid
+        uses: Xotabu4/selenoid-github-action@v1
+
       - uses: actions/checkout@v1
 
       - uses: actions/cache@v1
@@ -29,11 +32,12 @@ jobs:
       #- name: Install dependencies
       #  run: mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile
 
-      - name: Install xvfb
-        run: sudo apt-get install xvfb
+      #- name: Install xvfb
+      #  run: sudo apt-get install xvfb
+      #  #xvfb-run --auto-servernum #to test command
 
       - name: Run Test
-        run: xvfb-run --auto-servernum mvn -f testng/pom.xml test
+        run: mvn -f testng/pom.xml test
         continue-on-error: true
 
       - name: Get Allure history
@@ -49,10 +53,10 @@ jobs:
         run: mvn -f testng/pom.xml allure:report
         continue-on-error: true
 
-      - uses: actions/upload-artifact@master
-        with:
-          name: allure-report
-          path: testng/target/site/allure-maven-plugin
+      #- uses: actions/upload-artifact@master
+      #  with:
+      #    name: allure-report
+      #    path: testng/target/site/allure-maven-plugin
 
       - name: Deploy report to Github Pages
         uses: JamesIves/github-pages-deploy-action@3.1.2

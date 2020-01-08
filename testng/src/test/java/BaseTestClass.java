@@ -6,6 +6,7 @@ import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
@@ -24,7 +25,7 @@ public class BaseTestClass {
     @BeforeClass
     public static void beforeClass() {
         System.out.println("beforeClass");
-        if (false & isUnix()) {
+        if (isUnix()) {
             Configuration.browser = MyRemoteWebDriverClass.class.getName();
             Configuration.browserSize = "1920x1080";
             //Configuration.startMaximized = true;
@@ -45,7 +46,7 @@ public class BaseTestClass {
         SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
     }
 
-    //@AfterMethod
+    @AfterMethod
     public void saveVideo() {
         String sessionId = getSessionId();
         closeWebDriver();

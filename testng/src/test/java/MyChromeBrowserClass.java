@@ -26,7 +26,8 @@ public class MyChromeBrowserClass implements WebDriverProvider {
         } catch (Exception e) {
             e.printStackTrace();
             step("ChromeDriver error: " + e.getMessage(), Status.FAILED);
-            return null;
+            throw e;
+            //return null;
         }
     }
 
