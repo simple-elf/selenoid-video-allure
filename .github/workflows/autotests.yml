@@ -16,9 +16,7 @@ jobs:
 
       - uses: actions/cache@v1
         with:
-          path: |
-            ~/.m2/repository
-            .allure
+          path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
@@ -67,7 +65,8 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.1.2
         #if: always()
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          #ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: testng/target/site/allure-maven-plugin # The folder the action should deploy.
           #TARGET_FOLDER: docs
