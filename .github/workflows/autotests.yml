@@ -34,8 +34,8 @@ jobs:
           google-chrome --version
           which google-chrome
 
-      - name: Install dependencies
-        run: mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile
+      #- name: Install dependencies
+      #  run: mvn -f testng/pom.xml dependency:go-offline compile compiler:testCompile
 
       - name: Run Test
       #  env:
@@ -65,8 +65,8 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.1.0
         #if: always()
         with:
-          #ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: testng/target/site/allure-maven-plugin # The folder the action should deploy.
           #TARGET_FOLDER: docs
