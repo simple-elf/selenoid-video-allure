@@ -1,44 +1,52 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "children" : [ {
-    "name" : "Product defects",
+    "name" : "Test defects",
     "children" : [ {
-      "name" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "name" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
       "children" : [ {
-        "name" : "test_4",
-        "uid" : "fc94554d61d98dbd",
-        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
-        "status" : "failed",
+        "name" : "saveVideo",
+        "uid" : "a23d452663da002c",
+        "parentUid" : "fb591d850b490b03d83413a9291646b3",
+        "status" : "broken",
         "time" : {
-          "start" : 1578472651344,
-          "stop" : 1578472660314,
-          "duration" : 8970
+          "start" : 1578474136921,
+          "stop" : 1578474136922,
+          "duration" : 1
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
-      }, {
+      } ],
+      "uid" : "fb591d850b490b03d83413a9291646b3"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "children" : [ {
         "name" : "test_1",
-        "uid" : "be2142946d8de151",
+        "uid" : "450c6774e1a0a63a",
         "parentUid" : "2da48e01a39d49d856eff44740f6e489",
         "status" : "failed",
         "time" : {
-          "start" : 1578472660323,
-          "stop" : 1578472667423,
-          "duration" : 7100
+          "start" : 1578474136954,
+          "stop" : 1578474147794,
+          "duration" : 10840
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "test_2",
-        "uid" : "2b05e8fea75e0b24",
+        "uid" : "2e24517ac98e1f87",
         "parentUid" : "2da48e01a39d49d856eff44740f6e489",
         "status" : "failed",
         "time" : {
-          "start" : 1578472667428,
-          "stop" : 1578472674494,
-          "duration" : 7066
+          "start" : 1578474150931,
+          "stop" : 1578474161443,
+          "duration" : 10512
         },
         "flaky" : false,
         "newFailed" : false,

@@ -1,14 +1,23 @@
 {
   "8ced8c7659dacd37a192bd01347caf17" : {
     "statistic" : {
-      "failed" : 1,
+      "failed" : 2,
       "broken" : 5,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 6
+      "total" : 7
     },
     "items" : [ {
+      "uid" : "450c6774e1a0a63a",
+      "status" : "failed",
+      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "time" : {
+        "start" : 1578474136954,
+        "stop" : 1578474147794,
+        "duration" : 10840
+      }
+    }, {
       "uid" : "be2142946d8de151",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -44,15 +53,6 @@
         "stop" : 1578468591009,
         "duration" : 208
       }
-    }, {
-      "uid" : "624d53b0f44fde4e",
-      "status" : "broken",
-      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "time" : {
-        "start" : 1578467170816,
-        "stop" : 1578467171083,
-        "duration" : 267
-      }
     } ]
   },
   "e08b0d164fc9382ef6731b116cdf8d52" : {
@@ -60,11 +60,19 @@
       "failed" : 0,
       "broken" : 5,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 2,
       "unknown" : 0,
-      "total" : 6
+      "total" : 7
     },
     "items" : [ {
+      "uid" : "858029a5e5c6bfce",
+      "status" : "passed",
+      "time" : {
+        "start" : 1578474120393,
+        "stop" : 1578474136664,
+        "duration" : 16271
+      }
+    }, {
       "uid" : "d5d8c0c29510336",
       "status" : "passed",
       "time" : {
@@ -99,14 +107,25 @@
         "stop" : 1578468590461,
         "duration" : 6302
       }
-    }, {
-      "uid" : "ef5687c3a4933894",
+    } ]
+  },
+  "5f597435345e35fb411f50d1be4833c8" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a23d452663da002c",
       "status" : "broken",
       "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
       "time" : {
-        "start" : 1578467158032,
-        "stop" : 1578467170441,
-        "duration" : 12409
+        "start" : 1578474136921,
+        "stop" : 1578474136922,
+        "duration" : 1
       }
     } ]
   },
@@ -114,12 +133,21 @@
     "statistic" : {
       "failed" : 1,
       "broken" : 5,
-      "skipped" : 0,
+      "skipped" : 1,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 6
+      "total" : 7
     },
     "items" : [ {
+      "uid" : "b537ef5d3db1b51a",
+      "status" : "skipped",
+      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+      "time" : {
+        "start" : 1578474136942,
+        "stop" : 1578474136943,
+        "duration" : 1
+      }
+    }, {
       "uid" : "fc94554d61d98dbd",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -155,27 +183,27 @@
         "stop" : 1578468590792,
         "duration" : 204
       }
-    }, {
-      "uid" : "65c4e0434181c3a3",
-      "status" : "broken",
-      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "time" : {
-        "start" : 1578467170576,
-        "stop" : 1578467170800,
-        "duration" : 224
-      }
     } ]
   },
   "da2f4f38cd97d2872be6bcc061ddcfc8" : {
     "statistic" : {
-      "failed" : 1,
+      "failed" : 2,
       "broken" : 5,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 6
+      "total" : 7
     },
     "items" : [ {
+      "uid" : "2e24517ac98e1f87",
+      "status" : "failed",
+      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "time" : {
+        "start" : 1578474150931,
+        "stop" : 1578474161443,
+        "duration" : 10512
+      }
+    }, {
       "uid" : "2b05e8fea75e0b24",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -210,15 +238,6 @@
         "start" : 1578468591012,
         "stop" : 1578468591208,
         "duration" : 196
-      }
-    }, {
-      "uid" : "237de94a9deff5dc",
-      "status" : "broken",
-      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "time" : {
-        "start" : 1578467171088,
-        "stop" : 1578467171293,
-        "duration" : 205
       }
     } ]
   }

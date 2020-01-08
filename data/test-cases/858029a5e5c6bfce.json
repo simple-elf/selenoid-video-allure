@@ -1,12 +1,12 @@
 {
-  "uid" : "d5d8c0c29510336",
+  "uid" : "858029a5e5c6bfce",
   "name" : "test_3",
   "fullName" : "EasyTest.test_3",
   "historyId" : "e08b0d164fc9382ef6731b116cdf8d52",
   "time" : {
-    "start" : 1578472622745,
-    "stop" : 1578472651197,
-    "duration" : 28452
+    "start" : 1578474120393,
+    "stop" : 1578474136664,
+    "duration" : 16271
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,9 +14,9 @@
   "beforeStages" : [ {
     "name" : "beforeClass",
     "time" : {
-      "start" : 1578472622618,
-      "stop" : 1578472622646,
-      "duration" : 28
+      "start" : 1578474120272,
+      "stop" : 1578474120302,
+      "duration" : 30
     },
     "description" : "",
     "status" : "passed",
@@ -33,9 +33,9 @@
     "steps" : [ {
       "name" : "$(open) http://ya.ru",
       "time" : {
-        "start" : 1578472622798,
-        "stop" : 1578472644175,
-        "duration" : 21377
+        "start" : 1578474120439,
+        "stop" : 1578474129726,
+        "duration" : 9287
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,9 +48,9 @@
     }, {
       "name" : "$(#text) should be(visible)",
       "time" : {
-        "start" : 1578472645218,
-        "stop" : 1578472645348,
-        "duration" : 130
+        "start" : 1578474130777,
+        "stop" : 1578474130960,
+        "duration" : 183
       },
       "status" : "passed",
       "steps" : [ ],
@@ -63,9 +63,9 @@
     }, {
       "name" : "$(#text) set value(selenoid)",
       "time" : {
-        "start" : 1578472645349,
-        "stop" : 1578472645535,
-        "duration" : 186
+        "start" : 1578474130960,
+        "stop" : 1578474131225,
+        "duration" : 265
       },
       "status" : "passed",
       "steps" : [ ],
@@ -78,8 +78,8 @@
     }, {
       "name" : "$(by text: Найти) parent()",
       "time" : {
-        "start" : 1578472646538,
-        "stop" : 1578472646538,
+        "start" : 1578474132228,
+        "stop" : 1578474132228,
         "duration" : 0
       },
       "status" : "passed",
@@ -93,9 +93,9 @@
     }, {
       "name" : "$(By.xpath: ..) should be(visible)",
       "time" : {
-        "start" : 1578472646538,
-        "stop" : 1578472646663,
-        "duration" : 125
+        "start" : 1578474132228,
+        "stop" : 1578474132336,
+        "duration" : 108
       },
       "status" : "passed",
       "steps" : [ ],
@@ -108,9 +108,9 @@
     }, {
       "name" : "$(By.xpath: ..) click()",
       "time" : {
-        "start" : 1578472646663,
-        "stop" : 1578472646813,
-        "duration" : 150
+        "start" : 1578474132337,
+        "stop" : 1578474132649,
+        "duration" : 312
       },
       "status" : "passed",
       "steps" : [ ],
@@ -123,9 +123,9 @@
     }, {
       "name" : "$(div.content) should be(visible)",
       "time" : {
-        "start" : 1578472647813,
-        "stop" : 1578472649410,
-        "duration" : 1597
+        "start" : 1578474133650,
+        "stop" : 1578474134702,
+        "duration" : 1052
       },
       "status" : "passed",
       "steps" : [ ],
@@ -137,17 +137,17 @@
       "hasContent" : false
     } ],
     "attachments" : [ {
-      "uid" : "694530c17cb5c3f5",
+      "uid" : "12661f1d9b7cc9db",
       "name" : "Screenshot",
-      "source" : "694530c17cb5c3f5.png",
+      "source" : "12661f1d9b7cc9db.png",
       "type" : "image/png",
-      "size" : 331449
+      "size" : 265456
     }, {
-      "uid" : "40fe0f9566c363b7",
+      "uid" : "466e000815dbab9a",
       "name" : "Screenshot",
-      "source" : "40fe0f9566c363b7.png",
+      "source" : "466e000815dbab9a.png",
       "type" : "image/png",
-      "size" : 74563
+      "size" : 268734
     } ],
     "parameters" : [ ],
     "stepsCount" : 7,
@@ -155,7 +155,25 @@
     "shouldDisplayMessage" : false,
     "hasContent" : true
   },
-  "afterStages" : [ ],
+  "afterStages" : [ {
+    "name" : "saveVideo",
+    "time" : {
+      "start" : 1578474136888,
+      "stop" : 1578474136890,
+      "duration" : 2
+    },
+    "description" : "",
+    "status" : "broken",
+    "statusMessage" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+    "statusTrace" : "java.lang.IllegalStateException: No webdriver is bound to current thread: 1. You need to call open(url) first.\n\tat com.codeborne.selenide.drivercommands.LazyDriver.getWebDriver(LazyDriver.java:67)\n\tat com.codeborne.selenide.SelenideDriver.getWebDriver(SelenideDriver.java:143)\n\tat com.codeborne.selenide.impl.WebDriverThreadLocalContainer.getWebDriver(WebDriverThreadLocalContainer.java:68)\n\tat com.codeborne.selenide.WebDriverRunner.getWebDriver(WebDriverRunner.java:71)\n\tat BaseTestClass.getSessionId(BaseTestClass.java:166)\n\tat BaseTestClass.saveVideo(BaseTestClass.java:51)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)\n\tat org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)\n\tat org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)\n\tat org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)\n\tat org.testng.internal.Invoker.invokeMethod(Invoker.java:646)\n\tat org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)\n\tat org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)\n\tat org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)\n\tat org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)\n\tat org.testng.TestRunner.privateRun(TestRunner.java:648)\n\tat org.testng.TestRunner.run(TestRunner.java:505)\n\tat org.testng.SuiteRunner.runTest(SuiteRunner.java:455)\n\tat org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)\n\tat org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)\n\tat org.testng.SuiteRunner.run(SuiteRunner.java:364)\n\tat org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)\n\tat org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)\n\tat org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)\n\tat org.testng.TestNG.runSuitesLocally(TestNG.java:1137)\n\tat org.testng.TestNG.runSuites(TestNG.java:1049)\n\tat org.testng.TestNG.run(TestNG.java:1017)\n\tat org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)\n\tat org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)\n\tat org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)\n\tat org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)\n\tat org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)\n\tat org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)\n",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  } ],
   "labels" : [ {
     "name" : "package",
     "value" : "EasyTest"
@@ -176,10 +194,10 @@
     "value" : "EasyTest"
   }, {
     "name" : "host",
-    "value" : "fv-az59"
+    "value" : "fv-az60"
   }, {
     "name" : "thread",
-    "value" : "2614@fv-az59.main(1)"
+    "value" : "3401@fv-az60.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -206,11 +224,19 @@
         "failed" : 0,
         "broken" : 5,
         "skipped" : 0,
-        "passed" : 1,
+        "passed" : 2,
         "unknown" : 0,
-        "total" : 6
+        "total" : 7
       },
       "items" : [ {
+        "uid" : "d5d8c0c29510336",
+        "status" : "passed",
+        "time" : {
+          "start" : 1578472622745,
+          "stop" : 1578472651197,
+          "duration" : 28452
+        }
+      }, {
         "uid" : "d1c9f3b8183432e6",
         "status" : "broken",
         "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -246,19 +272,10 @@
           "stop" : 1578467170441,
           "duration" : 12409
         }
-      }, {
-        "uid" : "e50d0e50b0e70799",
-        "status" : "broken",
-        "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-        "time" : {
-          "start" : 1578325720451,
-          "stop" : 1578325732409,
-          "duration" : 11958
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "d5d8c0c29510336.json",
+  "source" : "858029a5e5c6bfce.json",
   "parameterValues" : [ ]
 }
