@@ -1,12 +1,12 @@
 {
-  "uid" : "8c47bad07b83cd4",
+  "uid" : "b50d6e31d5ab8cb8",
   "name" : "test_1",
   "fullName" : "SimpleTest.test_1",
   "historyId" : "8ced8c7659dacd37a192bd01347caf17",
   "time" : {
-    "start" : 1578469646714,
-    "stop" : 1578469646935,
-    "duration" : 221
+    "start" : 1578471163313,
+    "stop" : 1578471163535,
+    "duration" : 222
   },
   "status" : "broken",
   "statusMessage" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -16,9 +16,9 @@
   "beforeStages" : [ {
     "name" : "beforeClass",
     "time" : {
-      "start" : 1578469646711,
-      "stop" : 1578469646712,
-      "duration" : 1
+      "start" : 1578471163305,
+      "stop" : 1578471163305,
+      "duration" : 0
     },
     "description" : "",
     "status" : "passed",
@@ -35,10 +35,10 @@
     "statusMessage" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
     "statusTrace" : "java.lang.AbstractMethodError: io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V\n\tat com.codeborne.selenide.logevents.SelenideLogger.commitStep(SelenideLogger.java:64)\n\tat com.codeborne.selenide.logevents.SelenideLogger.commitStep(SelenideLogger.java:56)\n\tat com.codeborne.selenide.drivercommands.Navigator.navigateTo(Navigator.java:73)\n\tat com.codeborne.selenide.drivercommands.Navigator.open(Navigator.java:24)\n\tat com.codeborne.selenide.SelenideDriver.open(SelenideDriver.java:59)\n\tat com.codeborne.selenide.Selenide.open(Selenide.java:39)\n\tat EasyTest.test_do(EasyTest.java:32)\n\tat SimpleTest.test_1(SimpleTest.java:16)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)\n\tat org.testng.internal.Invoker.invokeMethod(Invoker.java:583)\n\tat org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)\n\tat org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)\n\tat org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)\n\tat org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)\n\tat org.testng.TestRunner.privateRun(TestRunner.java:648)\n\tat org.testng.TestRunner.run(TestRunner.java:505)\n\tat org.testng.SuiteRunner.runTest(SuiteRunner.java:455)\n\tat org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)\n\tat org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)\n\tat org.testng.SuiteRunner.run(SuiteRunner.java:364)\n\tat org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)\n\tat org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)\n\tat org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)\n\tat org.testng.TestNG.runSuitesLocally(TestNG.java:1137)\n\tat org.testng.TestNG.runSuites(TestNG.java:1049)\n\tat org.testng.TestNG.run(TestNG.java:1017)\n\tat org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)\n\tat org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)\n\tat org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)\n\tat org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)\n\tat org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:379)\n\tat org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:340)\n\tat org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:125)\n\tat org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:413)\n",
     "steps" : [ {
-      "name" : "ChromeDriver error: unknown error: Chrome failed to start: exited abnormally\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az59', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.0.0-1027-azure', java.version: '1.8.0_232'\nDriver info: driver.version: SelenideDriver\nremote stacktrace: #0 0x55d677186859 <unknown>\n",
+      "name" : "ChromeDriver error: unknown error: Chrome failed to start: exited abnormally\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az92', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.0.0-1027-azure', java.version: '1.8.0_232'\nDriver info: driver.version: SelenideDriver\nremote stacktrace: #0 0x5615cd6cd859 <unknown>\n",
       "time" : {
-        "start" : 1578469646923,
-        "stop" : 1578469646923,
+        "start" : 1578471163534,
+        "stop" : 1578471163534,
         "duration" : 0
       },
       "status" : "failed",
@@ -78,10 +78,10 @@
     "value" : "SimpleTest"
   }, {
     "name" : "host",
-    "value" : "fv-az59"
+    "value" : "fv-az92"
   }, {
     "name" : "thread",
-    "value" : "2707@fv-az59.main(1)"
+    "value" : "2880@fv-az92.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -110,13 +110,22 @@
     "history" : {
       "statistic" : {
         "failed" : 0,
-        "broken" : 4,
+        "broken" : 5,
         "skipped" : 0,
         "passed" : 0,
         "unknown" : 0,
-        "total" : 4
+        "total" : 5
       },
       "items" : [ {
+        "uid" : "8c47bad07b83cd4",
+        "status" : "broken",
+        "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+        "time" : {
+          "start" : 1578469646714,
+          "stop" : 1578469646935,
+          "duration" : 221
+        }
+      }, {
         "uid" : "ad121bdefaef3d74",
         "status" : "broken",
         "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -147,6 +156,6 @@
     },
     "tags" : [ ]
   },
-  "source" : "8c47bad07b83cd4.json",
+  "source" : "b50d6e31d5ab8cb8.json",
   "parameterValues" : [ ]
 }
