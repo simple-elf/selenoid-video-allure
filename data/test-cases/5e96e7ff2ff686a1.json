@@ -1,12 +1,12 @@
 {
-  "uid" : "92e74f0ac91c42e9",
+  "uid" : "5e96e7ff2ff686a1",
   "name" : "test_3",
   "fullName" : "EasyTest.test_3",
   "historyId" : "e08b0d164fc9382ef6731b116cdf8d52",
   "time" : {
-    "start" : 1578474570559,
-    "stop" : 1578474584323,
-    "duration" : 13764
+    "start" : 1578494146264,
+    "stop" : 1578494163565,
+    "duration" : 17301
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,9 +14,9 @@
   "beforeStages" : [ {
     "name" : "beforeClass",
     "time" : {
-      "start" : 1578474570428,
-      "stop" : 1578474570464,
-      "duration" : 36
+      "start" : 1578494146132,
+      "stop" : 1578494146169,
+      "duration" : 37
     },
     "description" : "",
     "status" : "passed",
@@ -33,9 +33,9 @@
     "steps" : [ {
       "name" : "$(open) http://ya.ru",
       "time" : {
-        "start" : 1578474570615,
-        "stop" : 1578474577742,
-        "duration" : 7127
+        "start" : 1578494146316,
+        "stop" : 1578494156240,
+        "duration" : 9924
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,9 +48,9 @@
     }, {
       "name" : "$(#text) should be(visible)",
       "time" : {
-        "start" : 1578474578786,
-        "stop" : 1578474579018,
-        "duration" : 232
+        "start" : 1578494157333,
+        "stop" : 1578494157574,
+        "duration" : 241
       },
       "status" : "passed",
       "steps" : [ ],
@@ -63,9 +63,9 @@
     }, {
       "name" : "$(#text) set value(selenoid)",
       "time" : {
-        "start" : 1578474579019,
-        "stop" : 1578474579268,
-        "duration" : 249
+        "start" : 1578494157574,
+        "stop" : 1578494158162,
+        "duration" : 588
       },
       "status" : "passed",
       "steps" : [ ],
@@ -78,8 +78,8 @@
     }, {
       "name" : "$(by text: Найти) parent()",
       "time" : {
-        "start" : 1578474580271,
-        "stop" : 1578474580271,
+        "start" : 1578494159165,
+        "stop" : 1578494159165,
         "duration" : 0
       },
       "status" : "passed",
@@ -93,9 +93,9 @@
     }, {
       "name" : "$(By.xpath: ..) should be(visible)",
       "time" : {
-        "start" : 1578474580272,
-        "stop" : 1578474580352,
-        "duration" : 80
+        "start" : 1578494159165,
+        "stop" : 1578494159326,
+        "duration" : 161
       },
       "status" : "passed",
       "steps" : [ ],
@@ -108,9 +108,9 @@
     }, {
       "name" : "$(By.xpath: ..) click()",
       "time" : {
-        "start" : 1578474580353,
-        "stop" : 1578474580559,
-        "duration" : 206
+        "start" : 1578494159326,
+        "stop" : 1578494159592,
+        "duration" : 266
       },
       "status" : "passed",
       "steps" : [ ],
@@ -123,9 +123,9 @@
     }, {
       "name" : "$(div.content) should be(visible)",
       "time" : {
-        "start" : 1578474581560,
-        "stop" : 1578474582456,
-        "duration" : 896
+        "start" : 1578494160593,
+        "stop" : 1578494161575,
+        "duration" : 982
       },
       "status" : "passed",
       "steps" : [ ],
@@ -137,17 +137,17 @@
       "hasContent" : false
     } ],
     "attachments" : [ {
-      "uid" : "430121f2a47ca3a2",
+      "uid" : "81fa4deae8c8af62",
       "name" : "Screenshot",
-      "source" : "430121f2a47ca3a2.png",
+      "source" : "81fa4deae8c8af62.png",
       "type" : "image/png",
-      "size" : 265456
+      "size" : 259846
     }, {
-      "uid" : "4589124e776d0046",
+      "uid" : "dc4ad2cc8e7de85c",
       "name" : "Screenshot",
-      "source" : "4589124e776d0046.png",
+      "source" : "dc4ad2cc8e7de85c.png",
       "type" : "image/png",
-      "size" : 268734
+      "size" : 274561
     } ],
     "parameters" : [ ],
     "stepsCount" : 7,
@@ -158,19 +158,19 @@
   "afterStages" : [ {
     "name" : "saveVideo",
     "time" : {
-      "start" : 1578474584480,
-      "stop" : 1578474587658,
-      "duration" : 3178
+      "start" : 1578494163765,
+      "stop" : 1578494169913,
+      "duration" : 6148
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "e5403a4984cddf72",
+      "uid" : "a14e0381b4fe0de6",
       "name" : "Video",
-      "source" : "e5403a4984cddf72.mp4",
+      "source" : "a14e0381b4fe0de6.mp4",
       "type" : "video/mp4",
-      "size" : 24979
+      "size" : 259161
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
@@ -198,10 +198,10 @@
     "value" : "EasyTest"
   }, {
     "name" : "host",
-    "value" : "fv-az12"
+    "value" : "fv-az59"
   }, {
     "name" : "thread",
-    "value" : "3621@fv-az12.main(1)"
+    "value" : "3472@fv-az59.main(1)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -228,11 +228,19 @@
         "failed" : 0,
         "broken" : 5,
         "skipped" : 0,
-        "passed" : 3,
+        "passed" : 4,
         "unknown" : 0,
-        "total" : 8
+        "total" : 9
       },
       "items" : [ {
+        "uid" : "92e74f0ac91c42e9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1578474570559,
+          "stop" : 1578474584323,
+          "duration" : 13764
+        }
+      }, {
         "uid" : "858029a5e5c6bfce",
         "status" : "passed",
         "time" : {
@@ -266,19 +274,10 @@
           "stop" : 1578469646366,
           "duration" : 5838
         }
-      }, {
-        "uid" : "5598b58e980f6453",
-        "status" : "broken",
-        "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
-        "time" : {
-          "start" : 1578468584159,
-          "stop" : 1578468590461,
-          "duration" : 6302
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "92e74f0ac91c42e9.json",
+  "source" : "5e96e7ff2ff686a1.json",
   "parameterValues" : [ ]
 }
