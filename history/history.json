@@ -2,13 +2,22 @@
   "8ced8c7659dacd37a192bd01347caf17" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 3,
+      "broken" : 4,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 3
+      "total" : 4
     },
     "items" : [ {
+      "uid" : "8c47bad07b83cd4",
+      "status" : "broken",
+      "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+      "time" : {
+        "start" : 1578469646714,
+        "stop" : 1578469646935,
+        "duration" : 221
+      }
+    }, {
       "uid" : "ad121bdefaef3d74",
       "status" : "broken",
       "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -40,13 +49,22 @@
   "e08b0d164fc9382ef6731b116cdf8d52" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 3,
+      "broken" : 4,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 3
+      "total" : 4
     },
     "items" : [ {
+      "uid" : "b8b43b588617f089",
+      "status" : "broken",
+      "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+      "time" : {
+        "start" : 1578469640528,
+        "stop" : 1578469646366,
+        "duration" : 5838
+      }
+    }, {
       "uid" : "5598b58e980f6453",
       "status" : "broken",
       "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -78,13 +96,22 @@
   "40f03c6a9652c83ee42175fe25edce63" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 3,
+      "broken" : 4,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 3
+      "total" : 4
     },
     "items" : [ {
+      "uid" : "dab86efd0b1cad86",
+      "status" : "broken",
+      "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+      "time" : {
+        "start" : 1578469646467,
+        "stop" : 1578469646706,
+        "duration" : 239
+      }
+    }, {
       "uid" : "f4d0ab4a5acb14cf",
       "status" : "broken",
       "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -116,13 +143,22 @@
   "da2f4f38cd97d2872be6bcc061ddcfc8" : {
     "statistic" : {
       "failed" : 0,
-      "broken" : 3,
+      "broken" : 4,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 3
+      "total" : 4
     },
     "items" : [ {
+      "uid" : "89ea5d759d44ce5b",
+      "status" : "broken",
+      "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+      "time" : {
+        "start" : 1578469646937,
+        "stop" : 1578469647170,
+        "duration" : 233
+      }
+    }, {
       "uid" : "92ed8cbe32d5c511",
       "status" : "broken",
       "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
