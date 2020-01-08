@@ -1,0 +1,264 @@
+{
+  "uid" : "d5d8c0c29510336",
+  "name" : "test_3",
+  "fullName" : "EasyTest.test_3",
+  "historyId" : "e08b0d164fc9382ef6731b116cdf8d52",
+  "time" : {
+    "start" : 1578472622745,
+    "stop" : 1578472651197,
+    "duration" : 28452
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeClass",
+    "time" : {
+      "start" : 1578472622618,
+      "stop" : 1578472622646,
+      "duration" : 28
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(open) http://ya.ru",
+      "time" : {
+        "start" : 1578472622798,
+        "stop" : 1578472644175,
+        "duration" : 21377
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(#text) should be(visible)",
+      "time" : {
+        "start" : 1578472645218,
+        "stop" : 1578472645348,
+        "duration" : 130
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(#text) set value(selenoid)",
+      "time" : {
+        "start" : 1578472645349,
+        "stop" : 1578472645535,
+        "duration" : 186
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(by text: Найти) parent()",
+      "time" : {
+        "start" : 1578472646538,
+        "stop" : 1578472646538,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(By.xpath: ..) should be(visible)",
+      "time" : {
+        "start" : 1578472646538,
+        "stop" : 1578472646663,
+        "duration" : 125
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(By.xpath: ..) click()",
+      "time" : {
+        "start" : 1578472646663,
+        "stop" : 1578472646813,
+        "duration" : 150
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(div.content) should be(visible)",
+      "time" : {
+        "start" : 1578472647813,
+        "stop" : 1578472649410,
+        "duration" : 1597
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "694530c17cb5c3f5",
+      "name" : "Screenshot",
+      "source" : "694530c17cb5c3f5.png",
+      "type" : "image/png",
+      "size" : 331449
+    }, {
+      "uid" : "40fe0f9566c363b7",
+      "name" : "Screenshot",
+      "source" : "40fe0f9566c363b7.png",
+      "type" : "image/png",
+      "size" : 74563
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "EasyTest"
+  }, {
+    "name" : "testClass",
+    "value" : "EasyTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_3"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "EasyTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az59"
+  }, {
+    "name" : "thread",
+    "value" : "2614@fv-az59.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ {
+    "name" : "http://ya.ru",
+    "type" : "custom"
+  } ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 5,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "d1c9f3b8183432e6",
+        "status" : "broken",
+        "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+        "time" : {
+          "start" : 1578471157901,
+          "stop" : 1578471162932,
+          "duration" : 5031
+        }
+      }, {
+        "uid" : "b8b43b588617f089",
+        "status" : "broken",
+        "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+        "time" : {
+          "start" : 1578469640528,
+          "stop" : 1578469646366,
+          "duration" : 5838
+        }
+      }, {
+        "uid" : "5598b58e980f6453",
+        "status" : "broken",
+        "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+        "time" : {
+          "start" : 1578468584159,
+          "stop" : 1578468590461,
+          "duration" : 6302
+        }
+      }, {
+        "uid" : "ef5687c3a4933894",
+        "status" : "broken",
+        "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+        "time" : {
+          "start" : 1578467158032,
+          "stop" : 1578467170441,
+          "duration" : 12409
+        }
+      }, {
+        "uid" : "e50d0e50b0e70799",
+        "status" : "broken",
+        "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
+        "time" : {
+          "start" : 1578325720451,
+          "stop" : 1578325732409,
+          "duration" : 11958
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "d5d8c0c29510336.json",
+  "parameterValues" : [ ]
+}

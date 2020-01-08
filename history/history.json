@@ -1,14 +1,23 @@
 {
   "8ced8c7659dacd37a192bd01347caf17" : {
     "statistic" : {
-      "failed" : 0,
+      "failed" : 1,
       "broken" : 5,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 5
+      "total" : 6
     },
     "items" : [ {
+      "uid" : "be2142946d8de151",
+      "status" : "failed",
+      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "time" : {
+        "start" : 1578472660323,
+        "stop" : 1578472667423,
+        "duration" : 7100
+      }
+    }, {
       "uid" : "b50d6e31d5ab8cb8",
       "status" : "broken",
       "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -44,15 +53,6 @@
         "stop" : 1578467171083,
         "duration" : 267
       }
-    }, {
-      "uid" : "b19674dfc6729da",
-      "status" : "broken",
-      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "time" : {
-        "start" : 1578325732794,
-        "stop" : 1578325733037,
-        "duration" : 243
-      }
     } ]
   },
   "e08b0d164fc9382ef6731b116cdf8d52" : {
@@ -60,11 +60,19 @@
       "failed" : 0,
       "broken" : 5,
       "skipped" : 0,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
-      "total" : 5
+      "total" : 6
     },
     "items" : [ {
+      "uid" : "d5d8c0c29510336",
+      "status" : "passed",
+      "time" : {
+        "start" : 1578472622745,
+        "stop" : 1578472651197,
+        "duration" : 28452
+      }
+    }, {
       "uid" : "d1c9f3b8183432e6",
       "status" : "broken",
       "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -100,27 +108,27 @@
         "stop" : 1578467170441,
         "duration" : 12409
       }
-    }, {
-      "uid" : "e50d0e50b0e70799",
-      "status" : "broken",
-      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "time" : {
-        "start" : 1578325720451,
-        "stop" : 1578325732409,
-        "duration" : 11958
-      }
     } ]
   },
   "40f03c6a9652c83ee42175fe25edce63" : {
     "statistic" : {
-      "failed" : 0,
+      "failed" : 1,
       "broken" : 5,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 5
+      "total" : 6
     },
     "items" : [ {
+      "uid" : "fc94554d61d98dbd",
+      "status" : "failed",
+      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "time" : {
+        "start" : 1578472651344,
+        "stop" : 1578472660314,
+        "duration" : 8970
+      }
+    }, {
       "uid" : "15ce0e6962c70dca",
       "status" : "broken",
       "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -156,27 +164,27 @@
         "stop" : 1578467170800,
         "duration" : 224
       }
-    }, {
-      "uid" : "b55b9bcb7d9811df",
-      "status" : "broken",
-      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "time" : {
-        "start" : 1578325732561,
-        "stop" : 1578325732778,
-        "duration" : 217
-      }
     } ]
   },
   "da2f4f38cd97d2872be6bcc061ddcfc8" : {
     "statistic" : {
-      "failed" : 0,
+      "failed" : 1,
       "broken" : 5,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 5
+      "total" : 6
     },
     "items" : [ {
+      "uid" : "2b05e8fea75e0b24",
+      "status" : "failed",
+      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "time" : {
+        "start" : 1578472667428,
+        "stop" : 1578472674494,
+        "duration" : 7066
+      }
+    }, {
       "uid" : "69030fc2e083c3b0",
       "status" : "broken",
       "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
@@ -211,15 +219,6 @@
         "start" : 1578467171088,
         "stop" : 1578467171293,
         "duration" : 205
-      }
-    }, {
-      "uid" : "a79636be78aeed2b",
-      "status" : "broken",
-      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "time" : {
-        "start" : 1578325733039,
-        "stop" : 1578325733298,
-        "duration" : 259
       }
     } ]
   }

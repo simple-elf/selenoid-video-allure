@@ -1,65 +1,52 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "children" : [ {
-    "name" : "Test defects",
+    "name" : "Product defects",
     "children" : [ {
-      "name" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+      "name" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
       "children" : [ {
-        "name" : "test_3",
-        "uid" : "d1c9f3b8183432e6",
-        "parentUid" : "63bb674721e178162cf5f3f3304f4b50",
-        "status" : "broken",
-        "time" : {
-          "start" : 1578471157901,
-          "stop" : 1578471162932,
-          "duration" : 5031
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      }, {
         "name" : "test_4",
-        "uid" : "15ce0e6962c70dca",
-        "parentUid" : "63bb674721e178162cf5f3f3304f4b50",
-        "status" : "broken",
+        "uid" : "fc94554d61d98dbd",
+        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
+        "status" : "failed",
         "time" : {
-          "start" : 1578471163081,
-          "stop" : 1578471163293,
-          "duration" : 212
+          "start" : 1578472651344,
+          "stop" : 1578472660314,
+          "duration" : 8970
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "test_1",
-        "uid" : "b50d6e31d5ab8cb8",
-        "parentUid" : "63bb674721e178162cf5f3f3304f4b50",
-        "status" : "broken",
+        "uid" : "be2142946d8de151",
+        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
+        "status" : "failed",
         "time" : {
-          "start" : 1578471163313,
-          "stop" : 1578471163535,
-          "duration" : 222
+          "start" : 1578472660323,
+          "stop" : 1578472667423,
+          "duration" : 7100
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
         "name" : "test_2",
-        "uid" : "69030fc2e083c3b0",
-        "parentUid" : "63bb674721e178162cf5f3f3304f4b50",
-        "status" : "broken",
+        "uid" : "2b05e8fea75e0b24",
+        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
+        "status" : "failed",
         "time" : {
-          "start" : 1578471163537,
-          "stop" : 1578471163763,
-          "duration" : 226
+          "start" : 1578472667428,
+          "stop" : 1578472674494,
+          "duration" : 7066
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "63bb674721e178162cf5f3f3304f4b50"
+      "uid" : "2da48e01a39d49d856eff44740f6e489"
     } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
   } ],
   "name" : "categories"
 }
