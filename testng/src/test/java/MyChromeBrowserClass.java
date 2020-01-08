@@ -46,8 +46,8 @@ public class MyChromeBrowserClass implements WebDriverProvider {
         //chromeOptions.addArguments("disable-popup-blocking", "true");
 
         //chromeOptions.addArguments("--enable-logging=stderr --v=1");
-        if (BaseTestClass.isUnix())
-            chromeOptions.setBinary("/usr/bin/google-chrome");
+        //if (BaseTestClass.isUnix())
+        //    chromeOptions.setBinary("/usr/bin/google-chrome");
 
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("credentials_enable_service", false);

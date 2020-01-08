@@ -40,7 +40,7 @@ public class EasyTest extends BaseTestClass {
         AllureHelpers.takeScreenshot();
         getWebDriver().manage().window().maximize();
         AllureHelpers.takeScreenshot();
-        close();
+        //close();
     }
 
 }
