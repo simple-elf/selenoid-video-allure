@@ -4,15 +4,15 @@ on:
   push:
     branches-ignore:
     - '!master' # Push events to branches matching allure-report
-    paths-ignore:
-    - 'docs/**'
+    #paths-ignore:
+    #- 'docs/**'
 
 jobs:
   autotests:
     name: Run autotests on selenoid
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
 
       - uses: actions/cache@v1
         with:
@@ -62,7 +62,7 @@ jobs:
           path: testng/target/site/allure-maven-plugin
 
       - name: Deploy report to Github Pages
-        uses: JamesIves/github-pages-deploy-action@3.1.2
+        uses: JamesIves/github-pages-deploy-action@3.1.0
         #if: always()
         with:
           #ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
@@ -70,3 +70,4 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: testng/target/site/allure-maven-plugin # The folder the action should deploy.
           #TARGET_FOLDER: docs
+          CLEAN: true
