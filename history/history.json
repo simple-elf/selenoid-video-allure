@@ -1,14 +1,23 @@
 {
   "8ced8c7659dacd37a192bd01347caf17" : {
     "statistic" : {
-      "failed" : 4,
+      "failed" : 5,
       "broken" : 5,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 9
+      "total" : 10
     },
     "items" : [ {
+      "uid" : "622bd5bbdce1fe23",
+      "status" : "failed",
+      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "time" : {
+        "start" : 1578557988338,
+        "stop" : 1578557998477,
+        "duration" : 10139
+      }
+    }, {
       "uid" : "95c3088127f6e2f9",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -44,15 +53,6 @@
         "stop" : 1578472667423,
         "duration" : 7100
       }
-    }, {
-      "uid" : "b50d6e31d5ab8cb8",
-      "status" : "broken",
-      "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
-      "time" : {
-        "start" : 1578471163313,
-        "stop" : 1578471163535,
-        "duration" : 222
-      }
     } ]
   },
   "e08b0d164fc9382ef6731b116cdf8d52" : {
@@ -60,11 +60,19 @@
       "failed" : 0,
       "broken" : 5,
       "skipped" : 0,
-      "passed" : 4,
+      "passed" : 5,
       "unknown" : 0,
-      "total" : 9
+      "total" : 10
     },
     "items" : [ {
+      "uid" : "dbdffa9cb4f2cbc4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1578557949212,
+        "stop" : 1578557965094,
+        "duration" : 15882
+      }
+    }, {
       "uid" : "5e96e7ff2ff686a1",
       "status" : "passed",
       "time" : {
@@ -96,15 +104,6 @@
         "stop" : 1578472651197,
         "duration" : 28452
       }
-    }, {
-      "uid" : "d1c9f3b8183432e6",
-      "status" : "broken",
-      "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
-      "time" : {
-        "start" : 1578471157901,
-        "stop" : 1578471162932,
-        "duration" : 5031
-      }
     } ]
   },
   "5f597435345e35fb411f50d1be4833c8" : {
@@ -129,14 +128,23 @@
   },
   "40f03c6a9652c83ee42175fe25edce63" : {
     "statistic" : {
-      "failed" : 3,
+      "failed" : 4,
       "broken" : 5,
       "skipped" : 1,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 9
+      "total" : 10
     },
     "items" : [ {
+      "uid" : "c5020865486793ee",
+      "status" : "failed",
+      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "time" : {
+        "start" : 1578557971545,
+        "stop" : 1578557982129,
+        "duration" : 10584
+      }
+    }, {
       "uid" : "44c07d4f3b3c30b7",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -172,27 +180,27 @@
         "stop" : 1578472660314,
         "duration" : 8970
       }
-    }, {
-      "uid" : "15ce0e6962c70dca",
-      "status" : "broken",
-      "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
-      "time" : {
-        "start" : 1578471163081,
-        "stop" : 1578471163293,
-        "duration" : 212
-      }
     } ]
   },
   "da2f4f38cd97d2872be6bcc061ddcfc8" : {
     "statistic" : {
-      "failed" : 4,
+      "failed" : 5,
       "broken" : 5,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 9
+      "total" : 10
     },
     "items" : [ {
+      "uid" : "b49f4d646435c9cc",
+      "status" : "failed",
+      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+      "time" : {
+        "start" : 1578558004591,
+        "stop" : 1578558014855,
+        "duration" : 10264
+      }
+    }, {
       "uid" : "3e46366e26de33fd",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -227,15 +235,6 @@
         "start" : 1578472667428,
         "stop" : 1578472674494,
         "duration" : 7066
-      }
-    }, {
-      "uid" : "69030fc2e083c3b0",
-      "status" : "broken",
-      "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
-      "time" : {
-        "start" : 1578471163537,
-        "stop" : 1578471163763,
-        "duration" : 226
       }
     } ]
   }
