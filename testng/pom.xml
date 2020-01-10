@@ -86,9 +86,9 @@
                         -Dfile.encoding=UTF-8
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <!--<parallel>classes</parallel>
-                    <threadCount>2</threadCount>
-                    <forkCount>2</forkCount>-->
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                    <forkCount>4</forkCount>
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                         <video.enabled>${video.enabled}</video.enabled>
