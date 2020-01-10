@@ -1,12 +1,12 @@
 {
-  "uid" : "dbdffa9cb4f2cbc4",
-  "name" : "test_3",
-  "fullName" : "EasyTest.test_3",
-  "historyId" : "e08b0d164fc9382ef6731b116cdf8d52",
+  "uid" : "963035ee37727d64",
+  "name" : "test_1",
+  "fullName" : "SimpleTest.test_1",
+  "historyId" : "8ced8c7659dacd37a192bd01347caf17",
   "time" : {
-    "start" : 1578557949212,
-    "stop" : 1578557965094,
-    "duration" : 15882
+    "start" : 1578632682634,
+    "stop" : 1578632716179,
+    "duration" : 33545
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,9 +14,9 @@
   "beforeStages" : [ {
     "name" : "beforeClass",
     "time" : {
-      "start" : 1578557949071,
-      "stop" : 1578557949109,
-      "duration" : 38
+      "start" : 1578632682437,
+      "stop" : 1578632682498,
+      "duration" : 61
     },
     "description" : "",
     "status" : "passed",
@@ -33,9 +33,9 @@
     "steps" : [ {
       "name" : "$(open) http://ya.ru",
       "time" : {
-        "start" : 1578557949264,
-        "stop" : 1578557957644,
-        "duration" : 8380
+        "start" : 1578632682709,
+        "stop" : 1578632698225,
+        "duration" : 15516
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,9 +48,9 @@
     }, {
       "name" : "$(#text) should be(visible)",
       "time" : {
-        "start" : 1578557958758,
-        "stop" : 1578557958995,
-        "duration" : 237
+        "start" : 1578632699327,
+        "stop" : 1578632699657,
+        "duration" : 330
       },
       "status" : "passed",
       "steps" : [ ],
@@ -63,9 +63,9 @@
     }, {
       "name" : "$(#text) set value(selenoid)",
       "time" : {
-        "start" : 1578557958996,
-        "stop" : 1578557959574,
-        "duration" : 578
+        "start" : 1578632699657,
+        "stop" : 1578632700673,
+        "duration" : 1016
       },
       "status" : "passed",
       "steps" : [ ],
@@ -78,8 +78,8 @@
     }, {
       "name" : "$(by text: Найти) parent()",
       "time" : {
-        "start" : 1578557960577,
-        "stop" : 1578557960577,
+        "start" : 1578632701676,
+        "stop" : 1578632701676,
         "duration" : 0
       },
       "status" : "passed",
@@ -93,9 +93,9 @@
     }, {
       "name" : "$(By.xpath: ..) should be(visible)",
       "time" : {
-        "start" : 1578557960578,
-        "stop" : 1578557960724,
-        "duration" : 146
+        "start" : 1578632701676,
+        "stop" : 1578632701899,
+        "duration" : 223
       },
       "status" : "passed",
       "steps" : [ ],
@@ -108,9 +108,9 @@
     }, {
       "name" : "$(By.xpath: ..) click()",
       "time" : {
-        "start" : 1578557960724,
-        "stop" : 1578557960948,
-        "duration" : 224
+        "start" : 1578632701899,
+        "stop" : 1578632707426,
+        "duration" : 5527
       },
       "status" : "passed",
       "steps" : [ ],
@@ -123,9 +123,9 @@
     }, {
       "name" : "$(div.content) should be(visible)",
       "time" : {
-        "start" : 1578557961948,
-        "stop" : 1578557963027,
-        "duration" : 1079
+        "start" : 1578632708427,
+        "stop" : 1578632713665,
+        "duration" : 5238
       },
       "status" : "passed",
       "steps" : [ ],
@@ -137,17 +137,17 @@
       "hasContent" : false
     } ],
     "attachments" : [ {
-      "uid" : "3e71e85ba5295bcd",
+      "uid" : "6aeb804d15ba220e",
       "name" : "Screenshot",
-      "source" : "3e71e85ba5295bcd.png",
+      "source" : "6aeb804d15ba220e.png",
       "type" : "image/png",
-      "size" : 265912
+      "size" : 261185
     }, {
-      "uid" : "1a05fa2b4efd27ae",
+      "uid" : "188132678f676b76",
       "name" : "Screenshot",
-      "source" : "1a05fa2b4efd27ae.png",
+      "source" : "188132678f676b76.png",
       "type" : "image/png",
-      "size" : 269242
+      "size" : 263883
     } ],
     "parameters" : [ ],
     "stepsCount" : 7,
@@ -158,19 +158,19 @@
   "afterStages" : [ {
     "name" : "saveVideo",
     "time" : {
-      "start" : 1578557965289,
-      "stop" : 1578557971526,
-      "duration" : 6237
+      "start" : 1578632716230,
+      "stop" : 1578632722430,
+      "duration" : 6200
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "9623f342392129b2",
+      "uid" : "106c3dbf88b3b06a",
       "name" : "Video",
-      "source" : "9623f342392129b2.mp4",
+      "source" : "106c3dbf88b3b06a.mp4",
       "type" : "video/mp4",
-      "size" : 271495
+      "size" : 271304
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
@@ -180,13 +180,13 @@
   } ],
   "labels" : [ {
     "name" : "package",
-    "value" : "EasyTest"
+    "value" : "SimpleTest"
   }, {
     "name" : "testClass",
-    "value" : "EasyTest"
+    "value" : "SimpleTest"
   }, {
     "name" : "testMethod",
-    "value" : "test_3"
+    "value" : "test_1"
   }, {
     "name" : "parentSuite",
     "value" : "Surefire suite"
@@ -195,13 +195,13 @@
     "value" : "Surefire test"
   }, {
     "name" : "subSuite",
-    "value" : "EasyTest"
+    "value" : "SimpleTest"
   }, {
     "name" : "host",
-    "value" : "fv-az89"
+    "value" : "fv-az88"
   }, {
     "name" : "thread",
-    "value" : "3396@fv-az89.main(1)"
+    "value" : "3588@fv-az88.TestNG-test=Surefire test-1(12)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -225,58 +225,62 @@
     "categories" : [ ],
     "history" : {
       "statistic" : {
-        "failed" : 0,
+        "failed" : 5,
         "broken" : 5,
         "skipped" : 0,
-        "passed" : 5,
+        "passed" : 1,
         "unknown" : 0,
-        "total" : 10
+        "total" : 11
       },
       "items" : [ {
-        "uid" : "5e96e7ff2ff686a1",
-        "status" : "passed",
+        "uid" : "622bd5bbdce1fe23",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
         "time" : {
-          "start" : 1578494146264,
-          "stop" : 1578494163565,
-          "duration" : 17301
+          "start" : 1578557988338,
+          "stop" : 1578557998477,
+          "duration" : 10139
         }
       }, {
-        "uid" : "92e74f0ac91c42e9",
-        "status" : "passed",
+        "uid" : "95c3088127f6e2f9",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
         "time" : {
-          "start" : 1578474570559,
-          "stop" : 1578474584323,
-          "duration" : 13764
+          "start" : 1578494186465,
+          "stop" : 1578494196790,
+          "duration" : 10325
         }
       }, {
-        "uid" : "858029a5e5c6bfce",
-        "status" : "passed",
+        "uid" : "bdccdc94f26a5a9d",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
         "time" : {
-          "start" : 1578474120393,
-          "stop" : 1578474136664,
-          "duration" : 16271
+          "start" : 1578474600298,
+          "stop" : 1578474610832,
+          "duration" : 10534
         }
       }, {
-        "uid" : "d5d8c0c29510336",
-        "status" : "passed",
+        "uid" : "450c6774e1a0a63a",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
         "time" : {
-          "start" : 1578472622745,
-          "stop" : 1578472651197,
-          "duration" : 28452
+          "start" : 1578474136954,
+          "stop" : 1578474147794,
+          "duration" : 10840
         }
       }, {
-        "uid" : "d1c9f3b8183432e6",
-        "status" : "broken",
-        "statusDetails" : "io.qameta.allure.selenide.AllureSelenide.onEvent(Lcom/codeborne/selenide/logevents/LogEvent;)V",
+        "uid" : "be2142946d8de151",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
         "time" : {
-          "start" : 1578471157901,
-          "stop" : 1578471162932,
-          "duration" : 5031
+          "start" : 1578472660323,
+          "stop" : 1578472667423,
+          "duration" : 7100
         }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "dbdffa9cb4f2cbc4.json",
+  "source" : "963035ee37727d64.json",
   "parameterValues" : [ ]
 }

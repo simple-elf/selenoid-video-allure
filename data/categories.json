@@ -6,39 +6,39 @@
       "name" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
       "children" : [ {
         "name" : "test_4",
-        "uid" : "c5020865486793ee",
+        "uid" : "c48a95b4e0a1a4d2",
         "parentUid" : "2da48e01a39d49d856eff44740f6e489",
         "status" : "failed",
         "time" : {
-          "start" : 1578557971545,
-          "stop" : 1578557982129,
-          "duration" : 10584
+          "start" : 1578632682615,
+          "stop" : 1578632704721,
+          "duration" : 22106
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       }, {
-        "name" : "test_1",
-        "uid" : "622bd5bbdce1fe23",
+        "name" : "test_3",
+        "uid" : "546a583ebfcc0df0",
         "parentUid" : "2da48e01a39d49d856eff44740f6e489",
         "status" : "failed",
         "time" : {
-          "start" : 1578557988338,
-          "stop" : 1578557998477,
-          "duration" : 10139
+          "start" : 1578632682625,
+          "stop" : 1578632713807,
+          "duration" : 31182
         },
         "flaky" : false,
-        "newFailed" : false,
+        "newFailed" : true,
         "parameters" : [ ]
       }, {
         "name" : "test_2",
-        "uid" : "b49f4d646435c9cc",
+        "uid" : "416c9a83164425b8",
         "parentUid" : "2da48e01a39d49d856eff44740f6e489",
         "status" : "failed",
         "time" : {
-          "start" : 1578558004591,
-          "stop" : 1578558014855,
-          "duration" : 10264
+          "start" : 1578632682633,
+          "stop" : 1578632705563,
+          "duration" : 22930
         },
         "flaky" : false,
         "newFailed" : false,
