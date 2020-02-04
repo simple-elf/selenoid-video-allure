@@ -4,11 +4,19 @@
       "failed" : 5,
       "broken" : 5,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 2,
       "unknown" : 0,
-      "total" : 11
+      "total" : 12
     },
     "items" : [ {
+      "uid" : "5c1d00aba3764f9b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1580827143178,
+        "stop" : 1580827171260,
+        "duration" : 28082
+      }
+    }, {
       "uid" : "963035ee37727d64",
       "status" : "passed",
       "time" : {
@@ -43,27 +51,27 @@
         "stop" : 1578474610832,
         "duration" : 10534
       }
-    }, {
-      "uid" : "450c6774e1a0a63a",
-      "status" : "failed",
-      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
-      "time" : {
-        "start" : 1578474136954,
-        "stop" : 1578474147794,
-        "duration" : 10840
-      }
     } ]
   },
   "e08b0d164fc9382ef6731b116cdf8d52" : {
     "statistic" : {
       "failed" : 1,
-      "broken" : 5,
+      "broken" : 6,
       "skipped" : 0,
       "passed" : 5,
       "unknown" : 0,
-      "total" : 11
+      "total" : 12
     },
     "items" : [ {
+      "uid" : "6562c4d2f2346fe4",
+      "status" : "broken",
+      "statusDetails" : "timeout: Timed out receiving message from renderer: 9.999\n  (Session info: chrome=79.0.3945.79)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az60', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.0.0-1028-azure', java.version: '1.8.0_242'\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: /tmp/.com.google.Chrome.PWkqcW}, goog:chromeOptions: {debuggerAddress: localhost:39991}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 6d3aa749f1a94f4ff065b3967d53081a",
+      "time" : {
+        "start" : 1580827143378,
+        "stop" : 1580827239966,
+        "duration" : 96588
+      }
+    }, {
       "uid" : "546a583ebfcc0df0",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -96,14 +104,6 @@
         "stop" : 1578474584323,
         "duration" : 13764
       }
-    }, {
-      "uid" : "858029a5e5c6bfce",
-      "status" : "passed",
-      "time" : {
-        "start" : 1578474120393,
-        "stop" : 1578474136664,
-        "duration" : 16271
-      }
     } ]
   },
   "5f597435345e35fb411f50d1be4833c8" : {
@@ -131,11 +131,19 @@
       "failed" : 5,
       "broken" : 5,
       "skipped" : 1,
-      "passed" : 0,
+      "passed" : 1,
       "unknown" : 0,
-      "total" : 11
+      "total" : 12
     },
     "items" : [ {
+      "uid" : "a01d7062ac55b06d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1580827143390,
+        "stop" : 1580827170840,
+        "duration" : 27450
+      }
+    }, {
       "uid" : "c48a95b4e0a1a4d2",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -171,27 +179,27 @@
         "stop" : 1578474598137,
         "duration" : 10458
       }
-    }, {
-      "uid" : "b537ef5d3db1b51a",
-      "status" : "skipped",
-      "statusDetails" : "No webdriver is bound to current thread: 1. You need to call open(url) first.",
-      "time" : {
-        "start" : 1578474136942,
-        "stop" : 1578474136943,
-        "duration" : 1
-      }
     } ]
   },
   "da2f4f38cd97d2872be6bcc061ddcfc8" : {
     "statistic" : {
       "failed" : 6,
-      "broken" : 5,
+      "broken" : 6,
       "skipped" : 0,
       "passed" : 0,
       "unknown" : 0,
-      "total" : 11
+      "total" : 12
     },
     "items" : [ {
+      "uid" : "e3bf737a31b80c92",
+      "status" : "broken",
+      "statusDetails" : "timeout: Timed out receiving message from renderer: 10.000\n  (Session info: chrome=79.0.3945.79)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az60', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.0.0-1028-azure', java.version: '1.8.0_242'\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: /tmp/.com.google.Chrome.O81yod}, goog:chromeOptions: {debuggerAddress: localhost:38599}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: e6d52d780d57ec59869b75cca4ec6189",
+      "time" : {
+        "start" : 1580827143192,
+        "stop" : 1580827239901,
+        "duration" : 96709
+      }
+    }, {
       "uid" : "416c9a83164425b8",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -226,15 +234,6 @@
         "start" : 1578474612935,
         "stop" : 1578474623229,
         "duration" : 10294
-      }
-    }, {
-      "uid" : "2e24517ac98e1f87",
-      "status" : "failed",
-      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
-      "time" : {
-        "start" : 1578474150931,
-        "stop" : 1578474161443,
-        "duration" : 10512
       }
     } ]
   }

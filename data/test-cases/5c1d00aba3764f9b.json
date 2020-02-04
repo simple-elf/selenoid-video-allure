@@ -1,12 +1,12 @@
 {
-  "uid" : "963035ee37727d64",
+  "uid" : "5c1d00aba3764f9b",
   "name" : "test_1",
   "fullName" : "SimpleTest.test_1",
   "historyId" : "8ced8c7659dacd37a192bd01347caf17",
   "time" : {
-    "start" : 1578632682634,
-    "stop" : 1578632716179,
-    "duration" : 33545
+    "start" : 1580827143178,
+    "stop" : 1580827171260,
+    "duration" : 28082
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,9 +14,9 @@
   "beforeStages" : [ {
     "name" : "beforeClass",
     "time" : {
-      "start" : 1578632682437,
-      "stop" : 1578632682498,
-      "duration" : 61
+      "start" : 1580827143072,
+      "stop" : 1580827143106,
+      "duration" : 34
     },
     "description" : "",
     "status" : "passed",
@@ -33,9 +33,9 @@
     "steps" : [ {
       "name" : "$(open) http://ya.ru",
       "time" : {
-        "start" : 1578632682709,
-        "stop" : 1578632698225,
-        "duration" : 15516
+        "start" : 1580827143229,
+        "stop" : 1580827159895,
+        "duration" : 16666
       },
       "status" : "passed",
       "steps" : [ ],
@@ -48,9 +48,9 @@
     }, {
       "name" : "$(#text) should be(visible)",
       "time" : {
-        "start" : 1578632699327,
-        "stop" : 1578632699657,
-        "duration" : 330
+        "start" : 1580827160896,
+        "stop" : 1580827161104,
+        "duration" : 208
       },
       "status" : "passed",
       "steps" : [ ],
@@ -63,9 +63,9 @@
     }, {
       "name" : "$(#text) set value(selenoid)",
       "time" : {
-        "start" : 1578632699657,
-        "stop" : 1578632700673,
-        "duration" : 1016
+        "start" : 1580827161104,
+        "stop" : 1580827161788,
+        "duration" : 684
       },
       "status" : "passed",
       "steps" : [ ],
@@ -78,8 +78,8 @@
     }, {
       "name" : "$(by text: Найти) parent()",
       "time" : {
-        "start" : 1578632701676,
-        "stop" : 1578632701676,
+        "start" : 1580827162788,
+        "stop" : 1580827162788,
         "duration" : 0
       },
       "status" : "passed",
@@ -93,9 +93,9 @@
     }, {
       "name" : "$(By.xpath: ..) should be(visible)",
       "time" : {
-        "start" : 1578632701676,
-        "stop" : 1578632701899,
-        "duration" : 223
+        "start" : 1580827162788,
+        "stop" : 1580827162972,
+        "duration" : 184
       },
       "status" : "passed",
       "steps" : [ ],
@@ -108,9 +108,9 @@
     }, {
       "name" : "$(By.xpath: ..) click()",
       "time" : {
-        "start" : 1578632701899,
-        "stop" : 1578632707426,
-        "duration" : 5527
+        "start" : 1580827162972,
+        "stop" : 1580827163426,
+        "duration" : 454
       },
       "status" : "passed",
       "steps" : [ ],
@@ -123,9 +123,9 @@
     }, {
       "name" : "$(div.content) should be(visible)",
       "time" : {
-        "start" : 1578632708427,
-        "stop" : 1578632713665,
-        "duration" : 5238
+        "start" : 1580827164426,
+        "stop" : 1580827167122,
+        "duration" : 2696
       },
       "status" : "passed",
       "steps" : [ ],
@@ -137,17 +137,17 @@
       "hasContent" : false
     } ],
     "attachments" : [ {
-      "uid" : "6aeb804d15ba220e",
+      "uid" : "5b676e278fdc9e22",
       "name" : "Screenshot",
-      "source" : "6aeb804d15ba220e.png",
+      "source" : "5b676e278fdc9e22.png",
       "type" : "image/png",
-      "size" : 261185
+      "size" : 287714
     }, {
-      "uid" : "188132678f676b76",
+      "uid" : "c6a27e5ed37b4caf",
       "name" : "Screenshot",
-      "source" : "188132678f676b76.png",
+      "source" : "c6a27e5ed37b4caf.png",
       "type" : "image/png",
-      "size" : 263883
+      "size" : 294041
     } ],
     "parameters" : [ ],
     "stepsCount" : 7,
@@ -155,29 +155,7 @@
     "shouldDisplayMessage" : false,
     "hasContent" : true
   },
-  "afterStages" : [ {
-    "name" : "saveVideo",
-    "time" : {
-      "start" : 1578632716230,
-      "stop" : 1578632722430,
-      "duration" : 6200
-    },
-    "description" : "",
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ {
-      "uid" : "106c3dbf88b3b06a",
-      "name" : "Video",
-      "source" : "106c3dbf88b3b06a.mp4",
-      "type" : "video/mp4",
-      "size" : 271304
-    } ],
-    "parameters" : [ ],
-    "stepsCount" : 0,
-    "attachmentsCount" : 1,
-    "shouldDisplayMessage" : false,
-    "hasContent" : true
-  } ],
+  "afterStages" : [ ],
   "labels" : [ {
     "name" : "package",
     "value" : "SimpleTest"
@@ -198,10 +176,10 @@
     "value" : "SimpleTest"
   }, {
     "name" : "host",
-    "value" : "fv-az88"
+    "value" : "fv-az60"
   }, {
     "name" : "thread",
-    "value" : "3588@fv-az88.TestNG-test=Surefire test-1(12)"
+    "value" : "3786@fv-az60.TestNG-test=Surefire test-1(12)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -228,11 +206,19 @@
         "failed" : 5,
         "broken" : 5,
         "skipped" : 0,
-        "passed" : 1,
+        "passed" : 2,
         "unknown" : 0,
-        "total" : 11
+        "total" : 12
       },
       "items" : [ {
+        "uid" : "963035ee37727d64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1578632682634,
+          "stop" : 1578632716179,
+          "duration" : 33545
+        }
+      }, {
         "uid" : "622bd5bbdce1fe23",
         "status" : "failed",
         "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -268,19 +254,10 @@
           "stop" : 1578474147794,
           "duration" : 10840
         }
-      }, {
-        "uid" : "be2142946d8de151",
-        "status" : "failed",
-        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
-        "time" : {
-          "start" : 1578472660323,
-          "stop" : 1578472667423,
-          "duration" : 7100
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "963035ee37727d64.json",
+  "source" : "5c1d00aba3764f9b.json",
   "parameterValues" : [ ]
 }
