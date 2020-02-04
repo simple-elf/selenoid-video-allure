@@ -6,8 +6,8 @@ import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,6 +20,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
 //@Listeners({TextReport.class, BrowserPerClass.class, AllureScreenShooter.class})
+@Listeners(SelenoidVideoListener.class)
 public class BaseTestClass {
 
     @BeforeClass
@@ -46,7 +47,7 @@ public class BaseTestClass {
         SelenideLogger.addListener("Allure Selenide", new AllureSelenide());
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void saveVideo() {
         String sessionId = getSessionId();
         closeWebDriver();
