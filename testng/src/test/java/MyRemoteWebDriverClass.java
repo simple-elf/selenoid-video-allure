@@ -32,7 +32,7 @@ public class MyRemoteWebDriverClass implements WebDriverProvider {
             return new RemoteWebDriver(getGridHubUrl(), capabilities);
         } catch (Exception e) {
             e.printStackTrace();
-            step("ChromeDriver error: " + e.getMessage(), Status.FAILED);
+            step("RemoteDriver error: " + e.getMessage(), Status.FAILED);
             throw e;
             //return null;
         }
