@@ -1,43 +1,52 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "children" : [ {
-    "name" : "Test defects",
+    "name" : "Product defects",
     "children" : [ {
-      "name" : "timeout: Timed out receiving message from renderer: 10.000\n  (Session info: chrome=79.0.3945.79)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az60', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.0.0-1028-azure', java.version: '1.8.0_242'\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: /tmp/.com.google.Chrome.O81yod}, goog:chromeOptions: {debuggerAddress: localhost:38599}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: e6d52d780d57ec59869b75cca4ec6189",
+      "name" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
       "children" : [ {
-        "name" : "test_2",
-        "uid" : "e3bf737a31b80c92",
-        "parentUid" : "48923bc3ea6d4af1746b935013484257",
-        "status" : "broken",
+        "name" : "test_1",
+        "uid" : "39d26754b3f6c953",
+        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
+        "status" : "failed",
         "time" : {
-          "start" : 1580827143192,
-          "stop" : 1580827239901,
-          "duration" : 96709
+          "start" : 1580827777331,
+          "stop" : 1580827805378,
+          "duration" : 28047
         },
-        "flaky" : false,
-        "newFailed" : false,
+        "flaky" : true,
+        "newFailed" : true,
         "parameters" : [ ]
-      } ],
-      "uid" : "48923bc3ea6d4af1746b935013484257"
-    }, {
-      "name" : "timeout: Timed out receiving message from renderer: 9.999\n  (Session info: chrome=79.0.3945.79)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az60', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.0.0-1028-azure', java.version: '1.8.0_242'\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: /tmp/.com.google.Chrome.PWkqcW}, goog:chromeOptions: {debuggerAddress: localhost:39991}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 6d3aa749f1a94f4ff065b3967d53081a",
-      "children" : [ {
+      }, {
+        "name" : "test_4",
+        "uid" : "186d979c715bf3c0",
+        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
+        "status" : "failed",
+        "time" : {
+          "start" : 1580827777645,
+          "stop" : 1580827796894,
+          "duration" : 19249
+        },
+        "flaky" : true,
+        "newFailed" : true,
+        "parameters" : [ ]
+      }, {
         "name" : "test_3",
-        "uid" : "6562c4d2f2346fe4",
-        "parentUid" : "7d27ddd06f61bd764d46dc55b8242f30",
-        "status" : "broken",
+        "uid" : "bdd6dca6e93e1815",
+        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
+        "status" : "failed",
         "time" : {
-          "start" : 1580827143378,
-          "stop" : 1580827239966,
-          "duration" : 96588
+          "start" : 1580827777648,
+          "stop" : 1580827801783,
+          "duration" : 24135
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "7d27ddd06f61bd764d46dc55b8242f30"
+      "uid" : "2da48e01a39d49d856eff44740f6e489"
     } ],
-    "uid" : "bdbf199525818fae7a8651db9eafe741"
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
   } ],
   "name" : "categories"
 }
