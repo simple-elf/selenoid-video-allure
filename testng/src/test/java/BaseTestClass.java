@@ -29,6 +29,7 @@ public class BaseTestClass {
             Configuration.browser = MyRemoteWebDriverClass.class.getName();
             Configuration.browserSize = "1920x1080";
             //Configuration.startMaximized = true;
+            Configuration.browserPosition = "2x2";
             System.out.println("RemoteWebDriver");
         } else {
             Configuration.browser = MyChromeBrowserClass.class.getName();
