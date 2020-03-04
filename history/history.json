@@ -4,11 +4,19 @@
       "failed" : 6,
       "broken" : 5,
       "skipped" : 0,
-      "passed" : 2,
+      "passed" : 3,
       "unknown" : 0,
-      "total" : 13
+      "total" : 14
     },
     "items" : [ {
+      "uid" : "624b0e211947cc33",
+      "status" : "passed",
+      "time" : {
+        "start" : 1583333790019,
+        "stop" : 1583333819549,
+        "duration" : 29530
+      }
+    }, {
       "uid" : "39d26754b3f6c953",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -42,15 +50,6 @@
         "stop" : 1578557998477,
         "duration" : 10139
       }
-    }, {
-      "uid" : "95c3088127f6e2f9",
-      "status" : "failed",
-      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
-      "time" : {
-        "start" : 1578494186465,
-        "stop" : 1578494196790,
-        "duration" : 10325
-      }
     } ]
   },
   "e08b0d164fc9382ef6731b116cdf8d52" : {
@@ -58,11 +57,19 @@
       "failed" : 2,
       "broken" : 6,
       "skipped" : 0,
-      "passed" : 5,
+      "passed" : 6,
       "unknown" : 0,
-      "total" : 13
+      "total" : 14
     },
     "items" : [ {
+      "uid" : "a5da7e6479fc06c7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1583333789855,
+        "stop" : 1583333818883,
+        "duration" : 29028
+      }
+    }, {
       "uid" : "bdd6dca6e93e1815",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -97,14 +104,6 @@
         "stop" : 1578557965094,
         "duration" : 15882
       }
-    }, {
-      "uid" : "5e96e7ff2ff686a1",
-      "status" : "passed",
-      "time" : {
-        "start" : 1578494146264,
-        "stop" : 1578494163565,
-        "duration" : 17301
-      }
     } ]
   },
   "5f597435345e35fb411f50d1be4833c8" : {
@@ -132,11 +131,19 @@
       "failed" : 6,
       "broken" : 5,
       "skipped" : 1,
-      "passed" : 1,
+      "passed" : 2,
       "unknown" : 0,
-      "total" : 13
+      "total" : 14
     },
     "items" : [ {
+      "uid" : "dde7191aa77f2923",
+      "status" : "passed",
+      "time" : {
+        "start" : 1583333789855,
+        "stop" : 1583333818590,
+        "duration" : 28735
+      }
+    }, {
       "uid" : "186d979c715bf3c0",
       "status" : "failed",
       "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
@@ -171,15 +178,6 @@
         "stop" : 1578557982129,
         "duration" : 10584
       }
-    }, {
-      "uid" : "44c07d4f3b3c30b7",
-      "status" : "failed",
-      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
-      "time" : {
-        "start" : 1578494169927,
-        "stop" : 1578494180316,
-        "duration" : 10389
-      }
     } ]
   },
   "da2f4f38cd97d2872be6bcc061ddcfc8" : {
@@ -187,11 +185,19 @@
       "failed" : 6,
       "broken" : 6,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 2,
       "unknown" : 0,
-      "total" : 13
+      "total" : 14
     },
     "items" : [ {
+      "uid" : "5f5524a616e6acf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1583333790009,
+        "stop" : 1583333819324,
+        "duration" : 29315
+      }
+    }, {
       "uid" : "94a92233e23cd2a7",
       "status" : "passed",
       "time" : {
@@ -225,15 +231,6 @@
         "start" : 1578558004591,
         "stop" : 1578558014855,
         "duration" : 10264
-      }
-    }, {
-      "uid" : "3e46366e26de33fd",
-      "status" : "failed",
-      "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
-      "time" : {
-        "start" : 1578494202921,
-        "stop" : 1578494213233,
-        "duration" : 10312
       }
     } ]
   }

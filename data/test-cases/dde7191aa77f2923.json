@@ -1,0 +1,177 @@
+{
+  "uid" : "dde7191aa77f2923",
+  "name" : "test_4",
+  "fullName" : "EasyTest.test_4",
+  "historyId" : "40f03c6a9652c83ee42175fe25edce63",
+  "time" : {
+    "start" : 1583333789855,
+    "stop" : 1583333818590,
+    "duration" : 28735
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "beforeClass",
+    "time" : {
+      "start" : 1583333789701,
+      "stop" : 1583333789755,
+      "duration" : 54
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "f4184a521cd67684",
+      "name" : "Screenshot",
+      "source" : "f4184a521cd67684.png",
+      "type" : "image/png",
+      "size" : 279219
+    }, {
+      "uid" : "f581d6a733afc00c",
+      "name" : "Screenshot",
+      "source" : "f581d6a733afc00c.png",
+      "type" : "image/png",
+      "size" : 283114
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "saveVideo",
+    "time" : {
+      "start" : 1583333818920,
+      "stop" : 1583333825154,
+      "duration" : 6234
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "93b86267d4ab0cf5",
+      "name" : "Video",
+      "source" : "93b86267d4ab0cf5.mp4",
+      "type" : "video/mp4",
+      "size" : 17035
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "EasyTest"
+  }, {
+    "name" : "testClass",
+    "value" : "EasyTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "test_4"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "EasyTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az59"
+  }, {
+    "name" : "thread",
+    "value" : "3636@fv-az59.TestNG-test=Surefire test-2(13)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 6,
+        "broken" : 5,
+        "skipped" : 1,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 14
+      },
+      "items" : [ {
+        "uid" : "186d979c715bf3c0",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+        "time" : {
+          "start" : 1580827777645,
+          "stop" : 1580827796894,
+          "duration" : 19249
+        }
+      }, {
+        "uid" : "a01d7062ac55b06d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1580827143390,
+          "stop" : 1580827170840,
+          "duration" : 27450
+        }
+      }, {
+        "uid" : "c48a95b4e0a1a4d2",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+        "time" : {
+          "start" : 1578632682615,
+          "stop" : 1578632704721,
+          "duration" : 22106
+        }
+      }, {
+        "uid" : "c5020865486793ee",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+        "time" : {
+          "start" : 1578557971545,
+          "stop" : 1578557982129,
+          "duration" : 10584
+        }
+      }, {
+        "uid" : "44c07d4f3b3c30b7",
+        "status" : "failed",
+        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
+        "time" : {
+          "start" : 1578494169927,
+          "stop" : 1578494180316,
+          "duration" : 10389
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "dde7191aa77f2923.json",
+  "parameterValues" : [ ]
+}

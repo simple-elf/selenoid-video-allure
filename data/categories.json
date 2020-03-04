@@ -1,52 +1,5 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
-  "children" : [ {
-    "name" : "Product defects",
-    "children" : [ {
-      "name" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
-      "children" : [ {
-        "name" : "test_1",
-        "uid" : "39d26754b3f6c953",
-        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
-        "status" : "failed",
-        "time" : {
-          "start" : 1580827777331,
-          "stop" : 1580827805378,
-          "duration" : 28047
-        },
-        "flaky" : true,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_4",
-        "uid" : "186d979c715bf3c0",
-        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
-        "status" : "failed",
-        "time" : {
-          "start" : 1580827777645,
-          "stop" : 1580827796894,
-          "duration" : 19249
-        },
-        "flaky" : true,
-        "newFailed" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "test_3",
-        "uid" : "bdd6dca6e93e1815",
-        "parentUid" : "2da48e01a39d49d856eff44740f6e489",
-        "status" : "failed",
-        "time" : {
-          "start" : 1580827777648,
-          "stop" : 1580827801783,
-          "duration" : 24135
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ ]
-      } ],
-      "uid" : "2da48e01a39d49d856eff44740f6e489"
-    } ],
-    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
-  } ],
+  "children" : [ ],
   "name" : "categories"
 }

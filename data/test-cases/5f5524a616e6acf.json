@@ -1,12 +1,12 @@
 {
-  "uid" : "94a92233e23cd2a7",
+  "uid" : "5f5524a616e6acf",
   "name" : "test_2",
   "fullName" : "SimpleTest.test_2",
   "historyId" : "da2f4f38cd97d2872be6bcc061ddcfc8",
   "time" : {
-    "start" : 1580827777320,
-    "stop" : 1580827805612,
-    "duration" : 28292
+    "start" : 1583333790009,
+    "stop" : 1583333819324,
+    "duration" : 29315
   },
   "status" : "passed",
   "flaky" : false,
@@ -14,9 +14,9 @@
   "beforeStages" : [ {
     "name" : "beforeClass",
     "time" : {
-      "start" : 1580827777168,
-      "stop" : 1580827777204,
-      "duration" : 36
+      "start" : 1583333789825,
+      "stop" : 1583333789878,
+      "duration" : 53
     },
     "description" : "",
     "status" : "passed",
@@ -32,17 +32,17 @@
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "6f3604064efd0eaf",
+      "uid" : "4e226056a74728ce",
       "name" : "Screenshot",
-      "source" : "6f3604064efd0eaf.png",
+      "source" : "4e226056a74728ce.png",
       "type" : "image/png",
-      "size" : 264494
+      "size" : 279538
     }, {
-      "uid" : "5a5b39ae2dbcc36e",
+      "uid" : "a566069f937b6d63",
       "name" : "Screenshot",
-      "source" : "5a5b39ae2dbcc36e.png",
+      "source" : "a566069f937b6d63.png",
       "type" : "image/png",
-      "size" : 269095
+      "size" : 282817
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
@@ -53,19 +53,19 @@
   "afterStages" : [ {
     "name" : "saveVideo",
     "time" : {
-      "start" : 1580827805654,
-      "stop" : 1580827811841,
-      "duration" : 6187
+      "start" : 1583333819622,
+      "stop" : 1583333825817,
+      "duration" : 6195
     },
     "description" : "",
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ {
-      "uid" : "733bf293358320fd",
+      "uid" : "78a3d89e8afdda1d",
       "name" : "Video",
-      "source" : "733bf293358320fd.mp4",
+      "source" : "78a3d89e8afdda1d.mp4",
       "type" : "video/mp4",
-      "size" : 252479
+      "size" : 257629
     } ],
     "parameters" : [ ],
     "stepsCount" : 0,
@@ -93,10 +93,10 @@
     "value" : "SimpleTest"
   }, {
     "name" : "host",
-    "value" : "fv-az88"
+    "value" : "fv-az59"
   }, {
     "name" : "thread",
-    "value" : "3784@fv-az88.TestNG-test=Surefire test-2(13)"
+    "value" : "3641@fv-az59.TestNG-test=Surefire test-2(13)"
   }, {
     "name" : "framework",
     "value" : "testng"
@@ -120,11 +120,19 @@
         "failed" : 6,
         "broken" : 6,
         "skipped" : 0,
-        "passed" : 1,
+        "passed" : 2,
         "unknown" : 0,
-        "total" : 13
+        "total" : 14
       },
       "items" : [ {
+        "uid" : "94a92233e23cd2a7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1580827777320,
+          "stop" : 1580827805612,
+          "duration" : 28292
+        }
+      }, {
         "uid" : "e3bf737a31b80c92",
         "status" : "broken",
         "statusDetails" : "timeout: Timed out receiving message from renderer: 10.000\n  (Session info: chrome=79.0.3945.79)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az60', ip: '10.1.0.4', os.name: 'Linux', os.arch: 'amd64', os.version: '5.0.0-1028-azure', java.version: '1.8.0_242'\nDriver info: org.openqa.selenium.remote.RemoteWebDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 79.0.3945.79, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: /tmp/.com.google.Chrome.O81yod}, goog:chromeOptions: {debuggerAddress: localhost:38599}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: e6d52d780d57ec59869b75cca4ec6189",
@@ -160,19 +168,10 @@
           "stop" : 1578494213233,
           "duration" : 10312
         }
-      }, {
-        "uid" : "ecec75cdd3539b63",
-        "status" : "failed",
-        "statusDetails" : "Element not found {#text}\nExpected: visible\nTimeout: 4 s.\nCaused by: NoSuchElementException: no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#text\"}",
-        "time" : {
-          "start" : 1578474612935,
-          "stop" : 1578474623229,
-          "duration" : 10294
-        }
       } ]
     },
     "tags" : [ ]
   },
-  "source" : "94a92233e23cd2a7.json",
+  "source" : "5f5524a616e6acf.json",
   "parameterValues" : [ ]
 }
